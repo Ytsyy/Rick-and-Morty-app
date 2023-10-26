@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 struct Color{
@@ -24,14 +25,38 @@ struct Color{
         self.blue = blue
     }
 }
-class ColorGenerator{
+
+
+protocol ColorGeneratorProtoccol{
+    var alpha: Double {get set}
+    var colorCodes: [Double]{get}
+
+    func createColor() -> UIColor
+
+    init(alpha: Double)
+}
+
+/*extension ColorGeneratorProtoccol{
+    func createCcolor()-> UIColor{
+        return UIColor
+    }
+} */
+
+
+class ColorGenerator: ColorGeneratorProtoccol{
+
     var alpha: Double
-    let colorCodes: [Double] = [0.0, 51.0, 102.0, 153.0, 204.0, 255.0]
-    
-    init(alpha: Double) {
+    var colorCodes: [Double] = [0.0, 51.0, 102.0, 153.0, 204.0, 255.0]
+    let whiteColor: UIColor = .white
+
+    required init(alpha: Double) {
         self.alpha = alpha
     }
-    
+
+    func createColor() -> UIColor {
+        UIColor(white: 1, alpha: alpha)
+    }
+
 }
 
 enum Brightness: Double {
