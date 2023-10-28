@@ -11,7 +11,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        let generator = ColorGenerator(alpha: 0.5)
+        let superGenerator: ColorGenerator = ColorGenerator(alpha: 1)
+
+        generator.whiteColor
+        
     }
 
 
