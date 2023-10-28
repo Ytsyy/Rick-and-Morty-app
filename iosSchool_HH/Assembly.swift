@@ -7,9 +7,9 @@
 
 import Foundation
 
-class Assembly{
-    
-    func ColorGenerator(alpha: Double) -> ColorGenerator{
+class Assembly {
+
+    func colorGenerator(alpha: Double) -> ColorGenerator {
         ColorGenerator(alpha: alpha)
     }
 }
