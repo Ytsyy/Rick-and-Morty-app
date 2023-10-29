@@ -15,7 +15,7 @@
 		3F07129A2AE11D2B00B98A82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0712982AE11D2B00B98A82 /* LaunchScreen.storyboard */; };
 		3F0712A22AE69C0200B98A82 /* ColorGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712A12AE69C0200B98A82 /* ColorGenerator.swift */; };
 		3F0712A92AEAA5EE00B98A82 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712A82AEAA5EE00B98A82 /* Assembly.swift */; };
-		3F0712B12AED053900B98A82 /* first-homework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712B02AED053900B98A82 /* first-homework.swift */; };
+		3F0712B12AED053900B98A82 /* FirstHomework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712B02AED053900B98A82 /* FirstHomework.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 		3F07129B2AE11D2B00B98A82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F0712A12AE69C0200B98A82 /* ColorGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGenerator.swift; sourceTree = "<group>"; };
 		3F0712A82AEAA5EE00B98A82 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
-		3F0712B02AED053900B98A82 /* first-homework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "first-homework.swift"; sourceTree = "<group>"; };
+		3F0712B02AED053900B98A82 /* FirstHomework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstHomework.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +71,7 @@
 				3F07129B2AE11D2B00B98A82 /* Info.plist */,
 				3F0712A12AE69C0200B98A82 /* ColorGenerator.swift */,
 				3F0712A82AEAA5EE00B98A82 /* Assembly.swift */,
-				3F0712B02AED053900B98A82 /* first-homework.swift */,
+				3F0712B02AED053900B98A82 /* FirstHomework.swift */,
 			);
 			path = iosSchool_HH;
 			sourceTree = "<group>";
@@ -170,7 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F0712B12AED053900B98A82 /* first-homework.swift in Sources */,
+				3F0712B12AED053900B98A82 /* FirstHomework.swift in Sources */,
 				3F0712922AE11D2800B98A82 /* ViewController.swift in Sources */,
 				3F0712A92AEAA5EE00B98A82 /* Assembly.swift in Sources */,
 				3F0712A22AE69C0200B98A82 /* ColorGenerator.swift in Sources */,
