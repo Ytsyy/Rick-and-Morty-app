@@ -25,13 +25,13 @@ class Character {
         case female = "Female"
         case male = "Male"
         case genderless = "Genderless"
-        case unknown = "Unkwown"
+        case unknown = "unknown"
     }
 
     enum Status: String, CaseIterable {
         case alive = "Alive"
         case dead = "Dead"
-        case unknown = "Unknown"
+        case unknown = "unknown"
     }
 
     let id: Int
