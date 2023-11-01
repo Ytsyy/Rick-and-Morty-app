@@ -9,41 +9,38 @@ import Foundation
 import UIKit
 
 
-struct Color{
+struct Color {
     var alpha: Brightness
     let red: Double
     let green: Double
     let blue: Double
-    
-    func description(){
+
+    func description() {
         print("R: \(red), aplha \(alpha.rawValue)")
     }
     init(red: Double, green: Double, blue: Double) {
-        self.alpha = .din
+        self.alpha = .dim
         self.red = red
         self.green = green
         self.blue = blue
     }
 }
 
-
-protocol ColorGeneratorProtoccol{
-    var alpha: Double {get set}
-    var colorCodes: [Double]{get}
-
-    func createColor() -> UIColor
-
+protocol ColorGeneratorProtocol {
+    var alpha: Double { get set }
+    var colorCodes: [Double] { get }
+    func createColorv() -> UIColor
     init(alpha: Double)
 }
 
-/*extension ColorGeneratorProtoccol{
-    func createCcolor()-> UIColor{
-        return UIColor
+extension ColorGeneratorProtocol {
+    func createColorv() -> UIColor {
+        UIColor(white: 1, alpha: alpha)
     }
-} */
+}
 
 
-class ColorGenerator: ColorGeneratorProtoccol{
+class ColorGenerator: ColorGeneratorProtocol {
 
     var alpha: Double
     var colorCodes: [Double] = [0.0, 51.0, 102.0, 153.0, 204.0, 255.0]
@@ -53,25 +50,42 @@ class ColorGenerator: ColorGeneratorProtoccol{
         self.alpha = alpha
     }
 
-    func createColor() -> UIColor {
-        UIColor(white: 1, alpha: alpha)
+    func changeColorCodes(completion: ([Double]) -> Void) {
+        completion([])
     }
 
-}
+    func changeColor(completion: () -> [Double]) {
+        print(completion())
+    }
 
-enum Brightness: Double {
-    case din = 0.1
-    case average = 0.5
-    case bright = 1
-    
-    func description() -> String{
-        switch self {
-        case .din:
-            return "Тусклый"
-        case .average:
-            return "Средний"
-        case .bright:
-            return "Яркий"
+    func test() {
+        changeColorCodes { [weak self] newColorCodes in
+            self?.colorCodes = newColorCodes
+        }
+
+        changeColor { [weak self] in
+            guard let self else {
+                return []
+            }
+            self.colorCodes = [0, 1, 2, 3]
+            return self.colorCodes
         }
     }
 }
+
+    enum Brightness: Double {
+        case dim = 0.1
+        case average = 0.5
+        case bright = 1
+
+        func description() -> String {
+            switch self {
+            case .dim:
+                return "Тусклый"
+            case .average:
+                return "Средний"
+            case .bright:
+                return "Яркий"
+            }
+        }
+    }
