@@ -66,6 +66,7 @@ class Character {
 
 protocol CharacterGeneratorProtocol {
     var characterCount: Int { get }
+
     func generateCharacter() -> Character
     func printCharacterInfo(character: Character)
 }
