@@ -95,8 +95,3 @@ class CharacterGenerator: CharacterGeneratorProtocol {
     }
 }
 
-let characterGenerator: CharacterGeneratorProtocol = CharacterGenerator()
-let characterGeneratorInstance = CharacterGenerator()
-
-let generatedCharacter1 = characterGenerator.generateCharacter()
-let generatedCharacter2 = characterGeneratorInstance.generateCharacter()
