@@ -64,7 +64,15 @@ class Character {
     }
 }
 
-class CharacterGenerator {
+protocol CharacterGeneratorProtocol {
+    var characterCount: Int { get }
+
+    func generateCharacter() -> Character
+    func printCharacterInfo(character: Character)
+}
+
+class CharacterGenerator: CharacterGeneratorProtocol {
+    var characterCount: Int = 0
 
     func generateCharacter() -> Character {
         let randomID = Int.random(in: 0...1000)
@@ -78,6 +86,12 @@ class CharacterGenerator {
             gender: Character.Gender.allCases.randomElement() ?? .unknown,
             status: Character.Status.allCases.randomElement() ?? .unknown
         )
+        characterCount += 1
         return someCharacter
     }
+
+    func printCharacterInfo(character: Character) {
+        print(character)
+    }
 }
+

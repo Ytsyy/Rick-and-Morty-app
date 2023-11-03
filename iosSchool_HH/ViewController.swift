@@ -13,15 +13,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         let generator = ColorGenerator(alpha: 1)
+
+        let characterGenerator: CharacterGeneratorProtocol = CharacterGenerator()
+        let characterGeneratorInstance = CharacterGenerator()
+        let generatedCharacter1 = characterGenerator.generateCharacter()
+        let generatedCharacter2 = characterGeneratorInstance.generateCharacter()
+
         generator.changeColorCodes { colorCodes in
             print(colorCodes)
         }
         generator.changeColor {
             [0,100,200]
         }
-
     }
-
-
 }
-
