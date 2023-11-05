@@ -93,5 +93,33 @@ class CharacterGenerator: CharacterGeneratorProtocol {
     func printCharacterInfo(character: Character) {
         print(character)
     }
-}
 
+    func generateNameOne(completion: (String) -> Void) {
+        let randomID = Int.random(in: 0...1000)
+        let randomName = "Character \(randomID)"
+        completion(randomName)
+    }
+
+    func generateNameTwo(completion: () -> (String)) {
+        let generatedName = completion()
+            print("Character: \(generatedName)")
+        }
+
+    let generateNameTwoClosure: () -> String = {
+        return String(Int.random(in: 0...1000))
+    }
+    func generateNameThree() -> () -> Void {
+        let randomID = Int.random(in: 0...1000)
+        let characterName = "Character \(randomID)"
+
+        return {
+            print(characterName)
+        }
+    }
+
+    func generateNameFour() -> (() -> String) {
+            let randomID = Int.random(in: 0...1000)
+            let characterName = "Character \(randomID)"
+            return { characterName }
+        }
+}
