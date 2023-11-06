@@ -73,9 +73,6 @@ protocol CharacterGeneratorProtocol {
 
 class CharacterGenerator: CharacterGeneratorProtocol {
     var characterCount: Int = 0
-    let generateNameTwoClosure: () -> String = {
-        return String(Int.random(in: 0...1000))
-    }
 
     func generateCharacter() -> Character {
         let randomID = Int.random(in: 0...1000)

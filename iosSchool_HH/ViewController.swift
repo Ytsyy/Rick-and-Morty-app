@@ -19,18 +19,17 @@ class ViewController: UIViewController {
         let generatedCharacter1 = characterGenerator.generateCharacter()
         let generatedCharacter2 = characterGeneratorInstance.generateCharacter()
 
-        let generateNameTwoClosure: () -> String = {
-            return String(Int.random(in: 0...1000))
-        }
         let nameThreeHandler = CharacterGenerator().generateNameThree()
         let nameFourClosure = CharacterGenerator().generateNameFour()
-    
+
         CharacterGenerator().generateNameOne { name in
             print("First generated name: \(name)")
         }
 
         print("Second generated name: ", terminator: "")
-        CharacterGenerator().generateNameTwo(completion: generateNameTwoClosure)
+        CharacterGenerator().generateNameTwo {
+            String(Int.random(in: 0...1000))
+        }
 
         print("Third generated name: ", terminator: "")
         nameThreeHandler()
