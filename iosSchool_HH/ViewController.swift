@@ -19,25 +19,23 @@ class ViewController: UIViewController {
         let generatedCharacter1 = characterGenerator.generateCharacter()
         let generatedCharacter2 = characterGeneratorInstance.generateCharacter()
 
-        let nameCharacterGenerator = CharacterGenerator()
         let generateNameTwoClosure: () -> String = {
             return String(Int.random(in: 0...1000))
         }
-        let nameThreeHandler = nameCharacterGenerator.generateNameThree()
-        let nameFourClosure = nameCharacterGenerator.generateNameFour()
-        let nameFour = nameFourClosure()
-
-        nameCharacterGenerator.generateNameOne { name in
+        let nameThreeHandler = CharacterGenerator().generateNameThree()
+        let nameFourClosure = CharacterGenerator().generateNameFour()
+    
+        CharacterGenerator().generateNameOne { name in
             print("First generated name: \(name)")
         }
 
         print("Second generated name: ", terminator: "")
-        nameCharacterGenerator.generateNameTwo(completion: generateNameTwoClosure)
+        CharacterGenerator().generateNameTwo(completion: generateNameTwoClosure)
 
         print("Third generated name: ", terminator: "")
         nameThreeHandler()
 
-        print("Fourth generated name: \(nameFour)")
+        print("Fourth generated name: \(nameFourClosure())")
 
         generator.changeColor {
             [0, 100, 200]
