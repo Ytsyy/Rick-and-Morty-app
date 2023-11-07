@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 struct Color {
     var alpha: Brightness
     let red: Double
@@ -29,16 +28,17 @@ struct Color {
 protocol ColorGeneratorProtocol {
     var alpha: Double { get set }
     var colorCodes: [Double] { get }
+
     func createColorv() -> UIColor
+
     init(alpha: Double)
 }
 
 extension ColorGeneratorProtocol {
     func createColorv() -> UIColor {
-        UIColor(white: 1, alpha: alpha)
+        return UIColor()
     }
 }
-
 
 class ColorGenerator: ColorGeneratorProtocol {
 
@@ -71,6 +71,11 @@ class ColorGenerator: ColorGeneratorProtocol {
             return self.colorCodes
         }
     }
+
+    func convertToArray<T>(element: T) -> [T] {
+        [element]
+    }
+    //func printAlpha<Generator>(generator: Generator) where Generator: ColorGeneratorProtocol
 }
 
     enum Brightness: Double {
@@ -89,3 +94,15 @@ class ColorGenerator: ColorGeneratorProtocol {
             }
         }
     }
+
+
+
+
+
+class Palette<CustomColor> {
+    let colors: [CustomColor]
+
+    init(colors: [CustomColor]) {
+        self.colors = colors
+    }
+}
