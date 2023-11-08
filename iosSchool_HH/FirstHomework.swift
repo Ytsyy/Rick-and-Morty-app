@@ -103,12 +103,13 @@ class CharacterGenerator: CharacterGeneratorProtocol {
         }
 
     func generateNameThree() -> () -> Void {
-      return {
+        {
             print("Character \(Int.random(in: 0...1000))")
         }
     }
 
     func generateNameFour() -> (() -> String) {
-            return { "Character \(Int.random(in: 0...1000))" }
+        {
+            "Character \(Int.random(in: 0...1000))" }
         }
 }
