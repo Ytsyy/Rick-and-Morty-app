@@ -99,8 +99,8 @@ class CharacterGenerator: CharacterGeneratorProtocol {
     }
 
     func generateNameTwo(completion: () -> (String)) {
-            print("Character: \(completion())")
-        }
+        print("Character: \(completion())")
+    }
 
     func generateNameThree() -> () -> Void {
         {
@@ -110,6 +110,7 @@ class CharacterGenerator: CharacterGeneratorProtocol {
 
     func generateNameFour() -> (() -> String) {
         {
-            "Character \(Int.random(in: 0...1000))" }
+            "Character \(Int.random(in: 0...1000))"
         }
+    }
 }
