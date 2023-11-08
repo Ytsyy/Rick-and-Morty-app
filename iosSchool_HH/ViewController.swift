@@ -13,12 +13,24 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         let generator = ColorGenerator(alpha: 1)
-
-        let characterGenerator: CharacterGeneratorProtocol = CharacterGenerator()
-        let characterGeneratorInstance = CharacterGenerator()
-        let generatedCharacter1 = characterGenerator.generateCharacter()
-        let generatedCharacter2 = characterGeneratorInstance.generateCharacter()
-
+        let result1 = arrayInt.filter { $0 % 2 == 0}
+        let array = [0.1, 0.2, 0.5, 1]
+        let generators = array.map { ColorGenerator(alpha: $0) }
+        let test = array.map {alpha -> ColorGeneratorProtocol? in
+            guard alpha < 1 else {
+                return nil
+            }
+            return ColorGenerator(alpha: alpha)
+        }
+        let test1: [ColorGenerator?] = array.map {
+            guard $0 < 1 else {
+                return nil
+            }
+            return ColorGenerator(alpha: $0)
+        }
+        let test2 = test1.compactMap{ $0 }
+        let test3 = test1.compactMap{ $0?.alpha }
+        let test4 = test1.map { $0?.alpha }
         //let color = Color(red: 1, green: 1, blue:1)
         //let intArray = generator.convertToArray(element: 1)
         //let colorArr = generator.convertToArray(element: color)
@@ -28,27 +40,31 @@ class ViewController: UIViewController {
         }
         let result = arrayInt.filter { elem in
             return elem % 2 == 0
-        }
-        let result1 = arrayInt.filter { $0 % 2 == 0}
+                                     }
+      
+        let characterGenerator: CharacterGeneratorProtocol = CharacterGenerator()
+        let characterGeneratorInstance = CharacterGenerator()
+        let generatedCharacter1 = characterGenerator.generateCharacter()
+        let generatedCharacter2 = characterGeneratorInstance.generateCharacter()
 
-        let array = [0.1, 0.2, 0.5, 1]
-        let generators = array.map { ColorGenerator(alpha: $0) }
-        let test = array.map {alpha -> ColorGeneratorProtocol? in
-            guard alpha < 1 else {
-                return nil
-            }
-            return ColorGenerator(alpha: alpha)
-        }
+        let nameThreeHandler = CharacterGenerator().generateNameThree()
+        let nameFourClosure = CharacterGenerator().generateNameFour()
 
-        let test1: [ColorGenerator?] = array.map {
-            guard $0 < 1 else {
-                return nil
-            }
-            return ColorGenerator(alpha: $0)
+        CharacterGenerator().generateNameOne { name in
+            print("First generated name: \(name)")
         }
 
-        let test2 = test1.compactMap{ $0 }
-        let test3 = test1.compactMap{ $0?.alpha }
-        let test4 = test1.map { $0?.alpha }
+        print("Second generated name: ", terminator: "")
+        CharacterGenerator().generateNameTwo {
+            String(Int.random(in: 0...1000))
+        }
+
+        print("Third generated name: ", terminator: "")
+        nameThreeHandler()
+
+        print("Fourth generated name: \(nameFourClosure())")
+
+        generator.changeColor {
+            [0, 100, 200] 
     }
 }
