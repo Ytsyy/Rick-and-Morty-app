@@ -71,9 +71,7 @@ class ViewController: UIViewController {
             }
         }
 
-        let totalCharacterNames = characters.reduce("") { result, character in
-            return result + character.name
-        }
+        let totalCharacterNames = characters.reduce("", { $0 + $1.name })
 
         generator.changeColor {
             [0, 100, 200]
