@@ -23,6 +23,12 @@
 		3F0712C42AF9245700B98A82 /* AuthDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712C32AF9245700B98A82 /* AuthDataProvider.swift */; };
 		3F0712C62AF9249500B98A82 /* AuthAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712C52AF9249500B98A82 /* AuthAssembly.swift */; };
 		3F0712C82AF9261600B98A82 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712C72AF9261600B98A82 /* AuthCoordinator.swift */; };
+		3F0712CB2AFD12BE00B98A82 /* SplashDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712CA2AFD12BE00B98A82 /* SplashDataProvider.swift */; };
+		3F0712CD2AFD12FA00B98A82 /* SplashViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712CC2AFD12FA00B98A82 /* SplashViewData.swift */; };
+		3F0712CF2AFD131D00B98A82 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712CE2AFD131D00B98A82 /* SplashView.swift */; };
+		3F0712D12AFD138000B98A82 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712D02AFD138000B98A82 /* SplashViewController.swift */; };
+		3F0712D32AFD141B00B98A82 /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712D22AFD141B00B98A82 /* SplashCoordinator.swift */; };
+		3F0712D52AFD147200B98A82 /* SplashAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712D42AFD147200B98A82 /* SplashAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +50,12 @@
 		3F0712C32AF9245700B98A82 /* AuthDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataProvider.swift; sourceTree = "<group>"; };
 		3F0712C52AF9249500B98A82 /* AuthAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAssembly.swift; sourceTree = "<group>"; };
 		3F0712C72AF9261600B98A82 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		3F0712CA2AFD12BE00B98A82 /* SplashDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashDataProvider.swift; sourceTree = "<group>"; };
+		3F0712CC2AFD12FA00B98A82 /* SplashViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewData.swift; sourceTree = "<group>"; };
+		3F0712CE2AFD131D00B98A82 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		3F0712D02AFD138000B98A82 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		3F0712D22AFD141B00B98A82 /* SplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
+		3F0712D42AFD147200B98A82 /* SplashAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +107,7 @@
 		3F0712BB2AF9224600B98A82 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3F0712C92AFD128C00B98A82 /* Splash */,
 				3F0712BC2AF9225700B98A82 /* Auth */,
 			);
 			path = Modules;
@@ -111,6 +124,19 @@
 				3F0712C72AF9261600B98A82 /* AuthCoordinator.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		3F0712C92AFD128C00B98A82 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				3F0712CA2AFD12BE00B98A82 /* SplashDataProvider.swift */,
+				3F0712CC2AFD12FA00B98A82 /* SplashViewData.swift */,
+				3F0712CE2AFD131D00B98A82 /* SplashView.swift */,
+				3F0712D02AFD138000B98A82 /* SplashViewController.swift */,
+				3F0712D22AFD141B00B98A82 /* SplashCoordinator.swift */,
+				3F0712D42AFD147200B98A82 /* SplashAssembly.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,7 +234,10 @@
 			files = (
 				3F0712B12AED053900B98A82 /* FirstHomework.swift in Sources */,
 				3F0712922AE11D2800B98A82 /* ViewController.swift in Sources */,
+				3F0712CF2AFD131D00B98A82 /* SplashView.swift in Sources */,
+				3F0712D12AFD138000B98A82 /* SplashViewController.swift in Sources */,
 				3F0712A92AEAA5EE00B98A82 /* Assembly.swift in Sources */,
+				3F0712D32AFD141B00B98A82 /* SplashCoordinator.swift in Sources */,
 				3F0712B72AF9194000B98A82 /* AppCoordinator.swift in Sources */,
 				3F0712C82AF9261600B98A82 /* AuthCoordinator.swift in Sources */,
 				3F0712A22AE69C0200B98A82 /* ColorGenerator.swift in Sources */,
@@ -220,6 +249,9 @@
 				3F0712BE2AF922E100B98A82 /* AuthViewController.swift in Sources */,
 				3F0712B92AF9197B00B98A82 /* BaseCoordinator.swift in Sources */,
 				3F0712C62AF9249500B98A82 /* AuthAssembly.swift in Sources */,
+				3F0712CB2AFD12BE00B98A82 /* SplashDataProvider.swift in Sources */,
+				3F0712D52AFD147200B98A82 /* SplashAssembly.swift in Sources */,
+				3F0712CD2AFD12FA00B98A82 /* SplashViewData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
