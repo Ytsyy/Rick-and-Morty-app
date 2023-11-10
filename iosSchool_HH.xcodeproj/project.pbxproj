@@ -29,6 +29,12 @@
 		3F0712D12AFD138000B98A82 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712D02AFD138000B98A82 /* SplashViewController.swift */; };
 		3F0712D32AFD141B00B98A82 /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712D22AFD141B00B98A82 /* SplashCoordinator.swift */; };
 		3F0712D52AFD147200B98A82 /* SplashAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712D42AFD147200B98A82 /* SplashAssembly.swift */; };
+		3F0712D82AFE398500B98A82 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712D72AFE398500B98A82 /* RegistrationView.swift */; };
+		3F0712DA2AFE3A2B00B98A82 /* RegistrationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712D92AFE3A2B00B98A82 /* RegistrationAssembly.swift */; };
+		3F0712DC2AFE3C2F00B98A82 /* RegistrationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712DB2AFE3C2F00B98A82 /* RegistrationCoordinator.swift */; };
+		3F0712DE2AFE3D6C00B98A82 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712DD2AFE3D6C00B98A82 /* RegistrationViewController.swift */; };
+		3F0712E02AFE3F7200B98A82 /* RegistrationViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712DF2AFE3F7200B98A82 /* RegistrationViewData.swift */; };
+		3F0712E22AFE3FB000B98A82 /* RegistrationDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712E12AFE3FB000B98A82 /* RegistrationDataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +62,12 @@
 		3F0712D02AFD138000B98A82 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		3F0712D22AFD141B00B98A82 /* SplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
 		3F0712D42AFD147200B98A82 /* SplashAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashAssembly.swift; sourceTree = "<group>"; };
+		3F0712D72AFE398500B98A82 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		3F0712D92AFE3A2B00B98A82 /* RegistrationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAssembly.swift; sourceTree = "<group>"; };
+		3F0712DB2AFE3C2F00B98A82 /* RegistrationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationCoordinator.swift; sourceTree = "<group>"; };
+		3F0712DD2AFE3D6C00B98A82 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		3F0712DF2AFE3F7200B98A82 /* RegistrationViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewData.swift; sourceTree = "<group>"; };
+		3F0712E12AFE3FB000B98A82 /* RegistrationDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationDataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +119,7 @@
 		3F0712BB2AF9224600B98A82 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3F0712D62AFE393500B98A82 /* Registration */,
 				3F0712C92AFD128C00B98A82 /* Splash */,
 				3F0712BC2AF9225700B98A82 /* Auth */,
 			);
@@ -137,6 +150,19 @@
 				3F0712D42AFD147200B98A82 /* SplashAssembly.swift */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		3F0712D62AFE393500B98A82 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				3F0712D72AFE398500B98A82 /* RegistrationView.swift */,
+				3F0712D92AFE3A2B00B98A82 /* RegistrationAssembly.swift */,
+				3F0712DB2AFE3C2F00B98A82 /* RegistrationCoordinator.swift */,
+				3F0712DD2AFE3D6C00B98A82 /* RegistrationViewController.swift */,
+				3F0712DF2AFE3F7200B98A82 /* RegistrationViewData.swift */,
+				3F0712E12AFE3FB000B98A82 /* RegistrationDataProvider.swift */,
+			);
+			path = Registration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,8 +261,11 @@
 				3F0712B12AED053900B98A82 /* FirstHomework.swift in Sources */,
 				3F0712922AE11D2800B98A82 /* ViewController.swift in Sources */,
 				3F0712CF2AFD131D00B98A82 /* SplashView.swift in Sources */,
+				3F0712DC2AFE3C2F00B98A82 /* RegistrationCoordinator.swift in Sources */,
+				3F0712D82AFE398500B98A82 /* RegistrationView.swift in Sources */,
 				3F0712D12AFD138000B98A82 /* SplashViewController.swift in Sources */,
 				3F0712A92AEAA5EE00B98A82 /* Assembly.swift in Sources */,
+				3F0712DA2AFE3A2B00B98A82 /* RegistrationAssembly.swift in Sources */,
 				3F0712D32AFD141B00B98A82 /* SplashCoordinator.swift in Sources */,
 				3F0712B72AF9194000B98A82 /* AppCoordinator.swift in Sources */,
 				3F0712C82AF9261600B98A82 /* AuthCoordinator.swift in Sources */,
@@ -247,7 +276,10 @@
 				3F0712C42AF9245700B98A82 /* AuthDataProvider.swift in Sources */,
 				3F0712902AE11D2800B98A82 /* SceneDelegate.swift in Sources */,
 				3F0712BE2AF922E100B98A82 /* AuthViewController.swift in Sources */,
+				3F0712DE2AFE3D6C00B98A82 /* RegistrationViewController.swift in Sources */,
 				3F0712B92AF9197B00B98A82 /* BaseCoordinator.swift in Sources */,
+				3F0712E02AFE3F7200B98A82 /* RegistrationViewData.swift in Sources */,
+				3F0712E22AFE3FB000B98A82 /* RegistrationDataProvider.swift in Sources */,
 				3F0712C62AF9249500B98A82 /* AuthAssembly.swift in Sources */,
 				3F0712CB2AFD12BE00B98A82 /* SplashDataProvider.swift in Sources */,
 				3F0712D52AFD147200B98A82 /* SplashAssembly.swift in Sources */,
