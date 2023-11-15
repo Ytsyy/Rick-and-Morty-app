@@ -13,7 +13,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
 
     private var window: UIWindow?
 
-    func start(window: UIWindow) {
+    func start(window: UIWindow?) {
         self.window = window
         let coordinator = assembly.splashCoordinator(onSuccess: { [weak self] in
         })

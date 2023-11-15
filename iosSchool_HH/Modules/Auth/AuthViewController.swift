@@ -19,10 +19,19 @@ class AuthViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .blue
+
+        login()
+    }
+
+    func login() {
+        dataProvider.auth(login: "mxm", password: "1111"){ token, error in
+            print(token ?? "нет токена")
+            print(error?.rawValue ?? "Нет ошибки")
+        }
     }
 }
