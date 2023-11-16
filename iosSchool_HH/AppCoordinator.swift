@@ -15,7 +15,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
 
     func start(window: UIWindow?) {
         self.window = window
-        let coordinator = assembly.splashCoordinator(onSuccess: { [weak self] in
+        let coordinator = assembly.registrationCoordinator(onRegistrationSuccess: { [weak self] in
         })
         setRoot(viewController: coordinator.make())
     }
