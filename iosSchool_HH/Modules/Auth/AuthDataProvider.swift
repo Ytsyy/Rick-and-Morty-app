@@ -27,7 +27,7 @@ class AuthDataProviderImp: AuthDataProvider {
         login: String,
         password: String,
         onRequestCompleted: @escaping (TokenResponse?, ApiError?) -> Void
-    ){
+    ) {
         apiClient.auth(login: login, password: password, onRequestCompleted: onRequestCompleted)
     }
 }

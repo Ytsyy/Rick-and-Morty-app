@@ -14,7 +14,6 @@ protocol SplashAssembly {
     func splashDataProvider() -> SplashDataProvider
 }
 
-
 extension Assembly: SplashAssembly {
 
     func splashDataProvider() -> SplashDataProvider {

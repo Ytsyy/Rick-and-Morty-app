@@ -75,7 +75,6 @@ class ColorGenerator: ColorGeneratorProtocol {
     func convertToArray<T>(element: T) -> [T] {
         [element]
     }
-    //func printAlpha<Generator>(generator: Generator) where Generator: ColorGeneratorProtocol
 }
 
     enum Brightness: Double {
