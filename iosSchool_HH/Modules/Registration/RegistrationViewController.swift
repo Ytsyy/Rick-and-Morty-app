@@ -32,6 +32,6 @@ class RegistrationViewController: UIViewController {
         super.viewDidAppear(animated)
 
         onRegistrationSuccess?()
-        print("onRegistrationSuccess executed: \(onRegistrationSuccess != nil)")
+        print("onRegistrationSuccess executed on registration: \(onRegistrationSuccess != nil)")
     }
 }
