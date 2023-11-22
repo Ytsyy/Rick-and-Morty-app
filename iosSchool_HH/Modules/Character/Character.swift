@@ -7,15 +7,15 @@
 
 import Foundation
 
-class Character: Decodable {
-    enum Gender: String, CaseIterable, Decodable {
+class Character: Codable {
+    enum Gender: String, CaseIterable, Codable {
         case female = "Female"
         case male = "Male"
         case genderless = "Genderless"
         case unknown = "unknown"
     }
 
-    enum Status: String, CaseIterable, Decodable {
+    enum Status: String, CaseIterable, Codable {
         case alive = "Alive"
         case dead = "Dead"
         case unknown = "unknown"

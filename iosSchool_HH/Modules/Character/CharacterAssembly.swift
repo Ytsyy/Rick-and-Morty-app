@@ -14,7 +14,6 @@ protocol CharacterAssembly {
 }
 
 extension Assembly: CharacterAssembly {
-    
     func characterCoordinator() -> CharacterCoordinator {
         CharacterCoordinator(assembly: self, context: .init())
     }
@@ -25,6 +24,4 @@ extension Assembly: CharacterAssembly {
     func characterDataProvider() -> CharacterDataProvider {
         CharacterDataProviderImp(apiClient: apiClient)
     }
-
-
 }
