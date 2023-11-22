@@ -16,7 +16,6 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
     func start(window: UIWindow?) {
         self.window = window
         let coordinator = assembly.registrationCoordinator(onRegistrationSuccess: { [weak self] in
-            print("print closure in func start (AppCoordinator)")
         })
         setRoot(viewController: coordinator.make())
     }
