@@ -16,7 +16,7 @@ protocol RegistrationAssembly {
 extension Assembly: RegistrationAssembly {
 
     func registrationCoordinator(onRegistrationSuccess: (() -> Void)?) -> RegistrationCoordinator {
-            RegistrationCoordinator(assembly: self, context: .init(onRegistrationSuccess: onRegistrationSuccess))
+        RegistrationCoordinator(assembly: self, context: .init(onRegistrationSuccess: onRegistrationSuccess))
     }
 
     func registrationVC(onRegistrationSuccess: (() -> Void)?) -> RegistrationViewController {

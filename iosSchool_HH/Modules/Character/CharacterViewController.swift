@@ -29,7 +29,7 @@ class CharacterViewController: UIViewController {
     }
 
     func getCharacter() {
-        dataProvider.getCharacter( id: Int.random(in: 1..<827)) { character, error in
+        dataProvider.getCharacter(id: Int.random(in: 1..<827)) { character, error in
             print(character ?? "No character")
             print(error?.rawValue ?? "No error")
         }

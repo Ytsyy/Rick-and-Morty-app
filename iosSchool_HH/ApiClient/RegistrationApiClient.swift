@@ -23,10 +23,8 @@ extension ApiClient: RegistrationApiClient {
         onRequestCompleted: @escaping (TokenResponse?, ApiError?) -> Void
     ) {
         let url = NetworkConstants.URLStrings.nanoPost + "/auth/register"
-        guard let userData = usernamePasswordToJSON(username: username, password: password) else {
-            print("Ошибка при преобразовании данных в JSON")
-            return
-        }
+        let userData = try? JSONEncoder().encode(["username": username, "password": password])
+
         performRequest(url: url, data: userData, method: .post) { (result: Result<TokenResponse, ApiError>) in
             switch result {
             case .success(let token):
