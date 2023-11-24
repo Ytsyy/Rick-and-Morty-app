@@ -43,6 +43,11 @@
 		3F0712F42B02601900B98A82 /* AuthApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712F32B02601900B98A82 /* AuthApiClient.swift */; };
 		3F0712F82B0640A900B98A82 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712F72B0640A900B98A82 /* BaseViewController.swift */; };
 		3F0712FB2B0642E800B98A82 /* AuthViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0712FA2B0642E800B98A82 /* AuthViewImp.xib */; };
+		3F0713502B105C4700B98A82 /* PKHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 3F07134F2B105C4700B98A82 /* PKHUD */; };
+		3F0713532B105C5E00B98A82 /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 3F0713522B105C5E00B98A82 /* SPIndicator */; };
+		3F0713552B105CE200B98A82 /* RootTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713542B105CE200B98A82 /* RootTabBar.swift */; };
+		3F0713572B105DB000B98A82 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713562B105DB000B98A82 /* TabBarController.swift */; };
+		3F0713592B10624700B98A82 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713582B10624700B98A82 /* BaseNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +89,9 @@
 		3F0712F32B02601900B98A82 /* AuthApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApiClient.swift; sourceTree = "<group>"; };
 		3F0712F72B0640A900B98A82 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		3F0712FA2B0642E800B98A82 /* AuthViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewImp.xib; sourceTree = "<group>"; };
+		3F0713542B105CE200B98A82 /* RootTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBar.swift; sourceTree = "<group>"; };
+		3F0713562B105DB000B98A82 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		3F0713582B10624700B98A82 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +99,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F0713502B105C4700B98A82 /* PKHUD in Frameworks */,
+				3F0713532B105C5E00B98A82 /* SPIndicator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				3F0712F62B06407800B98A82 /* Common */,
-				3F0712F52B06406D00B98A82 /* cCommno */,
 				3F0712EA2B025AE300B98A82 /* ApiClient */,
 				3F0712E32B02512300B98A82 /* Models */,
 				3F0712BB2AF9224600B98A82 /* Modules */,
@@ -205,18 +214,14 @@
 			path = ApiClient;
 			sourceTree = "<group>";
 		};
-		3F0712F52B06406D00B98A82 /* cCommno */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = cCommno;
-			sourceTree = "<group>";
-		};
 		3F0712F62B06407800B98A82 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				3F0712B82AF9197B00B98A82 /* BaseCoordinator.swift */,
 				3F0712F72B0640A900B98A82 /* BaseViewController.swift */,
+				3F0713542B105CE200B98A82 /* RootTabBar.swift */,
+				3F0713562B105DB000B98A82 /* TabBarController.swift */,
+				3F0713582B10624700B98A82 /* BaseNavigationController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -246,6 +251,10 @@
 			dependencies = (
 			);
 			name = iosSchool_HH;
+			packageProductDependencies = (
+				3F07134F2B105C4700B98A82 /* PKHUD */,
+				3F0713522B105C5E00B98A82 /* SPIndicator */,
+			);
 			productName = iosSchool_HH;
 			productReference = 3F07128A2AE11D2800B98A82 /* iosSchool_HH.app */;
 			productType = "com.apple.product-type.application";
@@ -274,6 +283,10 @@
 				Base,
 			);
 			mainGroup = 3F0712812AE11D2700B98A82;
+			packageReferences = (
+				3F07134E2B105C4700B98A82 /* XCRemoteSwiftPackageReference "PKHUD" */,
+				3F0713512B105C5E00B98A82 /* XCRemoteSwiftPackageReference "SPIndicator" */,
+			);
 			productRefGroup = 3F07128B2AE11D2800B98A82 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -326,6 +339,7 @@
 				3F0712B12AED053900B98A82 /* FirstHomework.swift in Sources */,
 				3F0712922AE11D2800B98A82 /* ViewController.swift in Sources */,
 				3F0712F82B0640A900B98A82 /* BaseViewController.swift in Sources */,
+				3F0713552B105CE200B98A82 /* RootTabBar.swift in Sources */,
 				3F0712E92B025A4400B98A82 /* TokenResponse.swift in Sources */,
 				3F0712CF2AFD131D00B98A82 /* SplashView.swift in Sources */,
 				3F0712DC2AFE3C2F00B98A82 /* RegistrationCoordinator.swift in Sources */,
@@ -340,6 +354,7 @@
 				3F0712A22AE69C0200B98A82 /* ColorGenerator.swift in Sources */,
 				3F07128E2AE11D2800B98A82 /* AppDelegate.swift in Sources */,
 				3F0712C22AF9242B00B98A82 /* AuthViewData.swift in Sources */,
+				3F0713572B105DB000B98A82 /* TabBarController.swift in Sources */,
 				3F0712C02AF9230E00B98A82 /* AuthView.swift in Sources */,
 				3F0712C42AF9245700B98A82 /* AuthDataProvider.swift in Sources */,
 				3F0712902AE11D2800B98A82 /* SceneDelegate.swift in Sources */,
@@ -353,6 +368,7 @@
 				3F0712E22AFE3FB000B98A82 /* RegistrationDataProvider.swift in Sources */,
 				3F0712C62AF9249500B98A82 /* AuthAssembly.swift in Sources */,
 				3F0712CB2AFD12BE00B98A82 /* SplashDataProvider.swift in Sources */,
+				3F0713592B10624700B98A82 /* BaseNavigationController.swift in Sources */,
 				3F0712D52AFD147200B98A82 /* SplashAssembly.swift in Sources */,
 				3F0712CD2AFD12FA00B98A82 /* SplashViewData.swift in Sources */,
 				3F0712EE2B025B0E00B98A82 /* ApiClient.swift in Sources */,
@@ -570,6 +586,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3F07134E2B105C4700B98A82 /* XCRemoteSwiftPackageReference "PKHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pkluz/PKHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.0;
+			};
+		};
+		3F0713512B105C5E00B98A82 /* XCRemoteSwiftPackageReference "SPIndicator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ivanvorobei/SPIndicator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.6.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3F07134F2B105C4700B98A82 /* PKHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F07134E2B105C4700B98A82 /* XCRemoteSwiftPackageReference "PKHUD" */;
+			productName = PKHUD;
+		};
+		3F0713522B105C5E00B98A82 /* SPIndicator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F0713512B105C5E00B98A82 /* XCRemoteSwiftPackageReference "SPIndicator" */;
+			productName = SPIndicator;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3F0712822AE11D2700B98A82 /* Project object */;
 }
