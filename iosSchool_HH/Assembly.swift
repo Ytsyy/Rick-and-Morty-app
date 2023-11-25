@@ -18,8 +18,8 @@ class Assembly {
     }
 
     func appCoordinator() -> AppCoordinator {
-        AppCoordinator(assembly: self, context: CoordinatorContext())
-        // AppCoordinator(assembly: self, context: .init())
+        //AppCoordinator(assembly: self, context: CoordinatorContext())
+        AppCoordinator(assembly: self, context: .init())
     }
 
     func rootTabBarController() -> UITabBarController {
