@@ -11,10 +11,9 @@ protocol CoreViewController: AnyObject {
     associatedtype View
 
     var rootView: View { get }
-
 }
 
-class BaseViewController<View: UIView>: UIViewController, CoreViewController {
+class BaseViewControoler<View: UIView>: UIViewController, CoreViewController {
 
     var rootView: View = {
         let nibName = String(describing: View.self)
