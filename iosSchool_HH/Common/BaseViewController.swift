@@ -13,7 +13,7 @@ protocol CoreViewController: AnyObject {
     var rootView: View { get }
 }
 
-class BaseViewControoler<View: UIView>: UIViewController, CoreViewController {
+class BaseViewController<View: UIView>: UIViewController, CoreViewController {
 
     var rootView: View = {
         let nibName = String(describing: View.self)

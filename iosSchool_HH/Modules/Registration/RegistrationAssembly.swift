@@ -9,7 +9,7 @@ import Foundation
 
 protocol RegistrationAssembly {
     func registrationCoordinator(onRegistrationSuccess: (() -> Void)?) -> RegistrationCoordinator
-    func registrationVC(onRegistrationSuccess: (() -> Void)?) -> RegistrationViewController
+    func registrationVC(onRegistrationSuccess: (() -> Void)?) -> RegistrationViewController<RegistrationViewImp>
     func registrationDataProvider() -> RegistrationDataProvider
 }
 
@@ -19,7 +19,7 @@ extension Assembly: RegistrationAssembly {
         RegistrationCoordinator(assembly: self, context: .init(onRegistrationSuccess: onRegistrationSuccess))
     }
 
-    func registrationVC(onRegistrationSuccess: (() -> Void)?) -> RegistrationViewController {
+    func registrationVC(onRegistrationSuccess: (() -> Void)?) -> RegistrationViewController<RegistrationViewImp> {
         .init(dataProvider: registrationDataProvider(), onRegistrationSuccess: onRegistrationSuccess)
     }
 
