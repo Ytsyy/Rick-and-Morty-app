@@ -31,12 +31,15 @@ class RegistrationViewImp: UIView, RegistrationView {
 
         registrationTextFieldSettings(textField: loginTextField)
         registratinViewShadowSettings(loginTextField)
+        loginTextField.setLeftPaddingInTextfield(padding: 16)
 
         registrationTextFieldSettings(textField: passwordTextField)
         registratinViewShadowSettings(passwordTextField)
+        passwordTextField.setLeftPaddingInTextfield(padding: 16)
 
         registrationTextFieldSettings(textField: repeatPasswordTextField)
         registratinViewShadowSettings(repeatPasswordTextField)
+        repeatPasswordTextField.setLeftPaddingInTextfield(padding: 16)
 
         registrationButtonSettings(button: registrationButton)
         registratinViewShadowSettings(registrationButton)
@@ -45,8 +48,10 @@ class RegistrationViewImp: UIView, RegistrationView {
         registratinViewShadowSettings(backButton)
     }
 
+
+
     func registrationTextFieldSettings(textField: UITextField){
-        textField.textColor = UIColor(red: 0.32, green: 0.31, blue: 0.31 , alpha: 1)
+        textField.textColor = UIColor(red: 0.32, green: 0.31, blue: 0.31, alpha: 1)
         textField.clipsToBounds = true
         textField.borderStyle = .none
         textField.layer.backgroundColor = UIColor(.white).cgColor
@@ -55,7 +60,7 @@ class RegistrationViewImp: UIView, RegistrationView {
         textField.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1).cgColor
     }
 
-    func registrationButtonSettings(button: UIButton){
+    func registrationButtonSettings(button: UIButton) {
         button.titleLabel?.textColor = UIColor(.white)
 
         button.backgroundColor = UIColor(named: "iceColor")
@@ -67,5 +72,14 @@ class RegistrationViewImp: UIView, RegistrationView {
         view.layer.shadowOpacity = 1
         view.layer.shadowRadius = 8
         view.layer.shadowOffset = CGSize(width: 0, height: 5)
+    }
+}
+
+extension UITextField{
+    func setLeftPaddingInTextfield(padding: Double){
+        let leftView =  UIView()
+        leftView.frame = CGRect.init(x: 0.0, y: 0.0, width: padding, height: self.frame.size.height)
+        self.leftView = leftView
+        self.leftViewMode = .always
     }
 }
