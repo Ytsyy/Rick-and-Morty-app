@@ -9,7 +9,7 @@ import UIKit
 import SPIndicator
 import PKHUD
 
-class AuthViewController<View: AuthView>: BaseViewControoler<View> {
+class AuthViewController<View: AuthView>: BaseViewController<View> {
 
     var onOpenRegistration: (() -> Void)?
 

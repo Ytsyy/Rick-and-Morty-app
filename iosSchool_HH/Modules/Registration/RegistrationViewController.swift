@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class RegistrationViewController: UIViewController {
+class RegistrationViewController<View: RegistrationView>: BaseViewController<View>{
 
     private let dataProvider: RegistrationDataProvider
     var onRegistrationSuccess: (() -> Void)?
@@ -30,9 +30,7 @@ class RegistrationViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        onRegistrationSuccess?()
+        rootView.setView()
     }
 
     func registration() {
