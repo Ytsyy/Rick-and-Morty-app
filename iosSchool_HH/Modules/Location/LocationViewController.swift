@@ -7,7 +7,9 @@
 
 import UIKit
 
-class LocationViewController: UIViewController {
+class LocationViewController<View: LocationView>: BaseViewController<View>{
+
+    var selectLocation: ((LocationCellData) -> Void)?
     private let dataProvider: LocationDataProvider
 
     init(dataProvider: LocationDataProvider) {
@@ -21,13 +23,36 @@ class LocationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        getAllLocations()
+
+        setupBar()
+        rootView.setView()
+        rootView.selectLocation = selectLocation
+        getListOfLocation()
     }
 
-    func getAllLocations() {
-        dataProvider.getAllLocations { location, error in
-            print(location ?? "No locations")
-            print(error?.rawValue ?? "No mistake")
+// MARK: - Private func
+
+    private func getListOfLocation() {
+        dataProvider.getAllLocations { [weak self] location, error in
+            guard let location else {
+                print(error ?? "no error")
+                return
+            }
+            print(location)
+            self?.rootView.update(data: LocationViewData(list: location))
         }
     }
+
+    private func setupBar() {
+            title = "Выбор планеты"
+            navigationController?.navigationBar.titleTextAttributes = [
+                .foregroundColor: UIColor.black,
+                .font: UIFont.systemFont(ofSize: 18)
+            ]
+            /*navigationItem.rightBarButtonItem = UIBarButtonItem(
+                barButtonSystemItem: .refresh,
+                target: self,
+                action: #selector(reload)
+            )*/
+        }
 }
