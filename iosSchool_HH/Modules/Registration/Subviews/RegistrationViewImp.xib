@@ -3,6 +3,7 @@
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,20 +19,20 @@
                     <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="IconDog" translatesAutoresizingMaskIntoConstraints="NO" id="JL7-6p-ceG">
-                    <rect key="frame" x="152" y="307" width="126" height="126"/>
+                    <rect key="frame" x="152" y="331" width="126" height="126"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="2uw-qk-Sum"/>
                         <constraint firstAttribute="height" constant="126" id="xR0-nv-40h"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Регистрация" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdW-ay-jfG">
-                    <rect key="frame" x="16" y="220" width="398" height="73"/>
+                    <rect key="frame" x="16" y="220" width="398" height="97"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Введите пароль" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Twz-2W-9AS">
-                    <rect key="frame" x="32" y="511" width="366" height="40"/>
+                    <rect key="frame" x="32" y="535" width="366" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="qah-zb-2ht"/>
                     </constraints>
@@ -39,7 +40,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Повторите пароль" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RXl-tR-LBw">
-                    <rect key="frame" x="32" y="569" width="366" height="40"/>
+                    <rect key="frame" x="32" y="593" width="366" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="WjV-Wu-5sF"/>
                     </constraints>
@@ -47,23 +48,27 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OhA-fb-Mpw" userLabel="RegistrationButton">
-                    <rect key="frame" x="16" y="736" width="398" height="52"/>
+                    <rect key="frame" x="16" y="760" width="398" height="40"/>
+                    <color key="backgroundColor" name="iceColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="52" id="Txu-3N-qYP"/>
+                        <constraint firstAttribute="height" constant="40" id="Txu-3N-qYP"/>
                     </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Готово"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhc-Bi-iJu">
-                    <rect key="frame" x="16" y="800" width="398" height="52"/>
+                    <rect key="frame" x="16" y="812" width="398" height="40"/>
+                    <color key="backgroundColor" name="iceColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="52" id="pp7-g4-CvJ"/>
+                        <constraint firstAttribute="height" constant="40" id="pp7-g4-CvJ"/>
                     </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Назад"/>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Введите логин" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uai-1V-4Tq">
-                    <rect key="frame" x="32" y="453" width="366" height="40"/>
+                    <rect key="frame" x="32" y="477" width="366" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="el9-vI-KQm"/>
                     </constraints>
@@ -74,7 +79,7 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="UdW-ay-jfG" firstAttribute="top" relation="lessThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="top" priority="800" constant="161" id="0kc-5T-gZt"/>
+                <constraint firstItem="UdW-ay-jfG" firstAttribute="top" relation="lessThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="top" constant="161" id="0kc-5T-gZt"/>
                 <constraint firstAttribute="trailing" secondItem="33S-os-zeP" secondAttribute="trailing" id="73N-0T-FJh"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="UdW-ay-jfG" secondAttribute="trailing" constant="16" id="7GV-dh-vDa"/>
                 <constraint firstItem="OhA-fb-Mpw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="8Tr-y8-3y7"/>
@@ -94,7 +99,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Uhc-Bi-iJu" secondAttribute="bottom" constant="46" id="s4K-Ta-KQC"/>
                 <constraint firstItem="Uai-1V-4Tq" firstAttribute="top" secondItem="JL7-6p-ceG" secondAttribute="bottom" constant="20" id="tSL-lS-E1G"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Uai-1V-4Tq" secondAttribute="trailing" constant="32" id="uba-da-yif"/>
-                <constraint firstItem="OhA-fb-Mpw" firstAttribute="top" relation="lessThanOrEqual" secondItem="RXl-tR-LBw" secondAttribute="bottom" priority="900" constant="127" id="vHa-Lu-xCE"/>
+                <constraint firstItem="OhA-fb-Mpw" firstAttribute="top" secondItem="RXl-tR-LBw" secondAttribute="bottom" priority="900" constant="127" id="vHa-Lu-xCE"/>
                 <constraint firstItem="RXl-tR-LBw" firstAttribute="top" secondItem="Twz-2W-9AS" secondAttribute="bottom" constant="18" id="vaI-pk-7yB"/>
                 <constraint firstItem="UdW-ay-jfG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="x6U-Ic-8YG"/>
                 <constraint firstItem="33S-os-zeP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="xCH-fv-Icm"/>
@@ -116,6 +121,9 @@
     <resources>
         <image name="IconDog" width="126" height="126"/>
         <image name="RegistrationBackground" width="390" height="844"/>
+        <namedColor name="iceColor">
+            <color red="0.33000001311302185" green="0.50999999046325684" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

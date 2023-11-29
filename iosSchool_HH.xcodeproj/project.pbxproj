@@ -50,6 +50,7 @@
 		3F0713592B10624700B98A82 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713582B10624700B98A82 /* BaseNavigationController.swift */; };
 		3F07135E2B11D12300B98A82 /* RegistrationViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F07135D2B11D12300B98A82 /* RegistrationViewImp.xib */; };
 		3F0713612B12270900B98A82 /* AssetColor.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F0713602B12270900B98A82 /* AssetColor.xcassets */; };
+		3F07137A2B17208C00B98A82 /* UITextField+LeftPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713792B17208C00B98A82 /* UITextField+LeftPadding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		3F0713582B10624700B98A82 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		3F07135D2B11D12300B98A82 /* RegistrationViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewImp.xib; sourceTree = "<group>"; };
 		3F0713602B12270900B98A82 /* AssetColor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AssetColor.xcassets; sourceTree = "<group>"; };
+		3F0713792B17208C00B98A82 /* UITextField+LeftPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+LeftPadding.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		3F07128C2AE11D2800B98A82 /* iosSchool_HH */ = {
 			isa = PBXGroup;
 			children = (
+				3F0713782B17206100B98A82 /* Extensions */,
 				3F07135F2B1226D700B98A82 /* Assets */,
 				3F0712F62B06407800B98A82 /* Common */,
 				3F0712EA2B025AE300B98A82 /* ApiClient */,
@@ -256,6 +259,14 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		3F0713782B17206100B98A82 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3F0713792B17208C00B98A82 /* UITextField+LeftPadding.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -368,6 +379,7 @@
 				3F0712CF2AFD131D00B98A82 /* SplashView.swift in Sources */,
 				3F0712DC2AFE3C2F00B98A82 /* RegistrationCoordinator.swift in Sources */,
 				3F0712D82AFE398500B98A82 /* RegistrationView.swift in Sources */,
+				3F07137A2B17208C00B98A82 /* UITextField+LeftPadding.swift in Sources */,
 				3F0712D12AFD138000B98A82 /* SplashViewController.swift in Sources */,
 				3F0712A92AEAA5EE00B98A82 /* Assembly.swift in Sources */,
 				3F0712DA2AFE3A2B00B98A82 /* RegistrationAssembly.swift in Sources */,

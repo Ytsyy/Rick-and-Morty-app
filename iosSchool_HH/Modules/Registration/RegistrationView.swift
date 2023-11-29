@@ -48,9 +48,7 @@ class RegistrationViewImp: UIView, RegistrationView {
         registratinViewShadowSettings(backButton)
     }
 
-
-
-    func registrationTextFieldSettings(textField: UITextField){
+    func registrationTextFieldSettings(textField: UITextField) {
         textField.textColor = UIColor(red: 0.32, green: 0.31, blue: 0.31, alpha: 1)
         textField.clipsToBounds = true
         textField.borderStyle = .none
@@ -61,8 +59,6 @@ class RegistrationViewImp: UIView, RegistrationView {
     }
 
     func registrationButtonSettings(button: UIButton) {
-        button.titleLabel?.textColor = UIColor(.white)
-
         button.backgroundColor = UIColor(named: "iceColor")
         button.layer.cornerRadius = 10
     }
@@ -72,14 +68,5 @@ class RegistrationViewImp: UIView, RegistrationView {
         view.layer.shadowOpacity = 1
         view.layer.shadowRadius = 8
         view.layer.shadowOffset = CGSize(width: 0, height: 5)
-    }
-}
-
-extension UITextField{
-    func setLeftPaddingInTextfield(padding: Double){
-        let leftView =  UIView()
-        leftView.frame = CGRect.init(x: 0.0, y: 0.0, width: padding, height: self.frame.size.height)
-        self.leftView = leftView
-        self.leftViewMode = .always
     }
 }
