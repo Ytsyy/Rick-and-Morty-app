@@ -65,6 +65,7 @@
 		3F0713722B14D1FC00B98A82 /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0713702B14D1FC00B98A82 /* LocationCell.xib */; };
 		3F0713742B14D4D900B98A82 /* LocationCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713732B14D4D900B98A82 /* LocationCellData.swift */; };
 		3F0713772B14D7AD00B98A82 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713762B14D7AD00B98A82 /* NSObject+ClassName.swift */; };
+		3F07137D2B173CE500B98A82 /* SplashViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F07137C2B173CE500B98A82 /* SplashViewImp.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +127,7 @@
 		3F0713702B14D1FC00B98A82 /* LocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
 		3F0713732B14D4D900B98A82 /* LocationCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCellData.swift; sourceTree = "<group>"; };
 		3F0713762B14D7AD00B98A82 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
+		3F07137C2B173CE500B98A82 /* SplashViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewImp.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 		3F0712C92AFD128C00B98A82 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				3F07137B2B173CB100B98A82 /* Subviews */,
 				3F0712CA2AFD12BE00B98A82 /* SplashDataProvider.swift */,
 				3F0712CC2AFD12FA00B98A82 /* SplashViewData.swift */,
 				3F0712CE2AFD131D00B98A82 /* SplashView.swift */,
@@ -317,6 +320,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		3F07137B2B173CB100B98A82 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				3F07137C2B173CE500B98A82 /* SplashViewImp.xib */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -384,6 +395,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F07137D2B173CE500B98A82 /* SplashViewImp.xib in Resources */,
 				3F07129A2AE11D2B00B98A82 /* LaunchScreen.storyboard in Resources */,
 				3F0712972AE11D2B00B98A82 /* Assets.xcassets in Resources */,
 				3F0713722B14D1FC00B98A82 /* LocationCell.xib in Resources */,
