@@ -24,14 +24,21 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
     }
 
     override func viewDidLoad() {
-        rootView.setView()
-
+        super.viewDidLoad()
+        view.backgroundColor = .lightGray
+        registration()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         onRegistrationSuccess?()
-        print("onRegistrationSuccess executed on registration: \(onRegistrationSuccess != nil)")
+    }
+
+    func registration() {
+        dataProvider.registration(username: "MaximMarin5", password: "123456789") { token, error in
+            print(token ?? "нет токена")
+            print(error?.rawValue ?? "Нет ошибки")
+        }
     }
 }
