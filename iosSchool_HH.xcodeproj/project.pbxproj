@@ -67,6 +67,8 @@
 		3F0713742B14D4D900B98A82 /* LocationCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713732B14D4D900B98A82 /* LocationCellData.swift */; };
 		3F0713772B14D7AD00B98A82 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713762B14D7AD00B98A82 /* NSObject+ClassName.swift */; };
 		3F07137A2B17208C00B98A82 /* UITextField+LeftPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713792B17208C00B98A82 /* UITextField+LeftPadding.swift */; };
+		3F07137F2B18BB9E00B98A82 /* NewAuthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F07137E2B18BB9E00B98A82 /* NewAuthView.xib */; };
+		3F0713822B18CC7100B98A82 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713812B18CC7100B98A82 /* ImageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +132,8 @@
 		3F0713732B14D4D900B98A82 /* LocationCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCellData.swift; sourceTree = "<group>"; };
 		3F0713762B14D7AD00B98A82 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 		3F0713792B17208C00B98A82 /* UITextField+LeftPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+LeftPadding.swift"; sourceTree = "<group>"; };
+		3F07137E2B18BB9E00B98A82 /* NewAuthView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewAuthView.xib; sourceTree = "<group>"; };
+		3F0713812B18CC7100B98A82 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +168,7 @@
 		3F07128C2AE11D2800B98A82 /* iosSchool_HH */ = {
 			isa = PBXGroup;
 			children = (
+				3F0713802B18CC5200B98A82 /* Services */,
 				3F0713752B14D79300B98A82 /* Extensions */,
 				3F0712F62B06407800B98A82 /* Common */,
 				3F0712EA2B025AE300B98A82 /* ApiClient */,
@@ -272,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				3F0712FA2B0642E800B98A82 /* AuthViewImp.xib */,
+				3F07137E2B18BB9E00B98A82 /* NewAuthView.xib */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -329,6 +335,14 @@
 				3F0713762B14D7AD00B98A82 /* NSObject+ClassName.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3F0713802B18CC5200B98A82 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3F0713812B18CC7100B98A82 /* ImageService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F07135E2B11D12300B98A82 /* RegistrationViewImp.xib in Resources */,
+				3F07137F2B18BB9E00B98A82 /* NewAuthView.xib in Resources */,
 				3F07129A2AE11D2B00B98A82 /* LaunchScreen.storyboard in Resources */,
 				3F0712972AE11D2B00B98A82 /* Assets.xcassets in Resources */,
 				3F0713722B14D1FC00B98A82 /* LocationCell.xib in Resources */,
@@ -464,6 +479,7 @@
 				3F0713212B0E181E00B98A82 /* LocationViewController.swift in Sources */,
 				3F07131F2B0E180A00B98A82 /* LocationDataProvider.swift in Sources */,
 				3F07128E2AE11D2800B98A82 /* AppDelegate.swift in Sources */,
+				3F0713822B18CC7100B98A82 /* ImageService.swift in Sources */,
 				3F0712C22AF9242B00B98A82 /* AuthViewData.swift in Sources */,
 				3F0713572B105DB000B98A82 /* TabBarController.swift in Sources */,
 				3F0712C02AF9230E00B98A82 /* AuthView.swift in Sources */,
