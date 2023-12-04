@@ -22,6 +22,7 @@ class AuthViewImp: UIView, AuthView {
 
     @IBOutlet private var scrollView: UIScrollView!
     @IBOutlet private var imageView: UIImageView!
+    @IBOutlet private var stackView: UIStackView!
     @IBOutlet private var labelView: UIView!
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var subTitleLabel: UILabel!
@@ -40,20 +41,23 @@ class AuthViewImp: UIView, AuthView {
         isUserInteractionEnabled = true
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(viewDidTap))
         addGestureRecognizer(recognizer)
-
-        imageView.image = UIImage(named: "auth-background")
-        imageView.contentMode = .scaleAspectFill
-
-        labelView.layer.cornerRadius = 10
-        labelView.layer.masksToBounds = true
-        labelView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-        labelView.layer.shadowOpacity = 1
-        labelView.layer.shadowRadius = 10
-        labelView.layer.shadowOffset = CGSize(width: 0, height: 8)
-        labelView.backgroundColor = UIColor(red: 196, green: 196, blue: 196, alpha: 0.65)
-
+      
         registrationButton.addTarget(self, action: #selector(registrationDidTap), for: .touchUpInside)
         registrationButton.backgroundColor = UIColor(named: "button-color")
+        
+        implementBasicTextFieldSettings(textField: loginTextField)
+        implementBasicViewShadowSettings(loginTextField)
+        loginTextField.setLeftPaddingInTextfield(padding: 16)
+
+        implementBasicTextFieldSettings(textField: passwordTextField)
+        implementBasicViewShadowSettings(passwordTextField)
+        passwordTextField.setLeftPaddingInTextfield(padding: 16)
+
+        implementBasicButtonSettings(button: loginButton)
+        implementBasicViewShadowSettings(loginButton)
+
+        implementBasicButtonSettings(button: registrationButton)
+        implementBasicViewShadowSettings(registrationButton)
 
         NotificationCenter.default.addObserver(
             self,
@@ -68,6 +72,9 @@ class AuthViewImp: UIView, AuthView {
             object: nil
         )
     }
+
+
+
 
     // MARK: - Private
 

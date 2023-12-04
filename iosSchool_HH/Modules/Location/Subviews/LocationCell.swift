@@ -20,11 +20,10 @@ class LocationCell: UITableViewCell {
 
     @IBOutlet private weak var nameLabel: UILabel!
 
-    //override func awakeFromNib() {
-     //   super.awakeFromNib()
-        // Initialization code
-    //}
-
+    override func awakeFromNib() {
+            super.awakeFromNib()
+            backgroundColor = .clear
+        }
 
     //MARK: Private methods
 

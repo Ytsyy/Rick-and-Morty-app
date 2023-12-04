@@ -21,7 +21,7 @@ class LocationViewImp: UIView, LocationView {
     private var viewData: LocationViewData?
     private let tableView = UITableView()
 
-    func setView(){
+    func setView() {
         backgroundColor = .white
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
@@ -59,7 +59,6 @@ class LocationViewImp: UIView, LocationView {
         }
 }
 
-
 // MARK: - UITableViewDataSource
 
 extension LocationViewImp: UITableViewDataSource {
@@ -77,8 +76,6 @@ extension LocationViewImp: UITableViewDataSource {
         (cell as? LocationCell)?.data = viewData.cellsData[indexPath.row]
         return cell
     }
-
-
 }
 
 // MARK: UITableViewDeleggate
