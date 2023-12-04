@@ -24,9 +24,7 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
     }
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .lightGray
-        registration()
+        rootView.setView()
     }
 
     override func viewDidAppear(_ animated: Bool) {
