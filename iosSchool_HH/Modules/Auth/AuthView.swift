@@ -21,8 +21,7 @@ protocol AuthViewDelegate: AnyObject {
 class AuthViewImp: UIView, AuthView {
 
     @IBOutlet private var scrollView: UIScrollView!
-    @IBOutlet private var imageView: UIImageView!
-    @IBOutlet private var stackView: UIStackView!
+    @IBOutlet private var backgroundImageView: UIImageView!
     @IBOutlet private var labelView: UIView!
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var subTitleLabel: UILabel!
@@ -41,9 +40,16 @@ class AuthViewImp: UIView, AuthView {
         isUserInteractionEnabled = true
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(viewDidTap))
         addGestureRecognizer(recognizer)
-      
+
         registrationButton.addTarget(self, action: #selector(registrationDidTap), for: .touchUpInside)
-        registrationButton.backgroundColor = UIColor(named: "button-color")
+
+        backgroundImageView.contentMode = .scaleAspectFill
+
+        labelView.layer.cornerRadius = 10
+        labelView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        labelView.layer.shadowOpacity = 1
+        labelView.layer.shadowRadius = 10
+        labelView.layer.shadowOffset = CGSize(width: 0, height: 8)
         
         implementBasicTextFieldSettings(textField: loginTextField)
         implementBasicViewShadowSettings(loginTextField)
@@ -72,8 +78,6 @@ class AuthViewImp: UIView, AuthView {
             object: nil
         )
     }
-
-
 
 
     // MARK: - Private

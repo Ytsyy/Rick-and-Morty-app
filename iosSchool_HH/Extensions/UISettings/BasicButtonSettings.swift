@@ -10,7 +10,6 @@ import UIKit
 
 extension UIView {
     func implementBasicButtonSettings(button: UIButton) {
-        button.backgroundColor = UIColor(named: "iceColor")
         button.layer.cornerRadius = 10
     }
 }

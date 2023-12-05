@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UIView{
+extension UIView {
     func implementBasicTextFieldSettings(textField: UITextField) {
         textField.textColor = UIColor(named: "GrayForTextField")
         textField.clipsToBounds = true
