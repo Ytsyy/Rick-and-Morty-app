@@ -24,6 +24,13 @@ class LocationViewController<View: LocationView>: BaseViewController<View>{
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        imageService.getImage(url: imageURL) { image in
+            if let image = image {
+                print("Got image:", image)
+            } else {
+                print("Failed to get image")
+            }
+        }
         setupBar()
         rootView.setView()
         rootView.selectLocation = selectLocation

@@ -14,9 +14,10 @@ class CharacterViewController: UIViewController {
     private let dataProvider: CharacterDataProvider
     private let charactersUrlList: [String]
     private let updateQueue = DispatchQueue(label: "CharacterRequestQueue")
-    private let imageService: ImageService
+    var imageService = ImageServicesImp()
+    private let imageURL = "https://upload.wikimedia.org/wikipedia/ru/5/5f/Steve-jobs.jpg"
 
-    init(dataProvider: CharacterDataProvider, data: LocationCellData, imageService: ImageService) {
+    init(dataProvider: CharacterDataProvider, data: LocationCellData, imageService: ImageServicesImp) {
         self.dataProvider = dataProvider
         charactersUrlList = data.residents 
         self.imageService = imageService
@@ -40,7 +41,7 @@ class CharacterViewController: UIViewController {
                 })
             }
         }
-    }
+}
 
     /// MARK: - Private func
        private func requestCharacter(url: String, completion: @escaping (Character) -> Void) {
