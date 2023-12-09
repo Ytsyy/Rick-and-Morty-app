@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SplashViewController<View: SplashView>: BaseViewController<View> {
+class SplashViewController: UIViewController {
 
     private let dataProvider: SplashDataProvider
     private let onSuccess: (() -> Void)?
@@ -20,6 +20,12 @@ class SplashViewController<View: SplashView>: BaseViewController<View> {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        view.backgroundColor = .systemBlue
     }
 
     override func viewDidAppear(_ animated: Bool) {
