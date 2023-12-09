@@ -377,6 +377,9 @@
 			isa = PBXGroup;
 			children = (
 				3F07137C2B173CE500B98A82 /* SplashViewImp.xib */,
+                );
+            path = Subviews;
+            sourceTree = "<group>";
         };
         3F0713802B18CC5200B98A82 /* Services */ = {
 			isa = PBXGroup;
