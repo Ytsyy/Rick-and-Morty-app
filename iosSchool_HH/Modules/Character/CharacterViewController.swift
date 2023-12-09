@@ -14,12 +14,11 @@ class CharacterViewController: UIViewController {
     private let dataProvider: CharacterDataProvider
     private let charactersUrlList: [String]
     private let updateQueue = DispatchQueue(label: "CharacterRequestQueue")
-    var imageService = ImageServicesImp()
-    private let imageURL = "https://upload.wikimedia.org/wikipedia/ru/5/5f/Steve-jobs.jpg"
+    private let imageService: ImageServicesImp
 
     init(dataProvider: CharacterDataProvider, data: LocationCellData, imageService: ImageServicesImp) {
         self.dataProvider = dataProvider
-        charactersUrlList = data.residents 
+        charactersUrlList = data.residents
         self.imageService = imageService
         super.init(nibName: nil, bundle: nil)
         title = "Жители локации \(data.name)"
@@ -31,9 +30,9 @@ class CharacterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         charactersUrlList.forEach { url in
-            requestCharacter(url: url){ [ weak self] character in
+            requestCharacter(url: url) { [ weak self] character in
                 print(character.name)
                 self?.imageService.getImage(url: character.image, completion: { [weak self]
                     image in

@@ -8,46 +8,49 @@
 import UIKit
 
 protocol ImageServices {
-    func getImage(url: String, completion: @escaping (UIImage?) -> ())
+    func getImage(url: String, completion: @escaping (UIImage?) -> Void)
 }
 
 class ImageServicesImp: ImageServices {
-    private var imageCache = [String: UIImage]()
-    private let maxCacheSize = 50
-    private let imageQueue = DispatchQueue(label: "com.example.imageQueue", attributes: .concurrent)
+    private var imageCache = NSCache<NSString, UIImage>()
+    private let apiClient: ApiClient
 
-    func getImage(url: String, completion: @escaping (UIImage?) -> ()) {
-        if let cachedImage = imageCache[url] {
+    init(apiClient: ApiClient) {
+        self.apiClient = apiClient
+    }
+
+    func getImage(url: String, completion: @escaping (UIImage?) -> Void) {
+        if let cachedImage = imageCache.object(forKey: NSString(string: url)) {
             completion(cachedImage)
             return
         }
 
-        DispatchQueue.global().async {
-            if let url = URL(string: url), let imageData = try? Data(contentsOf: url), let image = UIImage(data: imageData){
-                self.cacheImage(url: url.absoluteString, image: image)
+        downloadImage(url: url) { [weak self] image in
+            if let image = image {
+                self?.imageCache.setObject(image, forKey: NSString(string: url))
+                self?.clearCacheIfNeeded()
+            }
 
-                DispatchQueue.main.async {
-                    completion(image)
-                }
-            } else {
-                DispatchQueue.main.async {
-                    completion(nil)
-                }
+            completion(image)
+        }
+    }
+
+    private func downloadImage(url: String, completion: @escaping (UIImage?) -> Void) {
+        apiClient.requestImageData(url: url) { [weak self] data in
+            guard let data = data, let downloadedImage = UIImage(data: data) else {
+                completion(nil)
+                return
+            }
+
+            DispatchQueue.main.async {
+                completion(downloadedImage)
             }
         }
     }
 
-    private func cacheImage(url: String, image: UIImage) {
-            imageQueue.async(flags: .barrier) {
-                self.imageCache[url] = image
-
-                if self.imageCache.count > self.maxCacheSize {
-                    let keysToRemove = Array(self.imageCache.keys.prefix(self.imageCache.count - self.maxCacheSize))
-                    for key in keysToRemove {
-                        self.imageCache.removeValue(forKey: key)
-                    }
-                }
-            }
+    private func clearCacheIfNeeded() {
+        if imageCache.totalCostLimit > 50 {
+            imageCache.removeAllObjects()
         }
     }
-
+}
