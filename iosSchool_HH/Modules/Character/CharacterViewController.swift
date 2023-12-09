@@ -8,14 +8,20 @@
 import Foundation
 import UIKit
 
-class CharacterViewController: UIViewController {
+final class CharacterViewController< View: CharacterView>: BaseViewController<View> {
+    private var characters: [Character] = []
 
     private let dataProvider: CharacterDataProvider
+    private let charactersUrlList: [String]
+    private let updateQueue = DispatchQueue(label: "CharacterRequestQueue")
+    private let imageService: ImageService
 
-    init(dataProvider: CharacterDataProvider) {
+    init(dataProvider: CharacterDataProvider, data: LocationCellData, imageService: ImageService) {
         self.dataProvider = dataProvider
-
+        charactersUrlList = data.residents 
+        self.imageService = imageService
         super.init(nibName: nil, bundle: nil)
+        title = "Жители локации \(data.name)"
     }
 
     required init?(coder: NSCoder) {
@@ -24,14 +30,42 @@ class CharacterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        getCharacter()
+        
+    rootView:setView()
+        rootView.update(cells: characterUrlList.map { CharactersCellData(url: $0)}))
+        charactersUrlList.forEach { url in
+            requestCharacter(url: url){ [ weak self] character in
+                guard let self else {
+                    return
+                }
+                dispatchQueue.main.async {
+                    self.rootView.updateCharacter(idx: idx, with: CharactersCellData)
+                }
+                self?.imageService.getImage(url: character.image, completion: { [weak self]
+                    image in
+                    print(image?.size ?? 0)
+                })
+            }
+        }
     }
 
-    func getCharacter() {
-        dataProvider.getCharacter(id: Int.random(in: 1..<827)) { character, error in
-            print(character ?? "No character")
-            print(error?.rawValue ?? "No error")
+    /// MARK: - Private func
+       private func requestCharacter(url: String, completion: @escaping (Character) -> Void) {
+        if let character = characters.first(where: {$0.url == url}) {
+            completion(character)
+            return
+        }
+        DispatchQueue.global().async{
+            self.dataProvider.character(url: url) { [weak self] character, error in
+                guard let character else {
+                    print(error ?? "no error")
+                    return
+                }
+                self?.updateQueue.async {
+                    self?.characters.append(character)
+                    completion(character)
+                }
+            }
         }
     }
 }

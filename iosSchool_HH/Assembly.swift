@@ -9,6 +9,9 @@ import UIKit
 
 class Assembly {
 
+    lazy var imageService: ImageService = ImageServiceImp(apiClient: apiClient)
+    lazy var storageManager: StorageManager = StorageManagerImp()
+
     var apiClient: ApiClient {
         ApiClient()
     }
@@ -18,7 +21,6 @@ class Assembly {
     }
 
     func appCoordinator() -> AppCoordinator {
-        //AppCoordinator(assembly: self, context: CoordinatorContext())
         AppCoordinator(assembly: self, context: .init())
     }
 

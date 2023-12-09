@@ -1,31 +1,22 @@
-//
-//  CharactersDataProvider.swift
-//  iosSchool_HH
-//
-//  Created by student on 22.11.2023.
-//
-
 import Foundation
 
 protocol CharacterDataProvider {
-    func getCharacter(
-        id: Int,
-        onRequestCompleted: @escaping (Character?, ApiError?) -> Void
-    )
+    func character(onRequestCompleted: @escaping (Character?, ApiError?) -> Void)
+    func character(url: String, onRequestCompleted: @escaping (Character?, ApiError?) -> Void)
 }
 
-class CharacterDataProviderImp: CharacterDataProvider {
-
+final class CharacterDataProviderImp: CharacterDataProvider {
     private let apiClient: CharacterApiClient
 
     init(apiClient: CharacterApiClient) {
         self.apiClient = apiClient
     }
 
-    func getCharacter(
-        id: Int,
-        onRequestCompleted: @escaping (Character?, ApiError?) -> Void
-    ) {
-        apiClient.getCharacter(id: id, onRequestCompleted: onRequestCompleted)
+    func character(onRequestCompleted: @escaping (Character?, ApiError?) -> Void) {
+        apiClient.character(onRequestCompleted: onRequestCompleted)
+    }
+
+    func character(url: String, onRequestCompleted: @escaping (Character?, ApiError?) -> Void) {
+        apiClient.character(url: url, onRequestCompleted: onRequestCompleted)
     }
 }

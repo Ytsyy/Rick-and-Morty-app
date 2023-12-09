@@ -18,6 +18,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
         let coordinator = assembly.splashCoordinator { [weak self] in
             self?.authBootstrap()
         }
+
         setRoot(
             viewController: coordinator.make()
         )
@@ -25,6 +26,11 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
     }
 
     private func authBootstrap() {
+        guard assembly.storageManager.getToken() == nil else {
+                    setTabVC()
+                    return
+                }
+
         let authCoordinator = assembly.authCoordinator { [weak self] in
             DispatchQueue.main.async {
                 self?.setTabVC()
