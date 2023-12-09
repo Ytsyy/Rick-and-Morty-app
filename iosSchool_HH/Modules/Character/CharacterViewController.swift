@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CharacterViewController: UIViewController {
+final class CharacterViewController< View: CharacterView>: BaseViewController<View> {
     private var characters: [Character] = []
 
     private let dataProvider: CharacterDataProvider
@@ -31,9 +31,16 @@ class CharacterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    rootView:setView()
+        rootView.update(cells: characterUrlList.map { CharactersCellData(url: $0)}))
         charactersUrlList.forEach { url in
             requestCharacter(url: url){ [ weak self] character in
-                print(character.name)
+                guard let self else {
+                    return
+                }
+                dispatchQueue.main.async {
+                    self.rootView.updateCharacter(idx: idx, with: CharactersCellData)
+                }
                 self?.imageService.getImage(url: character.image, completion: { [weak self]
                     image in
                     print(image?.size ?? 0)
