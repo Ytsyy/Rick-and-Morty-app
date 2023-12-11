@@ -13,10 +13,11 @@ protocol StorageManager {
     func saveToken(token: TokenResponse)
     func getToken() -> TokenResponse?
     func removeToken()
+    func saveLastLoginDate()
+    func getLastLoginDate() -> Date?
 }
 
 class StorageManagerImp: StorageManager {
-
     private let keychain = Keychain(service: Constants.serviceId)
 
     func cleanKeychainIfNeeded() {
@@ -57,6 +58,14 @@ class StorageManagerImp: StorageManager {
         } catch {
             print(error as Any)
         }
+    }
+
+    func saveLastLoginDate(){
+        UserDefaults.standard.set(Date(), forKey: "lastLoginDate")
+    }
+
+    func getLastLoginDate() -> Date? {
+        return UserDefaults.standard.object(forKey: "lastLoginDate") as? Date
     }
 }
 

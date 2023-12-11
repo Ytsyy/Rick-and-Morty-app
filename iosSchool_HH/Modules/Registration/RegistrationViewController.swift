@@ -8,13 +8,15 @@
 import Foundation
 import UIKit
 
-class RegistrationViewController<View: RegistrationView>: BaseViewController<View>{
+class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
 
     private let dataProvider: RegistrationDataProvider
     var onRegistrationSuccess: (() -> Void)?
+    private let storageManager: StorageManager
 
-    init(dataProvider: RegistrationDataProvider, onRegistrationSuccess: (() -> Void)?) {
+    init(dataProvider: RegistrationDataProvider, storageManager: StorageManager, onRegistrationSuccess: (() -> Void)?) {
         self.dataProvider = dataProvider
+        self.storageManager = storageManager
         self.onRegistrationSuccess = onRegistrationSuccess
         super.init(nibName: nil, bundle: nil)
     }
@@ -27,6 +29,7 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
         super.viewDidLoad()
         view.backgroundColor = .lightGray
         registration()
+        self.storageManager.saveLastLoginDate()
     }
 
     override func viewDidAppear(_ animated: Bool) {

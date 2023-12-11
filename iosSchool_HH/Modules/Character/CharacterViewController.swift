@@ -31,7 +31,6 @@ final class CharacterViewController< View: CharacterView>: BaseViewController<Vi
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .red
         rootView.setView()
         rootView.update(data: CharacterViewData(cells: charactersUrlList.map {
             CharacterCellData(url: $0)
