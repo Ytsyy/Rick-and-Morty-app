@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-protocol CCoreCellView: UICollectionViewCell, CoreNibReusable {
+protocol CoreCellView: UICollectionViewCell, CoreNibReusable {
     associatedtype InputData: CoreCellInputData
 
-    static func layoutSection() -> NSCollectionLayoutSection
+    static func layoutSection() -> NSCollectionLayoutSection?
     func update(with inputData: InputData)
 }

@@ -5,12 +5,12 @@
 //  Created by student on 07.12.2023.
 //
 
-import Foundation
+import UIKit
 
 protocol CharacterView: UIView {
     func setView()
     func update(data: CharacterViewData)
-    func updateCharacter(idx: with, with data: CharacterViewData)
+    func updateCharacter(idx: Int, with data: CharacterCellData)
 }
 
 class CharacterViewImp: UIView, CharacterView {
@@ -22,7 +22,7 @@ class CharacterViewImp: UIView, CharacterView {
             frame: .zero,
             collectionViewLayout: layout()
         )
-    }
+    }()
 
     func setView() {
         collectionView.backgroundColor = .clear
@@ -37,23 +37,24 @@ class CharacterViewImp: UIView, CharacterView {
         collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
 
-    func update (){
-        section = CharacterSection(cellData: data.cells)
-        section?.registration(collectionView: collectionView)
+    func update(data: CharacterViewData) {
+        section = CharacterSection(cellsData: data.cells)
+        section?.registrate(collectionView: collectionView)
         collectionView.reloadData()
-
-        func updateCharacter(idx: Int, with data: CharacterViewData) {
-            section?.updateCell(at: IndexPath(item: idx, section: 0), with: data)
-            guard let cell = section?.cell(
-                collectionView: collectionView,
-                indexPath: IndexPath(item: idx, section: 0)
-            ) as? CharacterCell else {
-                return
-            }
-            cell.update(with:data)
-        }
-
     }
+
+    func updateCharacter(idx: Int, with data: CharacterCellData) {
+        section?.updateCell(at: IndexPath(item: idx, section: 0), with: data)
+        guard let cell = section?.cell(
+            collectionView: collectionView,
+            indexPath: IndexPath(item: idx, section: 0)
+        ) as? CharacterCell else {
+            return
+        }
+        cell.update(with: data)
+    }
+
+    // MARK: - Private
 
     private func layout() -> UICollectionViewLayout {
         UICollectionViewCompositionalLayout { [unowned self] section, env -> NSCollectionLayoutSection? in
@@ -68,8 +69,8 @@ class CharacterViewImp: UIView, CharacterView {
     }
 }
 
+// MARK: - UICollectionViewDataSource
 
-    //// MARK: - UICollectionViewDataSource
 extension CharacterViewImp: UICollectionViewDataSource {
     func collectionView(
         _ collectionView: UICollectionView,

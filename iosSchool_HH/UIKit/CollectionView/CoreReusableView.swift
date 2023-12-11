@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 
 protocol CoreReusableView: UICollectionReusableView, CoreNibReusable {
-    associatedtype inputData
+    associatedtype InputData
 
-    static func layout()-> NSCollectionLayoutBoundarySupplementaryItem
+    static func layoutItem() -> NSCollectionLayoutBoundarySupplementaryItem?
     func update(with inputData: InputData) -> Self
 }

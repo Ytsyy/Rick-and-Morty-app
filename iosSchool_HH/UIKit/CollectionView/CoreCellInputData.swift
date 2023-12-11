@@ -8,5 +8,5 @@
 import Foundation
 
 protocol CoreCellInputData {
-    var selectClosure:((CoreCellInputData) -> Void)? { get}
+    var selectClosure: ((CoreCellInputData) -> Void)? { get }
 }

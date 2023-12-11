@@ -8,5 +8,5 @@
 import Foundation
 
 struct CharacterViewData {
-    let cell: [CharacterCellData]
+    let cells: [CharacterCellData]
 }

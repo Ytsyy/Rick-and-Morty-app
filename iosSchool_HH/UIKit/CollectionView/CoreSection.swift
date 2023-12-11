@@ -5,7 +5,6 @@
 //  Created by student on 07.12.2023.
 //
 
-import Foundation
 import UIKit
 
 protocol CoreSection: AnyObject {
@@ -13,7 +12,7 @@ protocol CoreSection: AnyObject {
     var sectionLayoutProvider: UICollectionViewCompositionalLayoutSectionProvider? { get }
     var numberOfItem: Int { get }
     var isContainsHeader: Bool { get }
-    var inContainsFooter: Bool { get }
+    var isContainsFooter: Bool { get }
 
     func registrate(collectionView: UICollectionView)
     func cell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell?
@@ -21,8 +20,7 @@ protocol CoreSection: AnyObject {
         collectionView: UICollectionView,
         indexPath: IndexPath,
         kind: String
-    ) -> UICollectionReusableView
+    ) -> UICollectionReusableView?
     func selectCell(at index: Int)
-    func update(at path: IndexPath, with data: CoreCellInputData)
-
+    func updateCell(at path: IndexPath, with data: CoreCellInputData)
 }

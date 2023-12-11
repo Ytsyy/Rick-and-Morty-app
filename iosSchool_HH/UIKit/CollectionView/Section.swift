@@ -113,7 +113,7 @@ private extension Section {
             return nil
         }
         let layout = Cell.layoutSection()
-        layout.boundarySupplementaryItems = [headerItem(env: env), footerItem(env: env)].compactMap { $0 }
+        layout?.boundarySupplementaryItems = [headerItem(env: env), footerItem(env: env)].compactMap { $0 }
         return Cell.layoutSection()
     }
 
@@ -131,4 +131,3 @@ private extension Section {
         return Footer.layoutItem()
     }
 }
-

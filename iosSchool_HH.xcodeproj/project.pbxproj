@@ -66,8 +66,8 @@
 		3F0713722B14D1FC00B98A82 /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0713702B14D1FC00B98A82 /* LocationCell.xib */; };
 		3F0713742B14D4D900B98A82 /* LocationCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713732B14D4D900B98A82 /* LocationCellData.swift */; };
 		3F0713772B14D7AD00B98A82 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713762B14D7AD00B98A82 /* NSObject+ClassName.swift */; };
-		3F07137D2B173CE500B98A82 /* SplashViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F07137C2B173CE500B98A82 /* SplashViewImp.xib */; };
 		3F07137A2B17208C00B98A82 /* UITextField+LeftPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713792B17208C00B98A82 /* UITextField+LeftPadding.swift */; };
+		3F07137D2B173CE500B98A82 /* SplashViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F07137C2B173CE500B98A82 /* SplashViewImp.xib */; };
 		3F07137F2B18BB9E00B98A82 /* NewAuthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F07137E2B18BB9E00B98A82 /* NewAuthView.xib */; };
 		3F0713822B18CC7100B98A82 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713812B18CC7100B98A82 /* ImageService.swift */; };
 		3F0713952B21F41500B98A82 /* CoreNibReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713942B21F41400B98A82 /* CoreNibReusable.swift */; };
@@ -84,6 +84,7 @@
 		3F0713AF2B22043D00B98A82 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713AD2B22043D00B98A82 /* CharacterCell.swift */; };
 		3F0713B02B22043D00B98A82 /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0713AE2B22043D00B98A82 /* CharacterCell.xib */; };
 		3F0713B22B2204D000B98A82 /* CharacterCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713B12B2204D000B98A82 /* CharacterCellData.swift */; };
+		3F0713B62B273BB700B98A82 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 3F0713B52B273BB700B98A82 /* KeychainAccess */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,8 +147,8 @@
 		3F0713702B14D1FC00B98A82 /* LocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
 		3F0713732B14D4D900B98A82 /* LocationCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCellData.swift; sourceTree = "<group>"; };
 		3F0713762B14D7AD00B98A82 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
-		3F07137C2B173CE500B98A82 /* SplashViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewImp.xib; sourceTree = "<group>"; };
 		3F0713792B17208C00B98A82 /* UITextField+LeftPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+LeftPadding.swift"; sourceTree = "<group>"; };
+		3F07137C2B173CE500B98A82 /* SplashViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewImp.xib; sourceTree = "<group>"; };
 		3F07137E2B18BB9E00B98A82 /* NewAuthView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewAuthView.xib; sourceTree = "<group>"; };
 		3F0713812B18CC7100B98A82 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		3F0713942B21F41400B98A82 /* CoreNibReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreNibReusable.swift; sourceTree = "<group>"; };
@@ -173,6 +174,7 @@
 			files = (
 				3F0713502B105C4700B98A82 /* PKHUD in Frameworks */,
 				3F0713532B105C5E00B98A82 /* SPIndicator in Frameworks */,
+				3F0713B62B273BB700B98A82 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,11 +379,11 @@
 			isa = PBXGroup;
 			children = (
 				3F07137C2B173CE500B98A82 /* SplashViewImp.xib */,
-                );
-            path = Subviews;
-            sourceTree = "<group>";
-        };
-        3F0713802B18CC5200B98A82 /* Services */ = {
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		3F0713802B18CC5200B98A82 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				3F0713812B18CC7100B98A82 /* ImageService.swift */,
@@ -442,6 +444,7 @@
 			packageProductDependencies = (
 				3F07134F2B105C4700B98A82 /* PKHUD */,
 				3F0713522B105C5E00B98A82 /* SPIndicator */,
+				3F0713B52B273BB700B98A82 /* KeychainAccess */,
 			);
 			productName = iosSchool_HH;
 			productReference = 3F07128A2AE11D2800B98A82 /* iosSchool_HH.app */;
@@ -474,7 +477,7 @@
 			packageReferences = (
 				3F07134E2B105C4700B98A82 /* XCRemoteSwiftPackageReference "PKHUD" */,
 				3F0713512B105C5E00B98A82 /* XCRemoteSwiftPackageReference "SPIndicator" */,
-				3F0713A92B22024200B98A82 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				3F0713B42B273BB700B98A82 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = 3F07128B2AE11D2800B98A82 /* Products */;
 			projectDirPath = "";
@@ -829,12 +832,12 @@
 				minimumVersion = 1.6.5;
 			};
 		};
-		3F0713A92B22024200B98A82 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+		3F0713B42B273BB700B98A82 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -849,6 +852,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3F0713512B105C5E00B98A82 /* XCRemoteSwiftPackageReference "SPIndicator" */;
 			productName = SPIndicator;
+		};
+		3F0713B52B273BB700B98A82 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F0713B42B273BB700B98A82 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
