@@ -9,7 +9,7 @@ import UIKit
 
 class Assembly {
 
-    lazy var imageService: ImageServicesImp = ImageServicesImp(apiClient: apiClient)
+    lazy var imageService: ImageService = ImageServiceImp(apiClient: apiClient)
 
     var apiClient: ApiClient {
         ApiClient()

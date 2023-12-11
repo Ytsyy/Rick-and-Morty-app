@@ -14,9 +14,9 @@ class CharacterViewController: UIViewController {
     private let dataProvider: CharacterDataProvider
     private let charactersUrlList: [String]
     private let updateQueue = DispatchQueue(label: "CharacterRequestQueue")
-    private let imageService: ImageServicesImp
+    private let imageService: ImageService
 
-    init(dataProvider: CharacterDataProvider, data: LocationCellData, imageService: ImageServicesImp) {
+    init(dataProvider: CharacterDataProvider, data: LocationCellData, imageService: ImageService) {
         self.dataProvider = dataProvider
         charactersUrlList = data.residents
         self.imageService = imageService

@@ -7,50 +7,45 @@
 
 import UIKit
 
-protocol ImageServices {
+protocol ImageService {
     func getImage(url: String, completion: @escaping (UIImage?) -> Void)
 }
 
-class ImageServicesImp: ImageServices {
-    private var imageCache = NSCache<NSString, UIImage>()
+class ImageServiceImp: ImageService {
+    private var imageDict: [String: UIImage] = [:]
     private let apiClient: ApiClient
+    private let updateImageQueue = DispatchQueue(label: "ImageService.updateQueue")
 
     init(apiClient: ApiClient) {
         self.apiClient = apiClient
     }
 
     func getImage(url: String, completion: @escaping (UIImage?) -> Void) {
-        if let cachedImage = imageCache.object(forKey: NSString(string: url)) {
+        if let cachedImage = imageDict[url] {
             completion(cachedImage)
             return
         }
 
-        downloadImage(url: url) { [weak self] image in
-            if let image = image {
-                self?.imageCache.setObject(image, forKey: NSString(string: url))
-                self?.clearCacheIfNeeded()
+        DispatchQueue.global().async { [weak self] in
+            self?.apiClient.requestImageData(url: url) { [weak self] data in
+                guard let data = data, let downloadedImage = UIImage(data: data) else {
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
+                    return
+                }
+
+                self?.updateImageQueue.async { [weak self] in
+                    if self?.imageDict.count ?? 0 >= 50 {
+                        self?.imageDict.removeAll()
+                    }
+                    self?.imageDict[url] = downloadedImage
+                }
+
+                DispatchQueue.main.async {
+                    completion(downloadedImage)
+                }
             }
-
-            completion(image)
-        }
-    }
-
-    private func downloadImage(url: String, completion: @escaping (UIImage?) -> Void) {
-        apiClient.requestImageData(url: url) { [weak self] data in
-            guard let data = data, let downloadedImage = UIImage(data: data) else {
-                completion(nil)
-                return
-            }
-
-            DispatchQueue.main.async {
-                completion(downloadedImage)
-            }
-        }
-    }
-
-    private func clearCacheIfNeeded() {
-        if imageCache.totalCostLimit > 50 {
-            imageCache.removeAllObjects()
         }
     }
 }
