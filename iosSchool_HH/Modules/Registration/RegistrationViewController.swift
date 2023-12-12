@@ -16,8 +16,8 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
 
     init(dataProvider: RegistrationDataProvider, storageManager: StorageManager, onRegistrationSuccess: (() -> Void)?) {
         self.dataProvider = dataProvider
-        self.storageManager = storageManager
         self.onRegistrationSuccess = onRegistrationSuccess
+        self.storageManager = storageManager
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -29,19 +29,22 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
         super.viewDidLoad()
         view.backgroundColor = .lightGray
         registration()
-        self.storageManager.saveLastLoginDate()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
         onRegistrationSuccess?()
     }
 
     func registration() {
-        dataProvider.registration(username: "MaximMarin5", password: "123456789") { token, error in
-            print(token ?? "нет токена")
+        dataProvider.registration(username: "MaximMarin5", password: "123456789") { [weak self] token, error in
+            guard let token = token else {
+                print("Нет токена")
+                return
+            }
+            print("Токен: \(token)")
             print(error?.rawValue ?? "Нет ошибки")
+            self?.storageManager.saveLastLoginDate()
         }
     }
 }
