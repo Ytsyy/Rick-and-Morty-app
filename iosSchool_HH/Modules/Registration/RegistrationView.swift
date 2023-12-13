@@ -42,7 +42,7 @@ class RegistrationViewImp: UIView, RegistrationView {
         repeatPasswordTextField.setLeftPaddingInTextfield(padding: 16)
 
         registrationButtonSettings(button: registrationButton)
-        registratinViewShadowSettings(registrationButton)
+        //registratinViewShadowSettings(registrationButton)
 
         registrationButtonSettings(button: backButton)
         registratinViewShadowSettings(backButton)
