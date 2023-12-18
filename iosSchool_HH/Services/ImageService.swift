@@ -25,7 +25,9 @@ class ImageServiceImp: ImageService {
             completion(cachedImage)
             return
         }
-
+        if self.imageDict.count >= 50 {
+            self.imageDict.removeAll()
+        }
         DispatchQueue.global().async { [weak self] in
             self?.apiClient.requestImageData(url: url) { [weak self] data in
                 guard let data = data, let downloadedImage = UIImage(data: data) else {
@@ -33,9 +35,6 @@ class ImageServiceImp: ImageService {
                     return
                 }
                 self?.updateImageQueue.async { [weak self] in
-                    if self?.imageDict.count ?? 0 >= 50 {
-                        self?.imageDict.removeAll()
-                    }
                     self?.imageDict[url] = downloadedImage
                 }
                 completion(downloadedImage)
