@@ -11,7 +11,7 @@ class CharacterCell: UICollectionViewCell, CoreCellView {
 
     @IBOutlet private weak var nameLabel: UILabel!
 
-    static func layoutSection() -> NSCollectionLayoutSection? {
+    static func layoutSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.5),
             heightDimension: .absolute(167)

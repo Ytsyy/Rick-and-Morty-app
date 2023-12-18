@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PersonHeaderView" id="U6b-Vx-4bR">
+            <rect key="frame" x="0.0" y="0.0" width="358" height="161"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dO-1o-QX7">
+                    <rect key="frame" x="16" y="75" width="326" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <constraints>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="1dO-1o-QX7" secondAttribute="trailing" constant="16" id="Txl-rg-ELg"/>
+                <constraint firstItem="1dO-1o-QX7" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="16" id="UAk-09-vIb"/>
+                <constraint firstItem="1dO-1o-QX7" firstAttribute="top" secondItem="VXr-Tz-HHm" secondAttribute="top" constant="16" id="W5k-wb-0op"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="1dO-1o-QX7" secondAttribute="bottom" constant="16" id="XRa-xb-ORH"/>
+            </constraints>
+            <point key="canvasLocation" x="146.56488549618319" y="58.802816901408455"/>
+        </collectionReusableView>
+    </objects>
+</document>

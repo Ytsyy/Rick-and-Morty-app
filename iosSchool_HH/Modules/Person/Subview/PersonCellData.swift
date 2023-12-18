@@ -1,40 +1,37 @@
 //
-//  CharacterCellData.swift
-//  iosSchool_HH
+//  PersonCellData.swift
+//  iosSchoolHH
 //
-//  Created by student on 07.12.2023.
+//  Created by Арина Колганова on 14.12.2023.
 //
 
-import Foundation
 import UIKit
 
-struct CharacterCellData: CoreCellInputData {
-
+struct PersonCellData: CoreCellInputData {
     var selectClosure: ((CoreCellInputData) -> Void)?
 
-    let isLoading: Bool
     let url: String
+    let isLoading: Bool
     let name: String?
+    let episodes: [String]
     let imageUrl: String?
     let image: UIImage?
-    let episodes: [String]
 
     init(character: Character, isLoading: Bool, image: UIImage?, selectClosure: ((CoreCellInputData) -> Void)?) {
         url = character.url
-        self.selectClosure = selectClosure
         self.isLoading = isLoading
-        self.name = character.name
-        self.imageUrl = character.image
-        self.image = image
+        name = character.name
         episodes = character.episode
+        imageUrl = character.image
+        self.image = image
     }
 
     init(url: String) {
         self.url = url
         isLoading = true
         name = nil
+        episodes = []
         imageUrl = nil
         image = nil
-        episodes = []
     }
 }
