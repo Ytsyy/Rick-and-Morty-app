@@ -83,6 +83,9 @@
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Готово"/>
+                                            <connections>
+                                                <action selector="registrationDidTapWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="O2k-XP-YsL"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUR-ac-wu0">
                                             <rect key="frame" x="0.0" y="52" width="398" height="40"/>
@@ -94,6 +97,9 @@
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Назад"/>
+                                            <connections>
+                                                <action selector="backDidTapWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="Ppe-p8-mHi"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>

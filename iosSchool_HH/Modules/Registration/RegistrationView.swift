@@ -36,9 +36,26 @@ class RegistrationViewImp: UIView, RegistrationView {
         NotificationCenter.default.removeObserver(self)
     }
 
-
     func setView() {
         isUserInteractionEnabled = true
+        let recognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(viewDidTap)
+        )
+        addGestureRecognizer(recognizer)
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
 
         backgroundImageView.contentMode = .scaleAspectFill
 
@@ -87,24 +104,13 @@ class RegistrationViewImp: UIView, RegistrationView {
     // MARK: - Private
 
     @IBAction
-    private func loginDidTap(sender: UIButton) {
+    private func registrationDidTap(sender: UIButton) {
         loginTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
-
-        delegate?.registrationButtonDidTap(
-            login: loginTextField.text ?? "",
-            password: passwordTextField.text ?? ""
-        )
     }
 
-    @objc
-    private func registrationDidTap() {
-        delegate?.registrationButtonDidTap()
-    }
-
-    @objc
-    private func backButtonDidTap() {
-        delegate?.backButtonDidTap()
+    @IBAction
+    private func backDidTap(sender: UIButton) {
     }
 
     @objc
@@ -115,7 +121,7 @@ class RegistrationViewImp: UIView, RegistrationView {
         guard let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
             return
         }
-        let keyboardHeight = keyboardFrame.cgRectValue.height + 20
+        let keyboardHeight = keyboardFrame.cgRectValue.height
         scrollView.contentInset.bottom = keyboardHeight
         scrollView.verticalScrollIndicatorInsets.bottom = keyboardHeight
     }
