@@ -107,10 +107,15 @@ class RegistrationViewImp: UIView, RegistrationView {
     private func registrationDidTap(sender: UIButton) {
         loginTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
+        repeatPasswordTextField.resignFirstResponder()
     }
 
     @IBAction
     private func backDidTap(sender: UIButton) {
+        delegate?.backButtonDidTap()
+        loginTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        repeatPasswordTextField.resignFirstResponder()
     }
 
     @objc
@@ -136,5 +141,6 @@ class RegistrationViewImp: UIView, RegistrationView {
     private func viewDidTap() {
         loginTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
+        repeatPasswordTextField.resignFirstResponder()
     }
 }

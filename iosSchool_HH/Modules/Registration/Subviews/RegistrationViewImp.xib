@@ -65,11 +65,6 @@
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="wMG-1G-Zt3" secondAttribute="trailing" id="YH3-vq-gt1"/>
-                                        <constraint firstItem="wMG-1G-Zt3" firstAttribute="top" secondItem="9dP-LJ-lxa" secondAttribute="top" id="dGI-jb-NdY"/>
-                                        <constraint firstItem="wMG-1G-Zt3" firstAttribute="leading" secondItem="9dP-LJ-lxa" secondAttribute="leading" id="eib-NE-SvC"/>
-                                    </constraints>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="YCO-Q5-iA7">
                                     <rect key="frame" x="16" y="794" width="398" height="92"/>
@@ -102,14 +97,6 @@
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="SUR-ac-wu0" secondAttribute="trailing" id="IB7-4A-qqb"/>
-                                        <constraint firstItem="keN-a7-2sC" firstAttribute="top" secondItem="YCO-Q5-iA7" secondAttribute="top" id="SsN-dg-xNA"/>
-                                        <constraint firstItem="keN-a7-2sC" firstAttribute="leading" secondItem="YCO-Q5-iA7" secondAttribute="leading" id="ZMn-uI-ADL"/>
-                                        <constraint firstAttribute="bottom" secondItem="SUR-ac-wu0" secondAttribute="bottom" id="c5l-66-VT3"/>
-                                        <constraint firstItem="SUR-ac-wu0" firstAttribute="leading" secondItem="YCO-Q5-iA7" secondAttribute="leading" id="iHE-f9-yDC"/>
-                                        <constraint firstAttribute="trailing" secondItem="keN-a7-2sC" secondAttribute="trailing" id="toP-8O-JZ7"/>
-                                    </constraints>
                                 </stackView>
                             </subviews>
                             <constraints>
