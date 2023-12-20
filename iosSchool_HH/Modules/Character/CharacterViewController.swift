@@ -19,7 +19,7 @@ final class CharacterViewController< View: CharacterView>: BaseViewController<Vi
 
     init(dataProvider: CharacterDataProvider, data: LocationCellData, imageService: ImageService) {
         self.dataProvider = dataProvider
-        charactersUrlList = data.residents 
+        charactersUrlList = data.residents
         self.imageService = imageService
         super.init(nibName: nil, bundle: nil)
         title = "Жители локации \(data.name)"
@@ -62,7 +62,7 @@ final class CharacterViewController< View: CharacterView>: BaseViewController<Vi
                 })
             }
         }
-    }
+}
 
     // MARK: - Private
     private func requestCharacter(url: String, completion: @escaping (Character) -> Void) {
