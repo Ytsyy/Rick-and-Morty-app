@@ -8,7 +8,8 @@
 import Foundation
 import UIKit
 
-class CharacterViewController: UIViewController {
+final class CharacterViewController< View: CharacterView>: BaseViewController<View> {
+    var selectCharacter: ((CharacterCellData) -> Void)?
     private var characters: [Character] = []
 
     private let dataProvider: CharacterDataProvider
@@ -31,34 +32,55 @@ class CharacterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        charactersUrlList.forEach { url in
-            requestCharacter(url: url) { [ weak self] character in
-                print(character.name)
-                self?.imageService.getImage(url: character.image, completion: { [weak self]
-                    image in
+        rootView.setView()
+        rootView.update(data: CharacterViewData(cells: charactersUrlList.map {
+            CharacterCellData(url: $0)
+        }))
+
+        let selectClosure: ((CoreCellInputData) -> Void)? = { [weak self] data in
+                    guard let data = data as? CharacterCellData else {// !data.isLoading else {
+                        return
+                    }
+                    self?.selectCharacter?(data)
+                }
+
+        charactersUrlList.enumerated().forEach { idx, url in
+            requestCharacter(url: url) { [weak self] character in
+                guard let self else {
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.rootView.updateCharacter(idx: idx, with: CharacterCellData(
+                        character: character,
+                        isLoading: true,
+                        image: nil,
+                        selectClosure: nil //selectClosure
+                    ))
+                }
+                self.imageService.getImage(url: character.image, completion: { image in
                     print(image?.size ?? 0)
                 })
             }
         }
 }
 
-    /// MARK: - Private func
-       private func requestCharacter(url: String, completion: @escaping (Character) -> Void) {
-        if let character = characters.first(where: {$0.url == url}) {
-            completion(character)
-            return
-        }
-        DispatchQueue.global().async{
-            self.dataProvider.character(url: url) { [weak self] character, error in
-                guard let character else {
-                    print(error ?? "no error")
-                    return
-                }
-                self?.updateQueue.async {
-                    self?.characters.append(character)
-                    completion(character)
+    // MARK: - Private
+    private func requestCharacter(url: String, completion: @escaping (Character) -> Void) {
+            if let character = characters.first(where: { $0.url == url }) {
+                completion(character)
+                return
+            }
+            DispatchQueue.global().async {
+                self.dataProvider.character(url: url) { [weak self] character, error in
+                    guard let character else {
+                        print(error ?? "no error")
+                        return
+                    }
+                    self?.updateQueue.async {
+                        self?.characters.append(character)
+                        completion(character)
+                    }
                 }
             }
         }
     }
-}

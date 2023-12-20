@@ -18,14 +18,17 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
         let coordinator = assembly.splashCoordinator { [weak self] in
             self?.authBootstrap()
         }
-
         setRoot(
             viewController: coordinator.make()
         )
-
     }
 
     private func authBootstrap() {
+        guard assembly.storageManager.getToken() == nil else {
+                    setTabVC()
+                    return
+                }
+
         let authCoordinator = assembly.authCoordinator { [weak self] in
             DispatchQueue.main.async {
                 self?.setTabVC()
@@ -37,7 +40,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
     private func setTabVC() {
         let tabVC = assembly.rootTabBarController()
 
-        /* let locationsCoord = assembly.locationsCoordinator()
+         /*let locationsCoord = assembly.locationsCoordinator()
         // let cabinetCoord = assembly.cabinetCoodrinator()
         guard let locationsVC = locationsCoord.make(), let cabinetVC = cabinetCoord.make() else {
             return
@@ -48,7 +51,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
 
         // cabinetVC.tabBarItem = RootTab.cabinet.tabBarItem
         tabVC.setViewControllers([navVC, cabinetVC], animated: false)
-        setRoot(viewController: tabVC) */
+        setRoot(viewController: tabVC)*/
     }
 
     private func setRoot(viewController: UIViewController?) {
