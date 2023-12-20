@@ -50,7 +50,7 @@ class AuthViewImp: UIView, AuthView {
         labelView.layer.shadowOpacity = 1
         labelView.layer.shadowRadius = 10
         labelView.layer.shadowOffset = CGSize(width: 0, height: 8)
-        
+
         implementBasicTextFieldSettings(textField: loginTextField)
         implementBasicViewShadowSettings(loginTextField)
         loginTextField.setLeftPaddingInTextfield(padding: 16)
@@ -93,7 +93,7 @@ class AuthViewImp: UIView, AuthView {
         )
     }
 
-    @objc
+    @IBAction
     private func registrationDidTap() {
         delegate?.registrationButtonDidTap()
     }
