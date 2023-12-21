@@ -24,12 +24,6 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vN7-IM-WRT">
                             <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Регистрация" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhU-1S-WMs">
-                                    <rect key="frame" x="0.0" y="328.66666666666669" width="430" height="26.333333333333314"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="IconDog" translatesAutoresizingMaskIntoConstraints="NO" id="eh6-7Y-FxQ">
                                     <rect key="frame" x="152" y="385" width="126" height="126"/>
                                     <constraints>
@@ -86,7 +80,6 @@
                                             <rect key="frame" x="0.0" y="52" width="398" height="40"/>
                                             <color key="backgroundColor" name="BlueButton"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="dPJ-W2-a3c"/>
                                                 <constraint firstAttribute="height" constant="40" id="vSL-gn-ORQ"/>
                                             </constraints>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -98,6 +91,12 @@
                                         </button>
                                     </subviews>
                                 </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Регистрация" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhU-1S-WMs">
+                                    <rect key="frame" x="0.0" y="328" width="430" height="26.333333333333314"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="eh6-7Y-FxQ" firstAttribute="centerX" secondItem="vN7-IM-WRT" secondAttribute="centerX" id="7b8-1d-0eA"/>
