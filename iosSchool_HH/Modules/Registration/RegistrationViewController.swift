@@ -12,10 +12,12 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
 
     private let dataProvider: RegistrationDataProvider
     var onRegistrationSuccess: (() -> Void)?
+    private let storageManager: StorageManager
 
-    init(dataProvider: RegistrationDataProvider, onRegistrationSuccess: (() -> Void)?) {
+    init(dataProvider: RegistrationDataProvider, storageManager: StorageManager, onRegistrationSuccess: (() -> Void)?) {
         self.dataProvider = dataProvider
         self.onRegistrationSuccess = onRegistrationSuccess
+        self.storageManager = storageManager
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -29,14 +31,18 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
         onRegistrationSuccess?()
     }
 
     func registration() {
-        dataProvider.registration(username: "MaximMarin5", password: "123456789") { token, error in
-            print(token ?? "нет токена")
+        dataProvider.registration(username: "MaximMarin5", password: "123456789") { [weak self] token, error in
+            guard let token = token else {
+                print("Нет токена")
+                return
+            }
+            print("Токен: \(token)")
             print(error?.rawValue ?? "Нет ошибки")
+            self?.storageManager.saveLastLoginDate()
         }
     }
 }
