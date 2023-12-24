@@ -21,7 +21,7 @@ protocol AuthViewDelegate: AnyObject {
 class AuthViewImp: UIView, AuthView {
 
     @IBOutlet private var scrollView: UIScrollView!
-    @IBOutlet private var imageView: UIImageView!
+    @IBOutlet private var backgroundImageView: UIImageView!
     @IBOutlet private var labelView: UIView!
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var subTitleLabel: UILabel!
@@ -41,8 +41,9 @@ class AuthViewImp: UIView, AuthView {
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(viewDidTap))
         addGestureRecognizer(recognizer)
 
-        imageView.image = UIImage(named: "auth-background")
-        imageView.contentMode = .scaleAspectFill
+        registrationButton.addTarget(self, action: #selector(registrationDidTap), for: .touchUpInside)
+
+        backgroundImageView.contentMode = .scaleAspectFill
 
         labelView.layer.cornerRadius = 10
         labelView.layer.masksToBounds = true
@@ -50,10 +51,18 @@ class AuthViewImp: UIView, AuthView {
         labelView.layer.shadowOpacity = 1
         labelView.layer.shadowRadius = 10
         labelView.layer.shadowOffset = CGSize(width: 0, height: 8)
-        labelView.backgroundColor = UIColor(red: 196, green: 196, blue: 196, alpha: 0.65)
 
-        registrationButton.addTarget(self, action: #selector(registrationDidTap), for: .touchUpInside)
-        registrationButton.backgroundColor = UIColor(named: "button-color")
+        loginTextField.setLeftPaddingInTextfield(padding: 16)
+        implementBasicViewShadowSettings(loginTextField)
+
+        passwordTextField.setLeftPaddingInTextfield(padding: 16)
+        implementBasicViewShadowSettings(passwordTextField)
+
+        implementBasicViewShadowSettings(loginButton)
+        loginButton.layer.cornerRadius = 10
+
+        implementBasicViewShadowSettings(registrationButton)
+        registrationButton.layer.cornerRadius = 10
 
         NotificationCenter.default.addObserver(
             self,
@@ -69,6 +78,13 @@ class AuthViewImp: UIView, AuthView {
         )
     }
 
+    func implementBasicViewShadowSettings<T: UIView>(_ view: T) {
+        view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        view.layer.shadowOpacity = 1
+        view.layer.shadowRadius = 8
+        view.layer.shadowOffset = CGSize(width: 0, height: 5)
+    }
+
     // MARK: - Private
 
     @IBAction
@@ -82,7 +98,7 @@ class AuthViewImp: UIView, AuthView {
         )
     }
 
-    @objc
+    @IBAction
     private func registrationDidTap() {
         delegate?.registrationButtonDidTap()
     }
@@ -95,7 +111,7 @@ class AuthViewImp: UIView, AuthView {
         guard let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
             return
         }
-        let keyboardHeight = keyboardFrame.cgRectValue.height + 20
+        let keyboardHeight = keyboardFrame.cgRectValue.height
         scrollView.contentInset.bottom = keyboardHeight
         scrollView.verticalScrollIndicatorInsets.bottom = keyboardHeight
     }

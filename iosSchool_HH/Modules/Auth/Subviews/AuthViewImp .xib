@@ -59,7 +59,7 @@
                                     <rect key="frame" x="32" y="529" width="366" height="96"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Логин" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kyR-Kh-agX" customClass="BaseTextField" customModule="iosSchool_HH" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="366" height="38"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="366" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="vKQ-lb-MeL"/>
                                             </constraints>
@@ -67,22 +67,20 @@
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3vS-W9-SJs" customClass="BaseTextField" customModule="iosSchool_HH" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="56" width="366" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="a8i-Em-0qg"/>
-                                            </constraints>
+                                            <rect key="frame" x="0.0" y="58" width="366" height="38"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="96" id="pqZ-Ic-Vwo"/>
+                                        <constraint firstAttribute="bottom" secondItem="3vS-W9-SJs" secondAttribute="bottom" constant="40" id="uN1-8h-2Wa"/>
                                     </constraints>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ylb-ps-7Uy">
                                     <rect key="frame" x="16" y="794" width="398" height="92"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IF2-F3-O3x" customClass="BaseButton" customModule="iosSchool_HH" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IF2-F3-O3x">
                                             <rect key="frame" x="0.0" y="0.0" width="398" height="40"/>
                                             <color key="backgroundColor" name="BlueButton"/>
                                             <constraints>
@@ -95,7 +93,7 @@
                                                 <action selector="loginDidTapWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="7k2-QT-ry1"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h40-Ip-0ug" customClass="BaseButton" customModule="iosSchool_HH" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h40-Ip-0ug">
                                             <rect key="frame" x="0.0" y="52" width="398" height="40"/>
                                             <color key="backgroundColor" name="BlueButton"/>
                                             <constraints>
