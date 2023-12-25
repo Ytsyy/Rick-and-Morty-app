@@ -62,7 +62,6 @@
 		3F07136B2B14C25F00B98A82 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F07136A2B14C25F00B98A82 /* LocationView.swift */; };
 		3F07136D2B14D18300B98A82 /* LocationViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F07136C2B14D18300B98A82 /* LocationViewData.swift */; };
 		3F0713712B14D1FC00B98A82 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F07136F2B14D1FC00B98A82 /* LocationCell.swift */; };
-		3F0713722B14D1FC00B98A82 /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0713702B14D1FC00B98A82 /* LocationCell.xib */; };
 		3F0713742B14D4D900B98A82 /* LocationCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713732B14D4D900B98A82 /* LocationCellData.swift */; };
 		3F0713772B14D7AD00B98A82 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713762B14D7AD00B98A82 /* NSObject+ClassName.swift */; };
 		3F07137A2B17208C00B98A82 /* UITextField+LeftPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713792B17208C00B98A82 /* UITextField+LeftPadding.swift */; };
@@ -103,6 +102,7 @@
 		3F0713FC2B2B438300B98A82 /* PersonHeaderViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713FB2B2B438300B98A82 /* PersonHeaderViewData.swift */; };
 		3F07143A2B38320C00B98A82 /* AuthViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0714392B38320C00B98A82 /* AuthViewImp.xib */; };
 		3F07143D2B389B9700B98A82 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F07143C2B389B9700B98A82 /* BaseTextField.swift */; };
+		3F0714412B394EE700B98A82 /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0714402B394EE700B98A82 /* LocationCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -161,7 +161,6 @@
 		3F07136A2B14C25F00B98A82 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		3F07136C2B14D18300B98A82 /* LocationViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewData.swift; sourceTree = "<group>"; };
 		3F07136F2B14D1FC00B98A82 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
-		3F0713702B14D1FC00B98A82 /* LocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
 		3F0713732B14D4D900B98A82 /* LocationCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCellData.swift; sourceTree = "<group>"; };
 		3F0713762B14D7AD00B98A82 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 		3F0713792B17208C00B98A82 /* UITextField+LeftPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+LeftPadding.swift"; sourceTree = "<group>"; };
@@ -201,6 +200,7 @@
 		3F0713FB2B2B438300B98A82 /* PersonHeaderViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonHeaderViewData.swift; sourceTree = "<group>"; };
 		3F0714392B38320C00B98A82 /* AuthViewImp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthViewImp.xib; sourceTree = "<group>"; };
 		3F07143C2B389B9700B98A82 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
+		3F0714402B394EE700B98A82 /* LocationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -396,7 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				3F07136F2B14D1FC00B98A82 /* LocationCell.swift */,
-				3F0713702B14D1FC00B98A82 /* LocationCell.xib */,
+				3F0714402B394EE700B98A82 /* LocationCell.xib */,
 				3F0713732B14D4D900B98A82 /* LocationCellData.swift */,
 			);
 			path = Subviews;
@@ -576,11 +576,11 @@
 				3F0713F22B2B3C2A00B98A82 /* PersonEpisodeCell.xib in Resources */,
 				3F0713B02B22043D00B98A82 /* CharacterCell.xib in Resources */,
 				3F07135E2B11D12300B98A82 /* RegistrationViewImp.xib in Resources */,
+				3F0714412B394EE700B98A82 /* LocationCell.xib in Resources */,
 				3F07143A2B38320C00B98A82 /* AuthViewImp.xib in Resources */,
 				3F07129A2AE11D2B00B98A82 /* LaunchScreen.storyboard in Resources */,
 				3F0712972AE11D2B00B98A82 /* Assets.xcassets in Resources */,
 				3F0713EA2B2B311900B98A82 /* PersonPhotoCell.xib in Resources */,
-				3F0713722B14D1FC00B98A82 /* LocationCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

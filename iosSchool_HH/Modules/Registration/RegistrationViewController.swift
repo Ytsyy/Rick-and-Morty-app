@@ -11,8 +11,8 @@ import UIKit
 class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
 
     private let dataProvider: RegistrationDataProvider
-    var onRegistrationSuccess: (() -> Void)?
     private let storageManager: StorageManager
+    var onRegistrationSuccess: (() -> Void)?
 
     init(dataProvider: RegistrationDataProvider, storageManager: StorageManager, onRegistrationSuccess: (() -> Void)?) {
         self.dataProvider = dataProvider
@@ -46,3 +46,18 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
         }
     }
 }
+
+// MARK: - RegistrationViewDelegate
+
+extension RegistrationViewController: RegistrationViewDelegate {
+    func registrationButtonDidTap(login: String, password: String, repeatPassword: String) {
+        <#code#>
+    }
+    
+
+
+    func backButtonDidTap() {
+        <#code#>
+    }
+}
+
