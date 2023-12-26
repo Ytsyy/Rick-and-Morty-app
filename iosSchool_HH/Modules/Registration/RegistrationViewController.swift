@@ -37,19 +37,6 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
         super.viewDidAppear(animated)
         onRegistrationSuccess?()
     }
-
-    /*func registration() {
-        dataProvider.registration(username: "MaximMarin5", password: "123456789") { [weak self] token, error in
-            guard let token = token else {
-                print("Нет токена")
-                return
-            }
-            print("Токен: \(token)")
-            print(error?.rawValue ?? "Нет ошибки")
-            self?.storageManager.saveLastLoginDate()
-        }
-    }
-     */
 }
 
 // MARK: - RegistrationViewDelegate
@@ -76,6 +63,7 @@ extension RegistrationViewController: RegistrationViewDelegate {
             }
             self.storageManager.saveToken(token: token)
             self.onRegistrationSuccess?()
+            self.storageManager.saveLastLoginDate()
         }
     }
 

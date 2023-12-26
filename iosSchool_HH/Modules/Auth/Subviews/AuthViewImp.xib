@@ -56,10 +56,10 @@
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="yTz-mX-71U">
-                                    <rect key="frame" x="32" y="529" width="366" height="96"/>
+                                    <rect key="frame" x="32" y="527" width="366" height="98"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Логин" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kyR-Kh-agX" customClass="BaseTextField" customModule="iosSchool_HH" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="366" height="38"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="366" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="vKQ-lb-MeL"/>
                                             </constraints>
@@ -67,7 +67,7 @@
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3vS-W9-SJs" customClass="BaseTextField" customModule="iosSchool_HH" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="56" width="366" height="40"/>
+                                            <rect key="frame" x="0.0" y="58" width="366" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="a8i-Em-0qg"/>
                                             </constraints>
@@ -76,7 +76,7 @@
                                         </textField>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="96" id="pqZ-Ic-Vwo"/>
+                                        <constraint firstAttribute="height" constant="98" id="pqZ-Ic-Vwo"/>
                                     </constraints>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ylb-ps-7Uy">

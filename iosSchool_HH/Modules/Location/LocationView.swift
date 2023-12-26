@@ -74,6 +74,7 @@ extension LocationViewImp: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: LocationCell.className) else {
             return UITableViewCell()
         }
+        cell.backgroundColor = .clear
         (cell as? LocationCell)?.data = viewData.cellsData[indexPath.row]
         return cell
     }

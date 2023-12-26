@@ -44,15 +44,21 @@ class LocationViewController<View: LocationView>: BaseViewController<View> {
     }
 
     private func setupBar() {
-            title = "Выбор планеты"
-            navigationController?.navigationBar.titleTextAttributes = [
-                .foregroundColor: UIColor.black,
-                .font: UIFont.systemFont(ofSize: 18)
-            ]
-            /*navigationItem.rightBarButtonItem = UIBarButtonItem(
-                barButtonSystemItem: .refresh,
-                target: self,
-                action: #selector(reload)
-            )*/
-        }
+        title = "Выбор планеты"
+        navigationController?.navigationBar.titleTextAttributes = [
+            .foregroundColor: UIColor.black,
+            .font: UIFont.systemFont(ofSize: 18)
+        ]
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+         barButtonSystemItem: .refresh,
+         target: self,
+         action: #selector(update)
+         )
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.black
+    }
+
+    @objc
+    private func update() {
+        getListOfLocation()
+    }
 }
