@@ -78,6 +78,9 @@ class RegistrationViewImp: UIView, RegistrationView {
 
         registrationButtonSettings(button: backButton)
         registratinViewShadowSettings(backButton)
+
+        registrationButton.addTarget(self, action: #selector(registrationDidTap), for: .touchUpInside)
+        backButton.addTarget(self, action: #selector(backDidTap), for: .touchUpInside)
     }
 
     func registrationTextFieldSettings(textField: UITextField) {
@@ -110,10 +113,10 @@ class RegistrationViewImp: UIView, RegistrationView {
         repeatPasswordTextField.resignFirstResponder()
 
         delegate?.registrationButtonDidTap(
-        login: loginTextField.text ?? "",
-        password: passwordTextField.text ?? "",
-        repeatPassword: repeatPasswordTextField.text ?? ""
-        )
+            login: loginTextField.text ?? "",
+            password: passwordTextField.text ?? "",
+            repeatPassword: repeatPasswordTextField.text ?? ""
+            )
     }
 
     @IBAction
@@ -121,6 +124,7 @@ class RegistrationViewImp: UIView, RegistrationView {
         loginTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
         repeatPasswordTextField.resignFirstResponder()
+
         delegate?.backButtonDidTap()
     }
 
