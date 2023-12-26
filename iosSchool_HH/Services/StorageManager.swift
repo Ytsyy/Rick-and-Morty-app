@@ -60,7 +60,7 @@ class StorageManagerImp: StorageManager {
         }
     }
 
-    func saveLastLoginDate(){
+    func saveLastLoginDate() {
         UserDefaults.standard.set(Date(), forKey: "lastLoginDate")
     }
 

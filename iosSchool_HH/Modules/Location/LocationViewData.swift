@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LocationViewData{
+struct LocationViewData {
     let cellsData: [LocationCellData]
 
     init(list: LocationsList) {

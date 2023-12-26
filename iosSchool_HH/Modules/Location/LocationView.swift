@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol LocationView: UIView{
+protocol LocationView: UIView {
     var selectLocation: ((LocationCellData) -> Void)? { get set }
 
     func setView()

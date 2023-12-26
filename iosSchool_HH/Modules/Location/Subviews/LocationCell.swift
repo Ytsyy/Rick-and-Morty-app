@@ -26,7 +26,7 @@ class LocationCell: UITableViewCell {
 
     //MARK: Private methods
 
-    private func update(data: LocationCellData){
+    private func update(data: LocationCellData) {
         nameLabel.text = data.name
         locationTypeLabel.text = data.type
         populationLabel.text = "Население: \(data.population)"
