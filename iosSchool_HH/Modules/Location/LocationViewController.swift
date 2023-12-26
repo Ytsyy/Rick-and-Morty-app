@@ -50,9 +50,9 @@ class LocationViewController<View: LocationView>: BaseViewController<View> {
             .font: UIFont.systemFont(ofSize: 18)
         ]
         navigationItem.rightBarButtonItem = UIBarButtonItem(
-         barButtonSystemItem: .refresh,
-         target: self,
-         action: #selector(update)
+            barButtonSystemItem: .refresh,
+            target: self,
+            action: #selector(update)
          )
         navigationItem.rightBarButtonItem?.tintColor = UIColor.black
     }

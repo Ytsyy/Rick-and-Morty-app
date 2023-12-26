@@ -46,7 +46,6 @@ class AuthViewImp: UIView, AuthView {
         backgroundImageView.contentMode = .scaleAspectFill
 
         labelView.layer.cornerRadius = 10
-        labelView.layer.masksToBounds = true
         labelView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
         labelView.layer.shadowOpacity = 1
         labelView.layer.shadowRadius = 10

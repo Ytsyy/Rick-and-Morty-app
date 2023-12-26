@@ -21,7 +21,7 @@ class LocationViewImp: UIView, LocationView {
     private var viewData: LocationViewData?
     private let tableView = UITableView()
 
-    func setView(){
+    func setView() {
         backgroundColor = .white
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
@@ -33,7 +33,6 @@ class LocationViewImp: UIView, LocationView {
         imageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-
 
         let nib = UINib(nibName: LocationCell.className, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: LocationCell.className)
@@ -78,11 +77,9 @@ extension LocationViewImp: UITableViewDataSource {
         (cell as? LocationCell)?.data = viewData.cellsData[indexPath.row]
         return cell
     }
-
-
 }
 
-// MARK: UITableViewDeleggate
+// MARK: UITableViewDelegate
 
 extension LocationViewImp: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
