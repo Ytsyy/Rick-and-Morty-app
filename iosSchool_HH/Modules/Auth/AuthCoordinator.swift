@@ -27,6 +27,6 @@ class AuthCoordinator: BaseCoordinator<AuthCoordinator.Context> {
             registrationVC.modalPresentationStyle = .fullScreen
             controller?.present(registrationVC, animated: true)
         }
-                    return controller
+        return controller
     }
 }

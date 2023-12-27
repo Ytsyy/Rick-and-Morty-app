@@ -11,11 +11,10 @@ import PKHUD
 
 class AuthViewController<View: AuthView>: BaseViewController<View> {
 
-    var onOpenRegistration: (() -> Void)?
-
-    private var onOpenLogin: (() -> Void)?
     private let dataProvider: AuthDataProvider
     private let storageManager: StorageManager
+    private var onOpenLogin: (() -> Void)?
+    var onOpenRegistration: (() -> Void)?
 
     init(dataProvider: AuthDataProvider, storageManager: StorageManager, onOpenLogin: (() -> Void)?) {
         self.dataProvider = dataProvider
@@ -53,8 +52,10 @@ extension AuthViewController: AuthViewDelegate {
                 return
             }
             self.storageManager.saveToken(token: token)
-            self.onOpenLogin?()
             self.storageManager.saveLastLoginDate()
+            DispatchQueue.main.async {
+                self.onOpenLogin?()
+            }
         }
     }
 
