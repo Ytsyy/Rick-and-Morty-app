@@ -36,7 +36,7 @@ class LocationViewImp: UIView, LocationView {
 
         let nib = UINib(nibName: LocationCell.className, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: LocationCell.className)
-        tableView.contentInset = UIEdgeInsets(top: 4, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         tableView.backgroundColor = .clear
         tableView.allowsSelectionDuringEditing = false
         tableView.dataSource = self
@@ -57,7 +57,6 @@ class LocationViewImp: UIView, LocationView {
             }
         }
 }
-
 
 // MARK: - UITableViewDataSource
 

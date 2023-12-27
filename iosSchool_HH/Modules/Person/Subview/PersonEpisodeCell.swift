@@ -13,7 +13,6 @@ class PersonEpisodeCell: UICollectionViewCell, CoreCellView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     static func layoutSection() -> NSCollectionLayoutSection {

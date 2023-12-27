@@ -9,7 +9,7 @@ import Foundation
 
 struct LocationViewData {
     let cellsData: [LocationCellData]
-    
+
     init(list: LocationsList) {
         cellsData = list.results.map { LocationCellData(location: $0) }
     }

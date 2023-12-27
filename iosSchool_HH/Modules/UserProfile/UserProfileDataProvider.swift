@@ -7,7 +7,7 @@
 
 import Foundation
 protocol UserProfileDataProvider {
-    
+
 }
 class UserProfileDataProviderImp: UserProfileDataProvider {
 }
