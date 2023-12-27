@@ -103,6 +103,10 @@
 		3F07143A2B38320C00B98A82 /* AuthViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0714392B38320C00B98A82 /* AuthViewImp.xib */; };
 		3F07143D2B389B9700B98A82 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F07143C2B389B9700B98A82 /* BaseTextField.swift */; };
 		3F0714412B394EE700B98A82 /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0714402B394EE700B98A82 /* LocationCell.xib */; };
+		3FA03B252B3C67BA00C5523C /* UserProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA03B242B3C67BA00C5523C /* UserProfileAssembly.swift */; };
+		3FA03B272B3C691D00C5523C /* UserProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA03B262B3C691D00C5523C /* UserProfileCoordinator.swift */; };
+		3FA03B292B3C6CB200C5523C /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA03B282B3C6CB200C5523C /* UserProfileViewController.swift */; };
+		3FA03B2B2B3C6DB600C5523C /* UserProfileDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA03B2A2B3C6DB600C5523C /* UserProfileDataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -201,6 +205,10 @@
 		3F0714392B38320C00B98A82 /* AuthViewImp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthViewImp.xib; sourceTree = "<group>"; };
 		3F07143C2B389B9700B98A82 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
 		3F0714402B394EE700B98A82 /* LocationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
+		3FA03B242B3C67BA00C5523C /* UserProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileAssembly.swift; sourceTree = "<group>"; };
+		3FA03B262B3C691D00C5523C /* UserProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCoordinator.swift; sourceTree = "<group>"; };
+		3FA03B282B3C6CB200C5523C /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		3FA03B2A2B3C6DB600C5523C /* UserProfileDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +266,7 @@
 		3F0712BB2AF9224600B98A82 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3FA03B232B3C667C00C5523C /* UserProfile */,
 				3F0713B82B2B224400B98A82 /* Person */,
 				3F07132A2B0E31A400B98A82 /* Character */,
 				3F07131C2B0E17B500B98A82 /* Location */,
@@ -502,6 +511,17 @@
 			path = UIElement;
 			sourceTree = "<group>";
 		};
+		3FA03B232B3C667C00C5523C /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				3FA03B242B3C67BA00C5523C /* UserProfileAssembly.swift */,
+				3FA03B262B3C691D00C5523C /* UserProfileCoordinator.swift */,
+				3FA03B282B3C6CB200C5523C /* UserProfileViewController.swift */,
+				3FA03B2A2B3C6DB600C5523C /* UserProfileDataProvider.swift */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -617,6 +637,7 @@
 				3F0713992B21F49700B98A82 /* CoreCellView.swift in Sources */,
 				3F0713232B0E197D00B98A82 /* LocationApiClient.swift in Sources */,
 				3F07139B2B21F55800B98A82 /* CoreReusableView.swift in Sources */,
+				3FA03B252B3C67BA00C5523C /* UserProfileAssembly.swift in Sources */,
 				3F0713AF2B22043D00B98A82 /* CharacterCell.swift in Sources */,
 				3F0713952B21F41500B98A82 /* CoreNibReusable.swift in Sources */,
 				3F0713F92B2B42FC00B98A82 /* PersonHeaderView.swift in Sources */,
@@ -624,8 +645,10 @@
 				3F07136B2B14C25F00B98A82 /* LocationView.swift in Sources */,
 				3F0712F82B0640A900B98A82 /* BaseViewController.swift in Sources */,
 				3F0713552B105CE200B98A82 /* RootTabBar.swift in Sources */,
+				3FA03B272B3C691D00C5523C /* UserProfileCoordinator.swift in Sources */,
 				3F0712E92B025A4400B98A82 /* TokenResponse.swift in Sources */,
 				3F0713A42B21FCD300B98A82 /* Section.swift in Sources */,
+				3FA03B292B3C6CB200C5523C /* UserProfileViewController.swift in Sources */,
 				3F0712CF2AFD131D00B98A82 /* SplashView.swift in Sources */,
 				3F07132E2B0E320E00B98A82 /* CharacterCoordinator.swift in Sources */,
 				3F0712DC2AFE3C2F00B98A82 /* RegistrationCoordinator.swift in Sources */,
@@ -658,6 +681,7 @@
 				3F0713212B0E181E00B98A82 /* LocationViewController.swift in Sources */,
 				3F07131F2B0E180A00B98A82 /* LocationDataProvider.swift in Sources */,
 				3F0713972B21F43F00B98A82 /* CoreCellInputData.swift in Sources */,
+				3FA03B2B2B3C6DB600C5523C /* UserProfileDataProvider.swift in Sources */,
 				3F07128E2AE11D2800B98A82 /* AppDelegate.swift in Sources */,
 				3F0713822B18CC7100B98A82 /* ImageService.swift in Sources */,
 				3F0712C22AF9242B00B98A82 /* AuthViewData.swift in Sources */,

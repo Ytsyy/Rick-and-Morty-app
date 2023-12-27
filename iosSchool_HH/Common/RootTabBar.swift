@@ -41,9 +41,9 @@ enum RootTab: Int {
     private var image: UIImage? {
         switch self {
         case .locations:
-            return UIImage(named: "locationsRootTab")
+            return UIImage(named: "locationsRootTab")?.withRenderingMode(.alwaysOriginal)
         case .cabinet:
-            return UIImage(named: "profileRootTab")
+            return UIImage(named: "profileRootTab")?.withRenderingMode(.alwaysOriginal)
         }
     }
 }
