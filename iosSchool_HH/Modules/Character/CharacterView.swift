@@ -10,7 +10,7 @@ import UIKit
 protocol CharacterView: UIView {
     func setView()
     func update(data: CharacterViewData)
-    func updateCharacter(idx: Int, with data: CharacterCellData)
+    func updateCharacter(index: Int, with data: CharacterCellData)
 }
 
 class CharacterViewImp: UIView, CharacterView {
@@ -43,11 +43,11 @@ class CharacterViewImp: UIView, CharacterView {
         collectionView.reloadData()
     }
 
-    func updateCharacter(idx: Int, with data: CharacterCellData) {
-        section?.updateCell(at: IndexPath(item: idx, section: 0), with: data)
+    func updateCharacter(index: Int, with data: CharacterCellData) {
+        section?.updateCell(at: IndexPath(item: index, section: 0), with: data)
         guard let cell = section?.cell(
             collectionView: collectionView,
-            indexPath: IndexPath(item: idx, section: 0)
+            indexPath: IndexPath(item: index, section: 0)
         ) as? CharacterCell else {
             return
         }

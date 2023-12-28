@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
 final class CharacterViewController< View: CharacterView>: BaseViewController<View> {
+    var selectCharacter: ((CharacterCellData) -> Void)?
+
     private var characters: [Character] = []
 
     private let dataProvider: CharacterDataProvider
@@ -31,25 +33,41 @@ final class CharacterViewController< View: CharacterView>: BaseViewController<Vi
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        rootView.backgroundColor = UIColor(named: "charactersBackgroundGray")
         rootView.setView()
-        rootView.update(data: CharacterViewData(cells: charactersUrlList.map {
+        rootView.update(data: CharacterViewData(cells: charactersUrlList.map({
             CharacterCellData(url: $0)
-        }))
-        charactersUrlList.enumerated().forEach { idx, url in
+        })))
+
+        let selectClosure: ((CoreCellInputData) -> Void)? = { [weak self] data in
+            guard let data = data as? CharacterCellData else {
+                return
+            }
+            self?.selectCharacter?(data)
+        }
+
+        charactersUrlList.enumerated().forEach { index, url in
             requestCharacter(url: url) { [weak self] character in
                 guard let self else {
                     return
                 }
                 DispatchQueue.main.async {
-                    self.rootView.updateCharacter(idx: idx, with: CharacterCellData(
+                    self.rootView.updateCharacter(index: index, with: CharacterCellData(
                         character: character,
                         isLoading: true,
                         image: nil,
-                        selectClosure: nil
+                        selectClosure: selectClosure
                     ))
                 }
-                self.imageService.getImage(url: character.image, completion: { image in
-                    print(image?.size ?? 0)
+                self.imageService.getImage(url: character.image, completion: { [weak self] image in
+                    DispatchQueue.main.async {
+                        self?.rootView.updateCharacter(index: index, with: CharacterCellData(
+                            character: character,
+                            isLoading: false,
+                            image: image,
+                            selectClosure: selectClosure
+                        ))
+                    }
                 })
             }
         }
@@ -57,21 +75,21 @@ final class CharacterViewController< View: CharacterView>: BaseViewController<Vi
 
     // MARK: - Private
     private func requestCharacter(url: String, completion: @escaping (Character) -> Void) {
-            if let character = characters.first(where: { $0.url == url }) {
-                completion(character)
-                return
-            }
-            DispatchQueue.global().async {
-                self.dataProvider.character(url: url) { [weak self] character, error in
-                    guard let character else {
-                        print(error ?? "no error")
-                        return
-                    }
-                    self?.updateQueue.async {
-                        self?.characters.append(character)
-                        completion(character)
-                    }
+        if let character = characters.first(where: { $0.url == url }) {
+            completion(character)
+            return
+        }
+        DispatchQueue.global().async {
+            self.dataProvider.character(url: url) { [weak self] character, error in
+                guard let character else {
+                    print(error ?? "no error")
+                    return
+                }
+                self?.updateQueue.async {
+                    self?.characters.append(character)
+                    completion(character)
                 }
             }
         }
     }
+}
