@@ -17,6 +17,7 @@
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="AuthBackground" translatesAutoresizingMaskIntoConstraints="NO" id="aa8-Ft-1BK">
                     <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="displayP3"/>
                 </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NSs-zL-g24">
                     <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
@@ -24,8 +25,8 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQT-Or-WJw">
                             <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                             <subviews>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="reZ-1U-cLb">
-                                    <rect key="frame" x="0.0" y="246" width="430" height="166"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="reZ-1U-cLb">
+                                    <rect key="frame" x="0.0" y="244" width="430" height="166"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Авторизация" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CmR-bZ-h5k">
                                             <rect key="frame" x="0.0" y="22" width="430" height="26"/>
@@ -116,13 +117,13 @@
                             </subviews>
                             <constraints>
                                 <constraint firstItem="reZ-1U-cLb" firstAttribute="leading" secondItem="kQT-Or-WJw" secondAttribute="leading" id="BZx-2k-uua"/>
-                                <constraint firstItem="yTz-mX-71U" firstAttribute="top" relation="lessThanOrEqual" secondItem="reZ-1U-cLb" secondAttribute="bottom" constant="117" id="Ju4-5H-ZRp"/>
                                 <constraint firstAttribute="trailing" secondItem="ylb-ps-7Uy" secondAttribute="trailing" constant="16" id="Ozc-c5-jwo"/>
                                 <constraint firstItem="ylb-ps-7Uy" firstAttribute="leading" secondItem="kQT-Or-WJw" secondAttribute="leading" constant="16" id="POZ-ic-8bt"/>
                                 <constraint firstAttribute="bottom" secondItem="ylb-ps-7Uy" secondAttribute="bottom" constant="46" id="bOv-tM-neK"/>
-                                <constraint firstItem="reZ-1U-cLb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="kQT-Or-WJw" secondAttribute="top" constant="15" id="bvg-Pn-Ylp"/>
+                                <constraint firstItem="reZ-1U-cLb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="kQT-Or-WJw" secondAttribute="top" constant="30" id="bvg-Pn-Ylp"/>
                                 <constraint firstItem="yTz-mX-71U" firstAttribute="leading" secondItem="kQT-Or-WJw" secondAttribute="leading" constant="32" id="eHc-QQ-NXj"/>
                                 <constraint firstAttribute="trailing" secondItem="reZ-1U-cLb" secondAttribute="trailing" id="gWd-bf-ZOD"/>
+                                <constraint firstItem="yTz-mX-71U" firstAttribute="top" secondItem="reZ-1U-cLb" secondAttribute="bottom" constant="117" id="gkn-0j-eTr"/>
                                 <constraint firstItem="ylb-ps-7Uy" firstAttribute="top" secondItem="yTz-mX-71U" secondAttribute="bottom" priority="900" constant="169" id="weO-bx-Yx4"/>
                                 <constraint firstAttribute="trailing" secondItem="yTz-mX-71U" secondAttribute="trailing" constant="32" id="ySl-DJ-gFh"/>
                             </constraints>

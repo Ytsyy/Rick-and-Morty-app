@@ -116,7 +116,7 @@ class RegistrationViewImp: UIView, RegistrationView {
             login: loginTextField.text ?? "",
             password: passwordTextField.text ?? "",
             repeatPassword: repeatPasswordTextField.text ?? ""
-            )
+        )
     }
 
     @IBAction

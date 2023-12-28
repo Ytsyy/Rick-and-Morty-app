@@ -45,16 +45,22 @@ class AuthViewImp: UIView, AuthView {
 
         backgroundImageView.contentMode = .scaleAspectFill
 
-        labelView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        labelView.backgroundColor = UIColor(named: "AuthLabelBackground")
+        labelView.layer.cornerRadius = 10
+        labelView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
         labelView.layer.shadowOpacity = 1
-        labelView.layer.shadowRadius = 10
-        labelView.layer.shadowOffset = CGSize(width: 0, height: 8)
+        labelView.layer.shadowRadius = 5
+        labelView.layer.shadowOffset = CGSize(width: 0, height: 5)
+        let shadowRect = CGRect(
+            x: 0, y: labelView.bounds.height - 5.0,
+            width: labelView.bounds.width, height: 5.0
+        )
+        let shadowPath = UIBezierPath(rect: shadowRect)
+        labelView.layer.shadowPath = shadowPath.cgPath
 
         loginTextField.setLeftPaddingInTextfield(padding: 16)
-        implementBasicViewShadowSettings(loginTextField)
 
         passwordTextField.setLeftPaddingInTextfield(padding: 16)
-        implementBasicViewShadowSettings(passwordTextField)
 
         implementBasicViewShadowSettings(loginButton)
         loginButton.layer.cornerRadius = 10

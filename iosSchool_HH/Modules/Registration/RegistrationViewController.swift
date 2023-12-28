@@ -44,9 +44,7 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
 extension RegistrationViewController: RegistrationViewDelegate {
     func registrationButtonDidTap(login: String, password: String, repeatPassword: String) {
         guard password == repeatPassword else {
-            DispatchQueue.main.async {
                 SPIndicator.present(title: "Пароли не совпадают", haptic: .error)
-            }
             return
         }
 
@@ -62,8 +60,8 @@ extension RegistrationViewController: RegistrationViewDelegate {
                 return
             }
             self.storageManager.saveToken(token: token)
-            self.onRegistrationSuccess?()
             self.storageManager.saveLastLoginDate()
+            self.onRegistrationSuccess?()
         }
     }
 

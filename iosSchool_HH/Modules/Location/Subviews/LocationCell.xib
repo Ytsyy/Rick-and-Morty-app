@@ -60,16 +60,6 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="kH5-SY-Qgt" secondAttribute="bottom" id="32K-oz-Pmd"/>
-                                    <constraint firstItem="bq5-JZ-Flp" firstAttribute="top" secondItem="Mnq-0d-VqX" secondAttribute="top" id="68E-0u-lG8"/>
-                                    <constraint firstAttribute="bottom" secondItem="bq5-JZ-Flp" secondAttribute="bottom" id="8ca-Tu-Itt"/>
-                                    <constraint firstAttribute="trailing" secondItem="bq5-JZ-Flp" secondAttribute="trailing" id="EN1-0C-M56"/>
-                                    <constraint firstItem="kH5-SY-Qgt" firstAttribute="centerY" secondItem="Mnq-0d-VqX" secondAttribute="centerY" id="gYQ-TQ-iHx"/>
-                                    <constraint firstItem="bq5-JZ-Flp" firstAttribute="centerY" secondItem="Mnq-0d-VqX" secondAttribute="centerY" id="p7Y-R3-jLh"/>
-                                    <constraint firstItem="kH5-SY-Qgt" firstAttribute="top" secondItem="Mnq-0d-VqX" secondAttribute="top" id="tqF-tV-QWy"/>
-                                    <constraint firstItem="kH5-SY-Qgt" firstAttribute="leading" secondItem="Mnq-0d-VqX" secondAttribute="leading" id="vaL-v0-qW9"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <constraints>
@@ -80,9 +70,9 @@
                             <constraint firstAttribute="height" constant="41" id="PLz-GZ-sHk"/>
                             <constraint firstAttribute="bottom" secondItem="VLp-qr-K1B" secondAttribute="bottom" id="UcM-uw-S28"/>
                             <constraint firstItem="Mnq-0d-VqX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VLp-qr-K1B" secondAttribute="trailing" id="ak3-Yk-aEO"/>
+                            <constraint firstAttribute="bottom" secondItem="5Wc-K8-za7" secondAttribute="bottom" id="dcE-ba-gfe"/>
                             <constraint firstItem="VLp-qr-K1B" firstAttribute="top" secondItem="1kE-oe-zKd" secondAttribute="top" id="klS-G0-iHq"/>
                             <constraint firstItem="5Wc-K8-za7" firstAttribute="leading" secondItem="1kE-oe-zKd" secondAttribute="leading" id="kwe-tz-BmV"/>
-                            <constraint firstAttribute="bottom" secondItem="5Wc-K8-za7" secondAttribute="bottom" id="pjn-Jn-rbq"/>
                             <constraint firstItem="Mnq-0d-VqX" firstAttribute="top" secondItem="1kE-oe-zKd" secondAttribute="top" id="rYM-tS-Tq9"/>
                         </constraints>
                     </view>
@@ -96,8 +86,6 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="bottomLine" destination="5Wc-K8-za7" id="3S9-VF-g3f"/>
-                <outlet property="chevron" destination="bq5-JZ-Flp" id="D9e-TB-KWV"/>
                 <outlet property="locationTypeLabel" destination="3Ka-Rm-7fr" id="tRa-qO-VIw"/>
                 <outlet property="nameLabel" destination="bsB-pb-OXK" id="stR-6e-uo0"/>
                 <outlet property="populationLabel" destination="kH5-SY-Qgt" id="bkO-9O-KRY"/>

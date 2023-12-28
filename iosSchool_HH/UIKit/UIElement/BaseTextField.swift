@@ -27,5 +27,10 @@ class BaseTextField: UITextField {
         layer.cornerRadius = 15
         layer.borderWidth = 1
         layer.borderColor = UIColor(.black).cgColor
+
+        layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        layer.shadowOpacity = 1
+        layer.shadowRadius = 8
+        layer.shadowOffset = CGSize(width: 0, height: 5)
     }
 }

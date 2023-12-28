@@ -21,8 +21,6 @@ class LocationCell: UITableViewCell {
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var locationTypeLabel: UILabel!
     @IBOutlet private weak var populationLabel: UILabel!
-    @IBOutlet private weak var chevron: UIImageView!
-    @IBOutlet private weak var bottomLine: UIView!
 
     // MARK: Private methods
 
