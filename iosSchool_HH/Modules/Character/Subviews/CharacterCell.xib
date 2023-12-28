@@ -40,13 +40,18 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="fPy-VM-an0">
+                                <rect key="frame" x="73.666666666666671" y="73.666666666666671" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" name="iceberg"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="458-ym-yDd" secondAttribute="trailing" id="9by-jh-zrd"/>
+                            <constraint firstItem="fPy-VM-an0" firstAttribute="centerX" secondItem="cee-Kc-Hj3" secondAttribute="centerX" id="F4T-su-JQm"/>
                             <constraint firstAttribute="trailing" secondItem="dDh-jA-hst" secondAttribute="trailing" priority="900" id="Nrx-Bn-0CQ"/>
                             <constraint firstAttribute="bottom" secondItem="458-ym-yDd" secondAttribute="bottom" constant="3" id="X12-jp-jVg"/>
                             <constraint firstItem="458-ym-yDd" firstAttribute="top" secondItem="dDh-jA-hst" secondAttribute="bottom" id="bz4-n9-Cqs"/>
+                            <constraint firstItem="fPy-VM-an0" firstAttribute="centerY" secondItem="cee-Kc-Hj3" secondAttribute="centerY" id="pbb-4m-BGr"/>
                             <constraint firstItem="dDh-jA-hst" firstAttribute="top" secondItem="cee-Kc-Hj3" secondAttribute="top" id="u4O-r9-buG"/>
                             <constraint firstItem="dDh-jA-hst" firstAttribute="leading" secondItem="cee-Kc-Hj3" secondAttribute="leading" priority="900" id="xnD-ba-YAw"/>
                             <constraint firstItem="458-ym-yDd" firstAttribute="leading" secondItem="cee-Kc-Hj3" secondAttribute="leading" id="yQm-6b-RYN"/>
@@ -63,6 +68,12 @@
                 <constraint firstItem="cee-Kc-Hj3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ePU-cO-uHa"/>
             </constraints>
             <size key="customSize" width="167" height="167"/>
+            <connections>
+                <outlet property="characterImage" destination="dDh-jA-hst" id="rOx-3J-0Sx"/>
+                <outlet property="descriptionLabel" destination="io7-EE-B6f" id="Hgs-xc-MNt"/>
+                <outlet property="loadingSpinner" destination="fPy-VM-an0" id="Sno-gX-dsT"/>
+                <outlet property="nameLabel" destination="1AG-mb-oYn" id="g6p-jn-OOk"/>
+            </connections>
             <point key="canvasLocation" x="176.33587786259542" y="-21.47887323943662"/>
         </collectionViewCell>
         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MRm-h7-LyA">

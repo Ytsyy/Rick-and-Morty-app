@@ -9,7 +9,11 @@ import UIKit
 
 class CharacterCell: UICollectionViewCell, CoreCellView {
 
+    @IBOutlet private weak var characterImage: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var loadingSpinner: UIActivityIndicatorView!
+
 
     static func layoutSection() -> NSCollectionLayoutSection? {
         let itemSize = NSCollectionLayoutSize(
