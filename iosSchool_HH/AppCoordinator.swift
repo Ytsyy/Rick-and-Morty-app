@@ -18,10 +18,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
         let coordinator = assembly.authCoordinator { [weak self] in
             self?.authBootstrap()
         }
-        setRoot(
-            viewController: coordinator.make()
-        )
-
+        setRoot(viewController: coordinator.make())
     }
 
     private func authBootstrap() {
@@ -40,8 +37,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
 
     private func setTabVC() {
         let tabVC = assembly.rootTabBarController()
-
-         let locationsCoord = assembly.locationCoordinator()
+        let locationsCoord = assembly.locationCoordinator()
         // let cabinetCoord = assembly.cabinetCoodrinator()
         guard let locationsVC = locationsCoord.make() else {
             return
