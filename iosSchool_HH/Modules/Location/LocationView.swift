@@ -34,7 +34,6 @@ class LocationViewImp: UIView, LocationView {
         imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
 
-
         let nib = UINib(nibName: LocationCell.className, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: LocationCell.className)
         tableView.contentInset = UIEdgeInsets(top: 4, left: 0, bottom: 0, right: 0)
@@ -77,7 +76,6 @@ extension LocationViewImp: UITableViewDataSource {
         (cell as? LocationCell)?.data = viewData.cellsData[indexPath.row]
         return cell
     }
-
 
 }
 

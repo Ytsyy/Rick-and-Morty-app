@@ -73,7 +73,7 @@ final class CharacterViewController< View: CharacterView>: BaseViewController<Vi
         }
     }
 
-    // MARK: - Private
+    // MARK: - Private func
     private func requestCharacter(url: String, completion: @escaping (Character) -> Void) {
         if let character = characters.first(where: { $0.url == url }) {
             completion(character)
@@ -82,7 +82,6 @@ final class CharacterViewController< View: CharacterView>: BaseViewController<Vi
         DispatchQueue.global().async {
             self.dataProvider.character(url: url) { [weak self] character, error in
                 guard let character else {
-                    print(error ?? "no error")
                     return
                 }
                 self?.updateQueue.async {

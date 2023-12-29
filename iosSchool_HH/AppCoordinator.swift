@@ -29,7 +29,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
             setTabVC()
             return
         }
-        
+
         let authCoordinator = assembly.authCoordinator { [weak self] in
             DispatchQueue.main.async {
                 self?.setTabVC()

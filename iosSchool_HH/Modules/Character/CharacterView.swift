@@ -35,6 +35,7 @@ class CharacterViewImp: UIView, CharacterView {
         collectionView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        collectionView.clipsToBounds = true
     }
 
     func update(data: CharacterViewData) {
@@ -54,7 +55,7 @@ class CharacterViewImp: UIView, CharacterView {
         cell.update(with: data)
     }
 
-    // MARK: - Private
+    // MARK: - Private func
 
     private func layout() -> UICollectionViewLayout {
         UICollectionViewCompositionalLayout { [unowned self] section, env -> NSCollectionLayoutSection? in
