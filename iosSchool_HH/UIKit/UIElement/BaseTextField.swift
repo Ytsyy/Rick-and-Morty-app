@@ -23,7 +23,7 @@ class BaseTextField: UITextField {
         textColor = UIColor(named: "GrayForTextField")
         clipsToBounds = true
         borderStyle = .none
-        layer.backgroundColor = UIColor(.white).cgColor
+        //layer.backgroundColor = UIColor(.white).cgColor
         layer.cornerRadius = 15
         layer.borderWidth = 1
         layer.borderColor = UIColor(.black).cgColor

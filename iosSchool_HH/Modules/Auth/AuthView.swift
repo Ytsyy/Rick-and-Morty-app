@@ -59,8 +59,10 @@ class AuthViewImp: UIView, AuthView {
         labelView.layer.shadowPath = shadowPath.cgPath
 
         loginTextField.setLeftPaddingInTextfield(padding: 16)
+        loginTextField.backgroundColor = UIColor(named: "grayBackgroundAuthTextField")
 
         passwordTextField.setLeftPaddingInTextfield(padding: 16)
+        passwordTextField.backgroundColor = UIColor(named: "grayBackgroundAuthTextField")
 
         implementBasicViewShadowSettings(loginButton)
         loginButton.layer.cornerRadius = 10
