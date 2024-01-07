@@ -19,18 +19,14 @@ class LocationCell: UITableViewCell {
     }
 
     @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var locationTypeLabel: UILabel!
+    @IBOutlet private weak var populationLabel: UILabel!
 
-    //override func awakeFromNib() {
-     //   super.awakeFromNib()
-        // Initialization code
-    //}
+    // MARK: Private methods
 
-
-    //MARK: Private methods
-
-    private func update(data: LocationCellData){
+    private func update(data: LocationCellData) {
         nameLabel.text = data.name
-
+        locationTypeLabel.text = data.type
+        populationLabel.text = "Население: \(data.population)"
     }
-
 }

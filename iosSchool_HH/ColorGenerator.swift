@@ -94,10 +94,6 @@ class ColorGenerator: ColorGeneratorProtocol {
         }
     }
 
-
-
-
-
 class Palette<CustomColor> {
     let colors: [CustomColor]
 

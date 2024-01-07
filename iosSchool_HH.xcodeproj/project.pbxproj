@@ -40,7 +40,6 @@
 		3F0712F22B025CB700B98A82 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712F12B025CB700B98A82 /* ApiError.swift */; };
 		3F0712F42B02601900B98A82 /* AuthApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712F32B02601900B98A82 /* AuthApiClient.swift */; };
 		3F0712F82B0640A900B98A82 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712F72B0640A900B98A82 /* BaseViewController.swift */; };
-		3F0712FB2B0642E800B98A82 /* AuthViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0712FA2B0642E800B98A82 /* AuthViewImp.xib */; };
 		3F07131B2B0DF18700B98A82 /* RegistrationApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F07131A2B0DF18700B98A82 /* RegistrationApiClient.swift */; };
 		3F07131F2B0E180A00B98A82 /* LocationDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F07131E2B0E180A00B98A82 /* LocationDataProvider.swift */; };
 		3F0713212B0E181E00B98A82 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713202B0E181E00B98A82 /* LocationViewController.swift */; };
@@ -63,12 +62,10 @@
 		3F07136B2B14C25F00B98A82 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F07136A2B14C25F00B98A82 /* LocationView.swift */; };
 		3F07136D2B14D18300B98A82 /* LocationViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F07136C2B14D18300B98A82 /* LocationViewData.swift */; };
 		3F0713712B14D1FC00B98A82 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F07136F2B14D1FC00B98A82 /* LocationCell.swift */; };
-		3F0713722B14D1FC00B98A82 /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0713702B14D1FC00B98A82 /* LocationCell.xib */; };
 		3F0713742B14D4D900B98A82 /* LocationCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713732B14D4D900B98A82 /* LocationCellData.swift */; };
 		3F0713772B14D7AD00B98A82 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713762B14D7AD00B98A82 /* NSObject+ClassName.swift */; };
 		3F07137A2B17208C00B98A82 /* UITextField+LeftPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713792B17208C00B98A82 /* UITextField+LeftPadding.swift */; };
 		3F07137D2B173CE500B98A82 /* SplashViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F07137C2B173CE500B98A82 /* SplashViewImp.xib */; };
-		3F07137F2B18BB9E00B98A82 /* NewAuthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F07137E2B18BB9E00B98A82 /* NewAuthView.xib */; };
 		3F0713822B18CC7100B98A82 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713812B18CC7100B98A82 /* ImageService.swift */; };
 		3F0713952B21F41500B98A82 /* CoreNibReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713942B21F41400B98A82 /* CoreNibReusable.swift */; };
 		3F0713972B21F43F00B98A82 /* CoreCellInputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713962B21F43F00B98A82 /* CoreCellInputData.swift */; };
@@ -103,6 +100,13 @@
 		3F0713F92B2B42FC00B98A82 /* PersonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713F72B2B42FC00B98A82 /* PersonHeaderView.swift */; };
 		3F0713FA2B2B42FC00B98A82 /* PersonHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0713F82B2B42FC00B98A82 /* PersonHeaderView.xib */; };
 		3F0713FC2B2B438300B98A82 /* PersonHeaderViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0713FB2B2B438300B98A82 /* PersonHeaderViewData.swift */; };
+		3F07143A2B38320C00B98A82 /* AuthViewImp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0714392B38320C00B98A82 /* AuthViewImp.xib */; };
+		3F07143D2B389B9700B98A82 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F07143C2B389B9700B98A82 /* BaseTextField.swift */; };
+		3F0714412B394EE700B98A82 /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F0714402B394EE700B98A82 /* LocationCell.xib */; };
+		3FA03B252B3C67BA00C5523C /* UserProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA03B242B3C67BA00C5523C /* UserProfileAssembly.swift */; };
+		3FA03B272B3C691D00C5523C /* UserProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA03B262B3C691D00C5523C /* UserProfileCoordinator.swift */; };
+		3FA03B292B3C6CB200C5523C /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA03B282B3C6CB200C5523C /* UserProfileViewController.swift */; };
+		3FA03B2B2B3C6DB600C5523C /* UserProfileDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA03B2A2B3C6DB600C5523C /* UserProfileDataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -141,7 +145,6 @@
 		3F0712F12B025CB700B98A82 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		3F0712F32B02601900B98A82 /* AuthApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApiClient.swift; sourceTree = "<group>"; };
 		3F0712F72B0640A900B98A82 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		3F0712FA2B0642E800B98A82 /* AuthViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewImp.xib; sourceTree = "<group>"; };
 		3F07131A2B0DF18700B98A82 /* RegistrationApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationApiClient.swift; sourceTree = "<group>"; };
 		3F07131E2B0E180A00B98A82 /* LocationDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataProvider.swift; sourceTree = "<group>"; };
 		3F0713202B0E181E00B98A82 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
@@ -162,12 +165,10 @@
 		3F07136A2B14C25F00B98A82 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		3F07136C2B14D18300B98A82 /* LocationViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewData.swift; sourceTree = "<group>"; };
 		3F07136F2B14D1FC00B98A82 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
-		3F0713702B14D1FC00B98A82 /* LocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
 		3F0713732B14D4D900B98A82 /* LocationCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCellData.swift; sourceTree = "<group>"; };
 		3F0713762B14D7AD00B98A82 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 		3F0713792B17208C00B98A82 /* UITextField+LeftPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+LeftPadding.swift"; sourceTree = "<group>"; };
 		3F07137C2B173CE500B98A82 /* SplashViewImp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewImp.xib; sourceTree = "<group>"; };
-		3F07137E2B18BB9E00B98A82 /* NewAuthView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewAuthView.xib; sourceTree = "<group>"; };
 		3F0713812B18CC7100B98A82 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		3F0713942B21F41400B98A82 /* CoreNibReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreNibReusable.swift; sourceTree = "<group>"; };
 		3F0713962B21F43F00B98A82 /* CoreCellInputData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreCellInputData.swift; sourceTree = "<group>"; };
@@ -201,6 +202,13 @@
 		3F0713F72B2B42FC00B98A82 /* PersonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonHeaderView.swift; sourceTree = "<group>"; };
 		3F0713F82B2B42FC00B98A82 /* PersonHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonHeaderView.xib; sourceTree = "<group>"; };
 		3F0713FB2B2B438300B98A82 /* PersonHeaderViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonHeaderViewData.swift; sourceTree = "<group>"; };
+		3F0714392B38320C00B98A82 /* AuthViewImp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthViewImp.xib; sourceTree = "<group>"; };
+		3F07143C2B389B9700B98A82 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
+		3F0714402B394EE700B98A82 /* LocationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
+		3FA03B242B3C67BA00C5523C /* UserProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileAssembly.swift; sourceTree = "<group>"; };
+		3FA03B262B3C691D00C5523C /* UserProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCoordinator.swift; sourceTree = "<group>"; };
+		3FA03B282B3C6CB200C5523C /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		3FA03B2A2B3C6DB600C5523C /* UserProfileDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +266,7 @@
 		3F0712BB2AF9224600B98A82 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3FA03B232B3C667C00C5523C /* UserProfile */,
 				3F0713B82B2B224400B98A82 /* Person */,
 				3F07132A2B0E31A400B98A82 /* Character */,
 				3F07131C2B0E17B500B98A82 /* Location */,
@@ -348,8 +357,7 @@
 		3F0712F92B0642C100B98A82 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				3F0712FA2B0642E800B98A82 /* AuthViewImp.xib */,
-				3F07137E2B18BB9E00B98A82 /* NewAuthView.xib */,
+				3F0714392B38320C00B98A82 /* AuthViewImp.xib */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -397,7 +405,7 @@
 			isa = PBXGroup;
 			children = (
 				3F07136F2B14D1FC00B98A82 /* LocationCell.swift */,
-				3F0713702B14D1FC00B98A82 /* LocationCell.xib */,
+				3F0714402B394EE700B98A82 /* LocationCell.xib */,
 				3F0713732B14D4D900B98A82 /* LocationCellData.swift */,
 			);
 			path = Subviews;
@@ -434,6 +442,7 @@
 		3F0713932B21F3D100B98A82 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				3F07143B2B389B6A00B98A82 /* UIElement */,
 				3F0713A22B21FB6A00B98A82 /* CollectionView */,
 			);
 			path = UIKit;
@@ -492,6 +501,25 @@
 				3F0713FB2B2B438300B98A82 /* PersonHeaderViewData.swift */,
 			);
 			path = Subview;
+			sourceTree = "<group>";
+		};
+		3F07143B2B389B6A00B98A82 /* UIElement */ = {
+			isa = PBXGroup;
+			children = (
+				3F07143C2B389B9700B98A82 /* BaseTextField.swift */,
+			);
+			path = UIElement;
+			sourceTree = "<group>";
+		};
+		3FA03B232B3C667C00C5523C /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				3FA03B242B3C67BA00C5523C /* UserProfileAssembly.swift */,
+				3FA03B262B3C691D00C5523C /* UserProfileCoordinator.swift */,
+				3FA03B282B3C6CB200C5523C /* UserProfileViewController.swift */,
+				3FA03B2A2B3C6DB600C5523C /* UserProfileDataProvider.swift */,
+			);
+			path = UserProfile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -568,12 +596,11 @@
 				3F0713F22B2B3C2A00B98A82 /* PersonEpisodeCell.xib in Resources */,
 				3F0713B02B22043D00B98A82 /* CharacterCell.xib in Resources */,
 				3F07135E2B11D12300B98A82 /* RegistrationViewImp.xib in Resources */,
-				3F07137F2B18BB9E00B98A82 /* NewAuthView.xib in Resources */,
+				3F0714412B394EE700B98A82 /* LocationCell.xib in Resources */,
+				3F07143A2B38320C00B98A82 /* AuthViewImp.xib in Resources */,
 				3F07129A2AE11D2B00B98A82 /* LaunchScreen.storyboard in Resources */,
 				3F0712972AE11D2B00B98A82 /* Assets.xcassets in Resources */,
 				3F0713EA2B2B311900B98A82 /* PersonPhotoCell.xib in Resources */,
-				3F0713722B14D1FC00B98A82 /* LocationCell.xib in Resources */,
-				3F0712FB2B0642E800B98A82 /* AuthViewImp.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,6 +637,7 @@
 				3F0713992B21F49700B98A82 /* CoreCellView.swift in Sources */,
 				3F0713232B0E197D00B98A82 /* LocationApiClient.swift in Sources */,
 				3F07139B2B21F55800B98A82 /* CoreReusableView.swift in Sources */,
+				3FA03B252B3C67BA00C5523C /* UserProfileAssembly.swift in Sources */,
 				3F0713AF2B22043D00B98A82 /* CharacterCell.swift in Sources */,
 				3F0713952B21F41500B98A82 /* CoreNibReusable.swift in Sources */,
 				3F0713F92B2B42FC00B98A82 /* PersonHeaderView.swift in Sources */,
@@ -617,8 +645,10 @@
 				3F07136B2B14C25F00B98A82 /* LocationView.swift in Sources */,
 				3F0712F82B0640A900B98A82 /* BaseViewController.swift in Sources */,
 				3F0713552B105CE200B98A82 /* RootTabBar.swift in Sources */,
+				3FA03B272B3C691D00C5523C /* UserProfileCoordinator.swift in Sources */,
 				3F0712E92B025A4400B98A82 /* TokenResponse.swift in Sources */,
 				3F0713A42B21FCD300B98A82 /* Section.swift in Sources */,
+				3FA03B292B3C6CB200C5523C /* UserProfileViewController.swift in Sources */,
 				3F0712CF2AFD131D00B98A82 /* SplashView.swift in Sources */,
 				3F07132E2B0E320E00B98A82 /* CharacterCoordinator.swift in Sources */,
 				3F0712DC2AFE3C2F00B98A82 /* RegistrationCoordinator.swift in Sources */,
@@ -635,6 +665,7 @@
 				3F0713A82B21FFB200B98A82 /* CharacterView.swift in Sources */,
 				3F07139D2B21F5D500B98A82 /* StorageManager.swift in Sources */,
 				3F0713C32B2B226000B98A82 /* PersonViewController.swift in Sources */,
+				3F07143D2B389B9700B98A82 /* BaseTextField.swift in Sources */,
 				3F0712D32AFD141B00B98A82 /* SplashCoordinator.swift in Sources */,
 				3F0713C52B2B226000B98A82 /* PersonAssembly.swift in Sources */,
 				3F0713772B14D7AD00B98A82 /* NSObject+ClassName.swift in Sources */,
@@ -650,6 +681,7 @@
 				3F0713212B0E181E00B98A82 /* LocationViewController.swift in Sources */,
 				3F07131F2B0E180A00B98A82 /* LocationDataProvider.swift in Sources */,
 				3F0713972B21F43F00B98A82 /* CoreCellInputData.swift in Sources */,
+				3FA03B2B2B3C6DB600C5523C /* UserProfileDataProvider.swift in Sources */,
 				3F07128E2AE11D2800B98A82 /* AppDelegate.swift in Sources */,
 				3F0713822B18CC7100B98A82 /* ImageService.swift in Sources */,
 				3F0712C22AF9242B00B98A82 /* AuthViewData.swift in Sources */,

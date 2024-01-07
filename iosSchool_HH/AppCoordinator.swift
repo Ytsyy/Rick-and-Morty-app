@@ -15,7 +15,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
     func start(window: UIWindow?) {
         self.window = window
 
-        let coordinator = assembly.splashCoordinator { [weak self] in
+        let coordinator = assembly.authCoordinator { [weak self] in
             self?.authBootstrap()
         }
         setRoot(
@@ -25,9 +25,9 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
 
     private func authBootstrap() {
         guard assembly.storageManager.getToken() == nil else {
-                    setTabVC()
-                    return
-                }
+            setTabVC()
+            return
+        }
 
         let authCoordinator = assembly.authCoordinator { [weak self] in
             DispatchQueue.main.async {
@@ -40,18 +40,18 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
     private func setTabVC() {
         let tabVC = assembly.rootTabBarController()
 
-         /*let locationsCoord = assembly.locationsCoordinator()
-        // let cabinetCoord = assembly.cabinetCoodrinator()
-        guard let locationsVC = locationsCoord.make(), let cabinetVC = cabinetCoord.make() else {
+        let locationsCoord = assembly.locationCoordinator()
+        let userProfileCoord = assembly.userProfileCoordinator()
+        guard let locationsVC = locationsCoord.make(), let userProfileVC = userProfileCoord.make() else {
             return
         }
-        let navVC = assembly.rootNavigationController()
-        navVC.setViewControllers([locationsVC], animated: false)
-        navVC.tabBarItem = RootTab.locations.tabBarItem
 
-        // cabinetVC.tabBarItem = RootTab.cabinet.tabBarItem
-        tabVC.setViewControllers([navVC, cabinetVC], animated: false)
-        setRoot(viewController: tabVC)*/
+        let navVC1 = assembly.rootNavigationController()
+        navVC1.setViewControllers([locationsVC], animated: false)
+        navVC1.tabBarItem = RootTab.locations.tabBarItem
+
+        tabVC.setViewControllers([navVC1, userProfileVC], animated: false)
+        setRoot(viewController: tabVC)
     }
 
     private func setRoot(viewController: UIViewController?) {

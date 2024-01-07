@@ -21,7 +21,7 @@ protocol AuthViewDelegate: AnyObject {
 class AuthViewImp: UIView, AuthView {
 
     @IBOutlet private var scrollView: UIScrollView!
-    @IBOutlet private var imageView: UIImageView!
+    @IBOutlet private var backgroundImageView: UIImageView!
     @IBOutlet private var labelView: UIView!
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var subTitleLabel: UILabel!
@@ -41,19 +41,35 @@ class AuthViewImp: UIView, AuthView {
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(viewDidTap))
         addGestureRecognizer(recognizer)
 
-        imageView.image = UIImage(named: "auth-background")
-        imageView.contentMode = .scaleAspectFill
+        backgroundImageView.contentMode = .scaleAspectFill
+        backgroundImageView.backgroundColor = UIColor(named: "grayAuthBackground")
 
         labelView.layer.cornerRadius = 10
-        labelView.layer.masksToBounds = true
-        labelView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        labelView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.55).cgColor
         labelView.layer.shadowOpacity = 1
-        labelView.layer.shadowRadius = 10
-        labelView.layer.shadowOffset = CGSize(width: 0, height: 8)
-        labelView.backgroundColor = UIColor(red: 196, green: 196, blue: 196, alpha: 0.65)
+        labelView.layer.shadowRadius = 5
+        labelView.layer.shadowOffset = CGSize(width: 0, height: 5)
+        let shadowRect = CGRect(
+            x: 0, y: labelView.bounds.height - 5.0,
+            width: labelView.bounds.width, height: 5.0
+        )
+        let shadowPath = UIBezierPath(rect: shadowRect)
+        labelView.layer.shadowPath = shadowPath.cgPath
+        labelView.backgroundColor = UIColor(named: "grayAuthLabel")
+
+        loginTextField.setLeftPaddingInTextfield(padding: 16)
+        loginTextField.backgroundColor = UIColor(named: "grayBackgroundAuthTextField")
+
+        passwordTextField.setLeftPaddingInTextfield(padding: 16)
+        passwordTextField.backgroundColor = UIColor(named: "grayBackgroundAuthTextField")
+
+        implementBasicViewShadowSettings(loginButton)
+        loginButton.layer.cornerRadius = 10
+
+        implementBasicViewShadowSettings(registrationButton)
+        registrationButton.layer.cornerRadius = 10
 
         registrationButton.addTarget(self, action: #selector(registrationDidTap), for: .touchUpInside)
-        registrationButton.backgroundColor = UIColor(named: "button-color")
 
         NotificationCenter.default.addObserver(
             self,
@@ -69,7 +85,14 @@ class AuthViewImp: UIView, AuthView {
         )
     }
 
-    // MARK: - Private
+    func implementBasicViewShadowSettings<T: UIView>(_ view: T) {
+        view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        view.layer.shadowOpacity = 1
+        view.layer.shadowRadius = 8
+        view.layer.shadowOffset = CGSize(width: 0, height: 5)
+    }
+
+    // MARK: - Private methods
 
     @IBAction
     private func loginDidTap(sender: UIButton) {
@@ -82,7 +105,7 @@ class AuthViewImp: UIView, AuthView {
         )
     }
 
-    @objc
+    @IBAction
     private func registrationDidTap() {
         delegate?.registrationButtonDidTap()
     }
@@ -95,7 +118,7 @@ class AuthViewImp: UIView, AuthView {
         guard let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
             return
         }
-        let keyboardHeight = keyboardFrame.cgRectValue.height + 20
+        let keyboardHeight = keyboardFrame.cgRectValue.height
         scrollView.contentInset.bottom = keyboardHeight
         scrollView.verticalScrollIndicatorInsets.bottom = keyboardHeight
     }

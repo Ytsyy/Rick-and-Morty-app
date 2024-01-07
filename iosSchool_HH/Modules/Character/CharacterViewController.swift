@@ -54,7 +54,7 @@ final class CharacterViewController< View: CharacterView>: BaseViewController<Vi
                         character: character,
                         isLoading: true,
                         image: nil,
-                        selectClosure: nil //selectClosure
+                        selectClosure: nil 
                     ))
                 }
                 self.imageService.getImage(url: character.image, completion: { image in

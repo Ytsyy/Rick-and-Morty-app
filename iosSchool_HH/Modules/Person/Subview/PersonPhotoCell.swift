@@ -10,7 +10,6 @@ import UIKit
 
 class PersonPhotoCell: UICollectionViewCell, CoreCellView {
 
-
     static func layoutSection() -> NSCollectionLayoutSection {
             let itemSize = NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1),
