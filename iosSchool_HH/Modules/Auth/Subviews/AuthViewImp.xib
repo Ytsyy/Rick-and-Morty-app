@@ -17,7 +17,6 @@
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="AuthBackground" translatesAutoresizingMaskIntoConstraints="NO" id="aa8-Ft-1BK">
                     <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="displayP3"/>
                 </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NSs-zL-g24">
                     <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>

@@ -41,13 +41,11 @@ class AuthViewImp: UIView, AuthView {
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(viewDidTap))
         addGestureRecognizer(recognizer)
 
-        registrationButton.addTarget(self, action: #selector(registrationDidTap), for: .touchUpInside)
-
         backgroundImageView.contentMode = .scaleAspectFill
+        backgroundImageView.backgroundColor = UIColor(named: "grayAuthBackground")
 
-        labelView.backgroundColor = UIColor(named: "AuthLabelBackground")
         labelView.layer.cornerRadius = 10
-        labelView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
+        labelView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.55).cgColor
         labelView.layer.shadowOpacity = 1
         labelView.layer.shadowRadius = 5
         labelView.layer.shadowOffset = CGSize(width: 0, height: 5)
@@ -57,6 +55,7 @@ class AuthViewImp: UIView, AuthView {
         )
         let shadowPath = UIBezierPath(rect: shadowRect)
         labelView.layer.shadowPath = shadowPath.cgPath
+        labelView.backgroundColor = UIColor(named: "grayAuthLabel")
 
         loginTextField.setLeftPaddingInTextfield(padding: 16)
         loginTextField.backgroundColor = UIColor(named: "grayBackgroundAuthTextField")
@@ -69,6 +68,8 @@ class AuthViewImp: UIView, AuthView {
 
         implementBasicViewShadowSettings(registrationButton)
         registrationButton.layer.cornerRadius = 10
+
+        registrationButton.addTarget(self, action: #selector(registrationDidTap), for: .touchUpInside)
 
         NotificationCenter.default.addObserver(
             self,
@@ -91,7 +92,7 @@ class AuthViewImp: UIView, AuthView {
         view.layer.shadowOffset = CGSize(width: 0, height: 5)
     }
 
-    // MARK: - Private
+    // MARK: - Private methods
 
     @IBAction
     private func loginDidTap(sender: UIButton) {
