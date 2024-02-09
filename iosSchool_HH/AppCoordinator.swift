@@ -37,6 +37,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
     }
 
     private func setTabVC() {
+        let navVC = assembly.rootNavigationController()
         let tabVC = assembly.rootTabBarController()
 
         let locationsCoord = assembly.locationCoordinator()
