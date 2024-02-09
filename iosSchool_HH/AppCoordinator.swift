@@ -18,9 +18,8 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
         let coordinator = assembly.authCoordinator { [weak self] in
             self?.authBootstrap()
         }
-        setRoot(
-            viewController: coordinator.make()
-        )
+        setRoot(viewController: coordinator.make())
+
     }
 
     private func authBootstrap() {
@@ -41,16 +40,15 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
         let tabVC = assembly.rootTabBarController()
 
         let locationsCoord = assembly.locationCoordinator()
-        let userProfileCoord = assembly.userProfileCoordinator()
-        guard let locationsVC = locationsCoord.make(), let userProfileVC = userProfileCoord.make() else {
+        // let cabinetCoord = assembly.cabinetCoodrinator()
+        guard let locationsVC = locationsCoord.make() else {
+
             return
         }
 
-        let navVC1 = assembly.rootNavigationController()
-        navVC1.setViewControllers([locationsVC], animated: false)
-        navVC1.tabBarItem = RootTab.locations.tabBarItem
+        // cabinetVC.tabBarItem = RootTab.cabinet.tabBarItem
+        tabVC.setViewControllers([navVC], animated: false)
 
-        tabVC.setViewControllers([navVC1, userProfileVC], animated: false)
         setRoot(viewController: tabVC)
     }
 

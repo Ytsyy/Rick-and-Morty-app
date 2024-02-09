@@ -76,6 +76,7 @@ extension LocationViewImp: UITableViewDataSource {
         (cell as? LocationCell)?.data = viewData.cellsData[indexPath.row]
         return cell
     }
+
 }
 
 // MARK: UITableViewDelegate

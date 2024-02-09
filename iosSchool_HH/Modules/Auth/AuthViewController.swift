@@ -40,6 +40,9 @@ class AuthViewController<View: AuthView>: BaseViewController<View> {
 extension AuthViewController: AuthViewDelegate {
 
     func loginButtonDidTap(login: String, password: String) {
+        DispatchQueue.main.async {
+                        self.onOpenLogin?()
+                    }        /*
         HUD.show(.progress)
         dataProvider.auth(login: login, password: password) { [weak self] token, error in
             DispatchQueue.main.async {
@@ -53,10 +56,8 @@ extension AuthViewController: AuthViewDelegate {
             }
             self.storageManager.saveToken(token: token)
             self.storageManager.saveLastLoginDate()
-            DispatchQueue.main.async {
-                self.onOpenLogin?()
-            }
-        }
+        } */
+
     }
 
     func registrationButtonDidTap() {
