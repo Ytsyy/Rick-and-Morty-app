@@ -1,10 +1,3 @@
-//
-//  Episode.swift
-//  iosSchool_HH
-//
-//  Created by Maxim on 07.02.2024.
-//
-
 import Foundation
 
 struct Episode: Codable {
