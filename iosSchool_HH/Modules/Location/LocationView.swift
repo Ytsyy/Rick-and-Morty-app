@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol LocationView: UIView{
+protocol LocationView: UIView {
     var selectLocation: ((LocationCellData) -> Void)? { get set }
 
     func setView()
@@ -21,7 +21,7 @@ class LocationViewImp: UIView, LocationView {
     private var viewData: LocationViewData?
     private let tableView = UITableView()
 
-    func setView(){
+    func setView() {
         backgroundColor = .white
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
@@ -58,7 +58,6 @@ class LocationViewImp: UIView, LocationView {
         }
 }
 
-
 // MARK: - UITableViewDataSource
 
 extension LocationViewImp: UITableViewDataSource {
@@ -73,13 +72,14 @@ extension LocationViewImp: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: LocationCell.className) else {
             return UITableViewCell()
         }
+        cell.backgroundColor = .clear
         (cell as? LocationCell)?.data = viewData.cellsData[indexPath.row]
         return cell
     }
 
 }
 
-// MARK: UITableViewDeleggate
+// MARK: UITableViewDelegate
 
 extension LocationViewImp: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -19,7 +19,7 @@ class CharacterCell: UICollectionViewCell, CoreCellView {
         applyCellUISettings()
     }
 
-    static func layoutSection() -> NSCollectionLayoutSection? {
+    static func layoutSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.5),
             heightDimension: .absolute(167)

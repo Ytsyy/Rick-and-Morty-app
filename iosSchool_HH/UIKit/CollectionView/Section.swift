@@ -113,8 +113,10 @@ private extension Section {
             return nil
         }
         let layout = Cell.layoutSection()
-        layout?.boundarySupplementaryItems = [headerItem(env: env), footerItem(env: env)].compactMap { $0 }
+        layout.boundarySupplementaryItems = [headerItem(env: env), footerItem(env: env)].compactMap { $0 }
         return Cell.layoutSection()
+            .add(supplementaryItem: headerItem(env: env))
+            .add(supplementaryItem: footerItem(env: env))
     }
 
     func headerItem(env: NSCollectionLayoutEnvironment) -> NSCollectionLayoutBoundarySupplementaryItem? {

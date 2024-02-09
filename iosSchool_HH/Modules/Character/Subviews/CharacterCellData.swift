@@ -27,6 +27,7 @@ struct CharacterCellData: CoreCellInputData {
         name = character.name
         imageUrl = character.image
         description = character.gender.rawValue + " " + character.species
+
         episodes = character.episode
     }
 
@@ -37,6 +38,7 @@ struct CharacterCellData: CoreCellInputData {
         imageUrl = nil
         image = nil
         description = nil
+
         episodes = []
     }
 }

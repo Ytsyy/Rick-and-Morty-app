@@ -18,10 +18,14 @@ enum RootTab: Int {
             tag: self.rawValue
         )
         let appearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(named: "iceberg")
         appearance.stackedLayoutAppearance.selected.titleTextAttributes = [
-            .font: UIFont.systemFont(ofSize: 10)
+            .font: UIFont.systemFont(ofSize: 10),
+            NSAttributedString.Key.foregroundColor: UIColor.black
         ]
         tabBarItem.standardAppearance = appearance
+        tabBarItem.scrollEdgeAppearance = appearance
         return tabBarItem
     }
 
@@ -37,9 +41,9 @@ enum RootTab: Int {
     private var image: UIImage? {
         switch self {
         case .locations:
-            return UIImage(named: "locations")
+            return UIImage(named: "locationsRootTab")?.withRenderingMode(.alwaysOriginal)
         case .cabinet:
-            return UIImage(named: "cabinet")
+            return UIImage(named: "profileRootTab")?.withRenderingMode(.alwaysOriginal)
         }
     }
 }

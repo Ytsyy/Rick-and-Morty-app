@@ -24,6 +24,7 @@ class LocationCell: UITableViewCell {
     @IBOutlet private weak var chevron: UIImageView!
     @IBOutlet private weak var bottomLine: UIView!
 
+
     // MARK: Private methods
 
     private func update(data: LocationCellData) {

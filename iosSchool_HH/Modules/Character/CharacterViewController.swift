@@ -20,7 +20,7 @@ final class CharacterViewController< View: CharacterView>: BaseViewController<Vi
 
     init(dataProvider: CharacterDataProvider, data: LocationCellData, imageService: ImageService) {
         self.dataProvider = dataProvider
-        charactersUrlList = data.residents 
+        charactersUrlList = data.residents
         self.imageService = imageService
         super.init(nibName: nil, bundle: nil)
         title = "Жители локации \(data.name)"
@@ -47,6 +47,7 @@ final class CharacterViewController< View: CharacterView>: BaseViewController<Vi
         }
 
         charactersUrlList.enumerated().forEach { index, url in
+
             requestCharacter(url: url) { [weak self] character in
                 guard let self else {
                     return
@@ -56,7 +57,9 @@ final class CharacterViewController< View: CharacterView>: BaseViewController<Vi
                         character: character,
                         isLoading: true,
                         image: nil,
+
                         selectClosure: selectClosure
+
                     ))
                 }
                 self.imageService.getImage(url: character.image, completion: { [weak self] image in
@@ -71,7 +74,7 @@ final class CharacterViewController< View: CharacterView>: BaseViewController<Vi
                 })
             }
         }
-    }
+}
 
     // MARK: - Private func
     private func requestCharacter(url: String, completion: @escaping (Character) -> Void) {

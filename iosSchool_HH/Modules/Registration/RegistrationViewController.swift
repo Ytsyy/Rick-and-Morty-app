@@ -5,14 +5,15 @@
 //  Created by student on 10.11.2023.
 //
 
-import Foundation
 import UIKit
+import SPIndicator
+import PKHUD
 
 class RegistrationViewController<View: RegistrationView>: BaseViewController<View> {
 
     private let dataProvider: RegistrationDataProvider
-    var onRegistrationSuccess: (() -> Void)?
     private let storageManager: StorageManager
+    var onRegistrationSuccess: (() -> Void)?
 
     init(dataProvider: RegistrationDataProvider, storageManager: StorageManager, onRegistrationSuccess: (() -> Void)?) {
         self.dataProvider = dataProvider
@@ -27,24 +28,44 @@ class RegistrationViewController<View: RegistrationView>: BaseViewController<Vie
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .lightGray
-        registration()
+
+        rootView.setView()
+        rootView.delegate = self
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        onRegistrationSuccess?()
-    }
 
-    func registration() {
-        dataProvider.registration(username: "MaximMarin5", password: "123456789") { [weak self] token, error in
-            guard let token = token else {
-                print("Нет токена")
+    }
+}
+
+// MARK: - RegistrationViewDelegate
+
+extension RegistrationViewController: RegistrationViewDelegate {
+    func registrationButtonDidTap(login: String, password: String, repeatPassword: String) {
+        guard password == repeatPassword else {
+                SPIndicator.present(title: "Пароли не совпадают", haptic: .error)
+            return
+        }
+
+        HUD.show(.progress)
+        dataProvider.registration(username: login, password: password) { [weak self] token, error in
+            DispatchQueue.main.async {
+                HUD.hide()
+            }
+            guard let self, let token else {
+                DispatchQueue.main.async {
+                    SPIndicator.present(title: error?.rawValue ?? "", haptic: .error)
+                }
                 return
             }
-            print("Токен: \(token)")
-            print(error?.rawValue ?? "Нет ошибки")
-            self?.storageManager.saveLastLoginDate()
+            self.storageManager.saveToken(token: token)
+            self.storageManager.saveLastLoginDate()
+            self.onRegistrationSuccess?()
         }
+    }
+
+    func backButtonDidTap() {
+        dismiss(animated: true)
     }
 }
