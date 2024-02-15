@@ -24,12 +24,17 @@ class LocationCell: UITableViewCell {
     @IBOutlet private weak var chevron: UIImageView!
     @IBOutlet private weak var bottomLine: UIView!
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
 
+        backgroundColor = .clear
+    }
+    
     // MARK: Private methods
 
     private func update(data: LocationCellData) {
-        //nameLabel.text = data.name
-        //locationTypeLabel.text = data.type
-        //populationLabel.text = "Население: \(data.population)"
+        nameLabel.text = data.name
+        locationTypeLabel.text = data.type
+        populationLabel.text = data.population
     }
 }
