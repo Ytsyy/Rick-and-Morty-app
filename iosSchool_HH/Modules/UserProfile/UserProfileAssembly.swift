@@ -8,22 +8,21 @@
 import Foundation
 
 protocol UserProfileAssembly {
-    func userProfileVC() //-> UserProfileViewController
-    //func userProfileDataProvider() -> userProfileDataProvider
-    func userProfileCoordinator() -> UserProfileCoordinator
+    func UserProfileVC(onProfileLogout: (() -> Void)?) -> UserProfileViewController<UserProfileViewImp>
+    func UserProfileDataProvider() -> UserProfileDataProvider
+    func UserProfileCoordinator(onProfileLogout: (() -> Void)?) -> UserProfileCoordinator
 }
 
-extension Assembly: UserProfileAssembly {
-    func userProfileVC() /*-> UserProfileViewController */{
-        //.init(dataProvider: UserProfileDataProvider())
-        return
+extension Assembly: ProfileAssembly {
+    func UserpPofileVC(onProfileLogout: (() -> Void)?) -> UserProfileViewController<ProfileViewImp> {
+        .init(dataProvider: UserProfileDataProvider(), storageManager: storageManager, onProfileLogout: onProfileLogout)
     }
-/*
-    func userProfileDataProvider() -> userProfileDataProvider {
+
+    func UserProfileDataProvider() -> ProfileDataProvider {
         userProfileDataProviderImp(apiClient: apiClient)
     }
-*/
-    func userProfileCoordinator() -> UserProfileCoordinator {
-        UserProfileCoordinator(assembly: self, context: .init())
+
+    func UserPprofileCoordinator(onProfileLogout: (() -> Void)?) -> UserProfileCoordinator {
+        UserProfileCoordinator(assembly: self, context: .init(onProfileLogout: onProfileLogout))
     }
 }
