@@ -13,16 +13,16 @@ protocol UserProfileAssembly {
     func UserProfileCoordinator(onProfileLogout: (() -> Void)?) -> UserProfileCoordinator
 }
 
-extension Assembly: ProfileAssembly {
-    func UserpPofileVC(onProfileLogout: (() -> Void)?) -> UserProfileViewController<ProfileViewImp> {
+extension Assembly: UserProfileAssembly {
+    func UserpPofileVC(onProfileLogout: (() -> Void)?) -> UserProfileViewController<UserProfileViewImp> {
         .init(dataProvider: UserProfileDataProvider(), storageManager: storageManager, onProfileLogout: onProfileLogout)
     }
 
-    func UserProfileDataProvider() -> ProfileDataProvider {
-        userProfileDataProviderImp(apiClient: apiClient)
+    func UserProfileDataProvider() -> UserProfileDataProvider {
+        UserProfileDataProviderImp(apiClient: apiClient)
     }
 
     func UserPprofileCoordinator(onProfileLogout: (() -> Void)?) -> UserProfileCoordinator {
-        UserProfileCoordinator(assembly: self, context: .init(onProfileLogout: onProfileLogout))
+        UserProfileCoordinator(assembly: self, context: .init(onUserProfileLogout: onUserProfileLogout))
     }
 }

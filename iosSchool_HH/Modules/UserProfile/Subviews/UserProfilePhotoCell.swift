@@ -29,7 +29,7 @@ final class UserProfilePhotoCell: UICollectionViewCell, CoreCellView {
     }
 
     static func layoutSection() -> NSCollectionLayoutSection {
-        let sizeCell = ProfileSizeCell(screenSize: (PersonSizeCell.screenHeight > 800 ? .bigSize : .smallSize))
+        let sizeCell = UserProfileSizeCell(screenSize: (PersonSizeCell.screenHeight > 800 ? .bigSize : .smallSize))
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
             heightDimension: .fractionalHeight(1)
