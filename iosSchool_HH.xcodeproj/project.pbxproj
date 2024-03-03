@@ -99,7 +99,7 @@
 		3FA03B272B3C691D00C5523C /* UserProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA03B262B3C691D00C5523C /* UserProfileCoordinator.swift */; };
 		3FA03B292B3C6CB200C5523C /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA03B282B3C6CB200C5523C /* UserProfileViewController.swift */; };
 		3FA03B2B2B3C6DB600C5523C /* UserProfileDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA03B2A2B3C6DB600C5523C /* UserProfileDataProvider.swift */; };
-		941261CE2B85C2A100361141 /* ProfileApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941261CD2B85C2A100361141 /* ProfileApiClient.swift */; };
+		941261CE2B85C2A100361141 /* UserProfileApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941261CD2B85C2A100361141 /* UserProfileApiClient.swift */; };
 		941261D12B85D9FA00361141 /* UserProfileDateColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941261D02B85D9FA00361141 /* UserProfileDateColorCell.swift */; };
 		941261D32B85DA4500361141 /* UserProfileColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 941261D22B85DA4500361141 /* UserProfileColorCell.xib */; };
 		941261D52B85DA8C00361141 /* UserProfileDateColorCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941261D42B85DA8C00361141 /* UserProfileDateColorCellData.swift */; };
@@ -113,6 +113,9 @@
 		941261E72B85EA8D00361141 /* UserProfileUsernameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941261E62B85EA8D00361141 /* UserProfileUsernameCell.swift */; };
 		941261E92B85EACE00361141 /* UserProfileSizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941261E82B85EACE00361141 /* UserProfileSizeCell.swift */; };
 		941261EB2B85F21400361141 /* UserProfilePhotoCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941261EA2B85F21400361141 /* UserProfilePhotoCellData.swift */; };
+		9447CC022B8F067200AA35CA /* PersonSizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447CC012B8F067200AA35CA /* PersonSizeCell.swift */; };
+		9447CC042B91C31C00AA35CA /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447CC032B91C31C00AA35CA /* CustomTextField.swift */; };
+		9447CC062B92F7B800AA35CA /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447CC052B92F7B800AA35CA /* UserProfile.swift */; };
 		9449EC862B8C413D00756CA4 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449EC852B8C413D00756CA4 /* UserProfileView.swift */; };
 		9449EC882B8C44EA00756CA4 /* UserProfileViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449EC872B8C44EA00756CA4 /* UserProfileViewData.swift */; };
 		9449EC8A2B8C45B700756CA4 /* UserProfileButtonCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449EC892B8C45B700756CA4 /* UserProfileButtonCellData.swift */; };
@@ -220,7 +223,7 @@
 		3FA03B262B3C691D00C5523C /* UserProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCoordinator.swift; sourceTree = "<group>"; };
 		3FA03B282B3C6CB200C5523C /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		3FA03B2A2B3C6DB600C5523C /* UserProfileDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDataProvider.swift; sourceTree = "<group>"; };
-		941261CD2B85C2A100361141 /* ProfileApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileApiClient.swift; sourceTree = "<group>"; };
+		941261CD2B85C2A100361141 /* UserProfileApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileApiClient.swift; sourceTree = "<group>"; };
 		941261D02B85D9FA00361141 /* UserProfileDateColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDateColorCell.swift; sourceTree = "<group>"; };
 		941261D22B85DA4500361141 /* UserProfileColorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileColorCell.xib; sourceTree = "<group>"; };
 		941261D42B85DA8C00361141 /* UserProfileDateColorCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDateColorCellData.swift; sourceTree = "<group>"; };
@@ -234,6 +237,9 @@
 		941261E62B85EA8D00361141 /* UserProfileUsernameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileUsernameCell.swift; sourceTree = "<group>"; };
 		941261E82B85EACE00361141 /* UserProfileSizeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileSizeCell.swift; sourceTree = "<group>"; };
 		941261EA2B85F21400361141 /* UserProfilePhotoCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePhotoCellData.swift; sourceTree = "<group>"; };
+		9447CC012B8F067200AA35CA /* PersonSizeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonSizeCell.swift; sourceTree = "<group>"; };
+		9447CC032B91C31C00AA35CA /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		9447CC052B92F7B800AA35CA /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		9449EC852B8C413D00756CA4 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		9449EC872B8C44EA00756CA4 /* UserProfileViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewData.swift; sourceTree = "<group>"; };
 		9449EC892B8C45B700756CA4 /* UserProfileButtonCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileButtonCellData.swift; sourceTree = "<group>"; };
@@ -361,6 +367,7 @@
 			children = (
 				3F0712E82B025A4400B98A82 /* TokenResponse.swift */,
 				94A5D3002B737CC400BF478D /* Episode.swift */,
+				9447CC052B92F7B800AA35CA /* UserProfile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -376,7 +383,7 @@
 				3F0713222B0E197D00B98A82 /* LocationApiClient.swift */,
 				3F0713332B0E32B100B98A82 /* CharacterApiClient.swift */,
 				3F0713C72B2B228800B98A82 /* PersonApiClient.swift */,
-				941261CD2B85C2A100361141 /* ProfileApiClient.swift */,
+				941261CD2B85C2A100361141 /* UserProfileApiClient.swift */,
 			);
 			path = ApiClient;
 			sourceTree = "<group>";
@@ -538,6 +545,7 @@
 				3F0713F72B2B42FC00B98A82 /* PersonHeaderView.swift */,
 				3F0713F82B2B42FC00B98A82 /* PersonHeaderView.xib */,
 				3F0713FB2B2B438300B98A82 /* PersonHeaderViewData.swift */,
+				9447CC012B8F067200AA35CA /* PersonSizeCell.swift */,
 			);
 			path = Subview;
 			sourceTree = "<group>";
@@ -546,6 +554,7 @@
 			isa = PBXGroup;
 			children = (
 				3F07143C2B389B9700B98A82 /* BaseTextField.swift */,
+				9447CC032B91C31C00AA35CA /* CustomTextField.swift */,
 			);
 			path = UIElement;
 			sourceTree = "<group>";
@@ -704,6 +713,7 @@
 			files = (
 				9449EC8A2B8C45B700756CA4 /* UserProfileButtonCellData.swift in Sources */,
 				3F0713C82B2B228800B98A82 /* PersonApiClient.swift in Sources */,
+				9447CC062B92F7B800AA35CA /* UserProfile.swift in Sources */,
 				3F0713992B21F49700B98A82 /* CoreCellView.swift in Sources */,
 				3F0713232B0E197D00B98A82 /* LocationApiClient.swift in Sources */,
 				3F07139B2B21F55800B98A82 /* CoreReusableView.swift in Sources */,
@@ -735,7 +745,7 @@
 				3F07136D2B14D18300B98A82 /* LocationViewData.swift in Sources */,
 				3F0713272B0E1CF700B98A82 /* LocationAssembly.swift in Sources */,
 				3F0713362B0E350800B98A82 /* Character.swift in Sources */,
-				941261CE2B85C2A100361141 /* ProfileApiClient.swift in Sources */,
+				941261CE2B85C2A100361141 /* UserProfileApiClient.swift in Sources */,
 				3F0712A92AEAA5EE00B98A82 /* Assembly.swift in Sources */,
 				3F0712DA2AFE3A2B00B98A82 /* RegistrationAssembly.swift in Sources */,
 				3F0713A82B21FFB200B98A82 /* CharacterView.swift in Sources */,
@@ -754,6 +764,7 @@
 				3F0712F02B025B6400B98A82 /* NetworkConstants.swift in Sources */,
 				94A5D2FA2B7357FC00BF478D /* PersonCoordinator.swift in Sources */,
 				9449EC862B8C413D00756CA4 /* UserProfileView.swift in Sources */,
+				9447CC042B91C31C00AA35CA /* CustomTextField.swift in Sources */,
 				3F0713212B0E181E00B98A82 /* LocationViewController.swift in Sources */,
 				3F07131F2B0E180A00B98A82 /* LocationDataProvider.swift in Sources */,
 				94A5D3012B737CC400BF478D /* Episode.swift in Sources */,
@@ -786,6 +797,7 @@
 				94A5D2FF2B7357FC00BF478D /* PersonAssembly.swift in Sources */,
 				94A5D2FE2B7357FC00BF478D /* PersonDataProvider.swift in Sources */,
 				3F0712F22B025CB700B98A82 /* ApiError.swift in Sources */,
+				9447CC022B8F067200AA35CA /* PersonSizeCell.swift in Sources */,
 				3F0713B22B2204D000B98A82 /* CharacterCellData.swift in Sources */,
 				3F0713EE2B2B313F00B98A82 /* PersonPhotoCellData.swift in Sources */,
 				3F0712E72B0259C700B98A82 /* LocationsList.swift in Sources */,

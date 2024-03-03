@@ -35,7 +35,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
         let tabVC = assembly.rootTabBarController()
 
         let locationsCoord = assembly.locationCoordinator()
-        let userProfileCoord = assembly.UserprofileCoordinator {
+        let userProfileCoord = assembly.userProfileCoordinator {
                     self.authBootstrap()
                 }
         guard let locationsVC = locationsCoord.make(), let userProfileVC = userProfileCoord.make() else {

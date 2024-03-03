@@ -7,22 +7,25 @@
 
 import Foundation
 
+import Foundation
+
 protocol UserProfileAssembly {
-    func UserProfileVC(onProfileLogout: (() -> Void)?) -> UserProfileViewController<UserProfileViewImp>
-    func UserProfileDataProvider() -> UserProfileDataProvider
-    func UserProfileCoordinator(onProfileLogout: (() -> Void)?) -> UserProfileCoordinator
+    func userProfileVC(onUserProfileLogout: (() -> Void)?) -> UserProfileViewController<UserProfileViewImp>
+    func userProfileDataProvider() -> UserProfileDataProvider
+    func userProfileCoordinator(onUserProfileLogout: (() -> Void)?) -> UserProfileCoordinator
 }
 
 extension Assembly: UserProfileAssembly {
-    func UserpPofileVC(onProfileLogout: (() -> Void)?) -> UserProfileViewController<UserProfileViewImp> {
-        .init(dataProvider: UserProfileDataProvider(), storageManager: storageManager, onProfileLogout: onProfileLogout)
+    func userProfileVC(onUserProfileLogout: (() -> Void)?) -> UserProfileViewController<UserProfileViewImp> {
+        .init(dataProvider: userProfileDataProvider(), storageManager: storageManager, onProfileLogout: onUserProfileLogout)
     }
 
-    func UserProfileDataProvider() -> UserProfileDataProvider {
+    func userProfileDataProvider() -> UserProfileDataProvider {
         UserProfileDataProviderImp(apiClient: apiClient)
     }
 
-    func UserPprofileCoordinator(onProfileLogout: (() -> Void)?) -> UserProfileCoordinator {
+    func userProfileCoordinator(onUserProfileLogout: (() -> Void)?) -> UserProfileCoordinator {
         UserProfileCoordinator(assembly: self, context: .init(onUserProfileLogout: onUserProfileLogout))
     }
 }
+

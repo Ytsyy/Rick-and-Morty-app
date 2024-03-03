@@ -29,13 +29,13 @@ class UserProfileViewController<View: UserProfileView>: BaseViewController<View>
             showError()
             return
         }
-        dataProvider.profile(userId: user) { [weak self] profile, error in
-            guard let self, let profile, error == nil else {
+        dataProvider.userProfile(userId: user) { [weak self] userProfile, error in
+            guard let self, let userProfile, error == nil else {
                 self?.showError()
                 return
             }
 
-            update(username: profile.username)
+            update(username: userProfile.username)
         }
     }
 
