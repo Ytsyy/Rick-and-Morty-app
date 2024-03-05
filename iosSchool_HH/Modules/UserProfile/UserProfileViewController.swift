@@ -6,12 +6,12 @@ class UserProfileViewController<View: UserProfileView>: BaseViewController<View>
     private let dataProvider: UserProfileDataProvider
     private let storageManager: StorageManager
 
-    private var onProfileLogout: (() -> Void)?
+    private var onUserProfileLogout: (() -> Void)?
 
-    init(dataProvider: UserProfileDataProvider, storageManager: StorageManager, onProfileLogout: (() -> Void)?) {
+    init(dataProvider: UserProfileDataProvider, storageManager: StorageManager, onUserProfileLogout: (() -> Void)?) {
         self.dataProvider = dataProvider
         self.storageManager = storageManager
-        self.onProfileLogout = onProfileLogout
+        self.onUserProfileLogout = onUserProfileLogout
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -61,7 +61,7 @@ class UserProfileViewController<View: UserProfileView>: BaseViewController<View>
                     logoutClosure: { [weak self] _ in
                         self?.storageManager.removeToken()
                         self?.storageManager.removeUserId()
-                        self?.onProfileLogout?()
+                        self?.onUserProfileLogout?()
                     }
                 )
             )

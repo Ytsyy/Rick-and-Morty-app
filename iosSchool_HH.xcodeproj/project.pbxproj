@@ -32,7 +32,6 @@
 		3F0712DE2AFE3D6C00B98A82 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712DD2AFE3D6C00B98A82 /* RegistrationViewController.swift */; };
 		3F0712E02AFE3F7200B98A82 /* RegistrationViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712DF2AFE3F7200B98A82 /* RegistrationViewData.swift */; };
 		3F0712E22AFE3FB000B98A82 /* RegistrationDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712E12AFE3FB000B98A82 /* RegistrationDataProvider.swift */; };
-		3F0712E72B0259C700B98A82 /* LocationsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712E62B0259C700B98A82 /* LocationsList.swift */; };
 		3F0712E92B025A4400B98A82 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712E82B025A4400B98A82 /* TokenResponse.swift */; };
 		3F0712F02B025B6400B98A82 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712EF2B025B6400B98A82 /* NetworkConstants.swift */; };
 		3F0712F22B025CB700B98A82 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0712F12B025CB700B98A82 /* ApiError.swift */; };
@@ -116,6 +115,8 @@
 		9447CC022B8F067200AA35CA /* PersonSizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447CC012B8F067200AA35CA /* PersonSizeCell.swift */; };
 		9447CC042B91C31C00AA35CA /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447CC032B91C31C00AA35CA /* CustomTextField.swift */; };
 		9447CC062B92F7B800AA35CA /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447CC052B92F7B800AA35CA /* UserProfile.swift */; };
+		9447CC2A2B957A9800AA35CA /* LocationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447CC292B957A9800AA35CA /* LocationList.swift */; };
+		9447CC2C2B957AB600AA35CA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447CC2B2B957AB600AA35CA /* User.swift */; };
 		9449EC862B8C413D00756CA4 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449EC852B8C413D00756CA4 /* UserProfileView.swift */; };
 		9449EC882B8C44EA00756CA4 /* UserProfileViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449EC872B8C44EA00756CA4 /* UserProfileViewData.swift */; };
 		9449EC8A2B8C45B700756CA4 /* UserProfileButtonCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449EC892B8C45B700756CA4 /* UserProfileButtonCellData.swift */; };
@@ -159,7 +160,6 @@
 		3F0712DD2AFE3D6C00B98A82 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		3F0712DF2AFE3F7200B98A82 /* RegistrationViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewData.swift; sourceTree = "<group>"; };
 		3F0712E12AFE3FB000B98A82 /* RegistrationDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationDataProvider.swift; sourceTree = "<group>"; };
-		3F0712E62B0259C700B98A82 /* LocationsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsList.swift; sourceTree = "<group>"; };
 		3F0712E82B025A4400B98A82 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		3F0712EF2B025B6400B98A82 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		3F0712F12B025CB700B98A82 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
@@ -240,6 +240,8 @@
 		9447CC012B8F067200AA35CA /* PersonSizeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonSizeCell.swift; sourceTree = "<group>"; };
 		9447CC032B91C31C00AA35CA /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		9447CC052B92F7B800AA35CA /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		9447CC292B957A9800AA35CA /* LocationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationList.swift; sourceTree = "<group>"; };
+		9447CC2B2B957AB600AA35CA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9449EC852B8C413D00756CA4 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		9449EC872B8C44EA00756CA4 /* UserProfileViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewData.swift; sourceTree = "<group>"; };
 		9449EC892B8C45B700756CA4 /* UserProfileButtonCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileButtonCellData.swift; sourceTree = "<group>"; };
@@ -368,6 +370,8 @@
 				3F0712E82B025A4400B98A82 /* TokenResponse.swift */,
 				94A5D3002B737CC400BF478D /* Episode.swift */,
 				9447CC052B92F7B800AA35CA /* UserProfile.swift */,
+				9447CC292B957A9800AA35CA /* LocationList.swift */,
+				9447CC2B2B957AB600AA35CA /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -412,7 +416,6 @@
 			isa = PBXGroup;
 			children = (
 				3F07136E2B14D1C400B98A82 /* Subviews */,
-				3F0712E62B0259C700B98A82 /* LocationsList.swift */,
 				3F07131E2B0E180A00B98A82 /* LocationDataProvider.swift */,
 				3F0713202B0E181E00B98A82 /* LocationViewController.swift */,
 				3F0713242B0E19AF00B98A82 /* Location.swift */,
@@ -742,6 +745,7 @@
 				3F07137A2B17208C00B98A82 /* UITextField+LeftPadding.swift in Sources */,
 				3F0712D12AFD138000B98A82 /* SplashViewController.swift in Sources */,
 				94A5D2FC2B7357FC00BF478D /* PersonViewController.swift in Sources */,
+				9447CC2C2B957AB600AA35CA /* User.swift in Sources */,
 				3F07136D2B14D18300B98A82 /* LocationViewData.swift in Sources */,
 				3F0713272B0E1CF700B98A82 /* LocationAssembly.swift in Sources */,
 				3F0713362B0E350800B98A82 /* Character.swift in Sources */,
@@ -766,6 +770,7 @@
 				9449EC862B8C413D00756CA4 /* UserProfileView.swift in Sources */,
 				9447CC042B91C31C00AA35CA /* CustomTextField.swift in Sources */,
 				3F0713212B0E181E00B98A82 /* LocationViewController.swift in Sources */,
+				9447CC2A2B957A9800AA35CA /* LocationList.swift in Sources */,
 				3F07131F2B0E180A00B98A82 /* LocationDataProvider.swift in Sources */,
 				94A5D3012B737CC400BF478D /* Episode.swift in Sources */,
 				3F0713972B21F43F00B98A82 /* CoreCellInputData.swift in Sources */,
@@ -800,7 +805,6 @@
 				9447CC022B8F067200AA35CA /* PersonSizeCell.swift in Sources */,
 				3F0713B22B2204D000B98A82 /* CharacterCellData.swift in Sources */,
 				3F0713EE2B2B313F00B98A82 /* PersonPhotoCellData.swift in Sources */,
-				3F0712E72B0259C700B98A82 /* LocationsList.swift in Sources */,
 				3F0712F42B02601900B98A82 /* AuthApiClient.swift in Sources */,
 				3F0712E22AFE3FB000B98A82 /* RegistrationDataProvider.swift in Sources */,
 				3F0712C62AF9249500B98A82 /* AuthAssembly.swift in Sources */,

@@ -41,12 +41,13 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
         guard let locationsVC = locationsCoord.make(), let userProfileVC = userProfileCoord.make() else {
             return
         }
-
-        let navVC1 = assembly.rootNavigationController()
-        navVC1.setViewControllers([locationsVC], animated: false)
-        navVC1.tabBarItem = RootTab.locations.tabBarItem
-
-        tabVC.setViewControllers([navVC1, userProfileVC], animated: false)
+        
+        let navVC = assembly.rootNavigationController()
+        navVC.setViewControllers([locationsVC], animated: false)
+        navVC.tabBarItem = RootTab.locations.tabBarItem
+        
+        userProfileVC.tabBarItem = RootTab.profile.tabBarItem
+        tabVC.setViewControllers([navVC, userProfileVC], animated: false)
         setRoot(viewController: tabVC)
     }
 

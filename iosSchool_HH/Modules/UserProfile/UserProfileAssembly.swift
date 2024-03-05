@@ -17,7 +17,7 @@ protocol UserProfileAssembly {
 
 extension Assembly: UserProfileAssembly {
     func userProfileVC(onUserProfileLogout: (() -> Void)?) -> UserProfileViewController<UserProfileViewImp> {
-        .init(dataProvider: userProfileDataProvider(), storageManager: storageManager, onProfileLogout: onUserProfileLogout)
+        .init(dataProvider: userProfileDataProvider(), storageManager: storageManager, onUserProfileLogout: onUserProfileLogout)
     }
 
     func userProfileDataProvider() -> UserProfileDataProvider {
