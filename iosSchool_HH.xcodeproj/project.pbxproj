@@ -100,7 +100,6 @@
 		3FA03B2B2B3C6DB600C5523C /* UserProfileDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA03B2A2B3C6DB600C5523C /* UserProfileDataProvider.swift */; };
 		941261CE2B85C2A100361141 /* UserProfileApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941261CD2B85C2A100361141 /* UserProfileApiClient.swift */; };
 		941261D12B85D9FA00361141 /* UserProfileDateColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941261D02B85D9FA00361141 /* UserProfileDateColorCell.swift */; };
-		941261D32B85DA4500361141 /* UserProfileColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 941261D22B85DA4500361141 /* UserProfileColorCell.xib */; };
 		941261D52B85DA8C00361141 /* UserProfileDateColorCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941261D42B85DA8C00361141 /* UserProfileDateColorCellData.swift */; };
 		941261D72B85DAAE00361141 /* UserProfileLogoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941261D62B85DAAE00361141 /* UserProfileLogoutCell.swift */; };
 		941261D92B85E07000361141 /* UserProfileLogoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 941261D82B85E07000361141 /* UserProfileLogoutCell.xib */; };
@@ -130,6 +129,7 @@
 		94A5D2FE2B7357FC00BF478D /* PersonDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5D2F82B7357FC00BF478D /* PersonDataProvider.swift */; };
 		94A5D2FF2B7357FC00BF478D /* PersonAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5D2F92B7357FC00BF478D /* PersonAssembly.swift */; };
 		94A5D3012B737CC400BF478D /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5D3002B737CC400BF478D /* Episode.swift */; };
+		94F946FF2B9CAB4000217CB3 /* UserProfileDateColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94F946FE2B9CAB4000217CB3 /* UserProfileDateColorCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -225,7 +225,6 @@
 		3FA03B2A2B3C6DB600C5523C /* UserProfileDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDataProvider.swift; sourceTree = "<group>"; };
 		941261CD2B85C2A100361141 /* UserProfileApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileApiClient.swift; sourceTree = "<group>"; };
 		941261D02B85D9FA00361141 /* UserProfileDateColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDateColorCell.swift; sourceTree = "<group>"; };
-		941261D22B85DA4500361141 /* UserProfileColorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileColorCell.xib; sourceTree = "<group>"; };
 		941261D42B85DA8C00361141 /* UserProfileDateColorCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDateColorCellData.swift; sourceTree = "<group>"; };
 		941261D62B85DAAE00361141 /* UserProfileLogoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileLogoutCell.swift; sourceTree = "<group>"; };
 		941261D82B85E07000361141 /* UserProfileLogoutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileLogoutCell.xib; sourceTree = "<group>"; };
@@ -255,6 +254,7 @@
 		94A5D2F82B7357FC00BF478D /* PersonDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDataProvider.swift; sourceTree = "<group>"; };
 		94A5D2F92B7357FC00BF478D /* PersonAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonAssembly.swift; sourceTree = "<group>"; };
 		94A5D3002B737CC400BF478D /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		94F946FE2B9CAB4000217CB3 /* UserProfileDateColorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileDateColorCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -580,7 +580,6 @@
 			isa = PBXGroup;
 			children = (
 				941261D02B85D9FA00361141 /* UserProfileDateColorCell.swift */,
-				941261D22B85DA4500361141 /* UserProfileColorCell.xib */,
 				941261D42B85DA8C00361141 /* UserProfileDateColorCellData.swift */,
 				941261D62B85DAAE00361141 /* UserProfileLogoutCell.swift */,
 				941261D82B85E07000361141 /* UserProfileLogoutCell.xib */,
@@ -595,6 +594,7 @@
 				9449EC892B8C45B700756CA4 /* UserProfileButtonCellData.swift */,
 				9449EC8B2B8C45F000756CA4 /* UserProfileLoginCellData.swift */,
 				9449EC8D2B8C462000756CA4 /* UserProfileInfoCellData.swift */,
+				94F946FE2B9CAB4000217CB3 /* UserProfileDateColorCell.xib */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -668,12 +668,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94F946FF2B9CAB4000217CB3 /* UserProfileDateColorCell.xib in Resources */,
 				3F07137D2B173CE500B98A82 /* SplashViewImp.xib in Resources */,
 				3F0713FA2B2B42FC00B98A82 /* PersonHeaderView.xib in Resources */,
 				3F0713F22B2B3C2A00B98A82 /* PersonEpisodeCell.xib in Resources */,
 				3F0713B02B22043D00B98A82 /* CharacterCell.xib in Resources */,
 				941261D92B85E07000361141 /* UserProfileLogoutCell.xib in Resources */,
-				941261D32B85DA4500361141 /* UserProfileColorCell.xib in Resources */,
 				3F07135E2B11D12300B98A82 /* RegistrationViewImp.xib in Resources */,
 				941261E12B85E47D00361141 /* UserProfilePhotoCell.xib in Resources */,
 				3F0714412B394EE700B98A82 /* LocationCell.xib in Resources */,
