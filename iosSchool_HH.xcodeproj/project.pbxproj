@@ -130,6 +130,7 @@
 		94A5D2FF2B7357FC00BF478D /* PersonAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5D2F92B7357FC00BF478D /* PersonAssembly.swift */; };
 		94A5D3012B737CC400BF478D /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5D3002B737CC400BF478D /* Episode.swift */; };
 		94F946FF2B9CAB4000217CB3 /* UserProfileDateColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94F946FE2B9CAB4000217CB3 /* UserProfileDateColorCell.xib */; };
+		94F947012B9F536500217CB3 /* date+dateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F947002B9F536500217CB3 /* date+dateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -255,6 +256,7 @@
 		94A5D2F92B7357FC00BF478D /* PersonAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonAssembly.swift; sourceTree = "<group>"; };
 		94A5D3002B737CC400BF478D /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		94F946FE2B9CAB4000217CB3 /* UserProfileDateColorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileDateColorCell.xib; sourceTree = "<group>"; };
+		94F947002B9F536500217CB3 /* date+dateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "date+dateFormatter.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -467,6 +469,7 @@
 				3F0713762B14D7AD00B98A82 /* NSObject+ClassName.swift */,
 				3F0713A52B21FD6600B98A82 /* UICollectionView+Registrate.swift */,
 				3F0713F52B2B429200B98A82 /* NSCollectionLayoutSection+SupplementaryItem.swift */,
+				94F947002B9F536500217CB3 /* date+dateFormatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -811,6 +814,7 @@
 				3F0712CB2AFD12BE00B98A82 /* SplashDataProvider.swift in Sources */,
 				9449EC882B8C44EA00756CA4 /* UserProfileViewData.swift in Sources */,
 				3F0713FC2B2B438300B98A82 /* PersonHeaderViewData.swift in Sources */,
+				94F947012B9F536500217CB3 /* date+dateFormatter.swift in Sources */,
 				3F07131B2B0DF18700B98A82 /* RegistrationApiClient.swift in Sources */,
 				3F0713592B10624700B98A82 /* BaseNavigationController.swift in Sources */,
 				941261E52B85EA2D00361141 /* UserProfileUsernameCellData.swift in Sources */,

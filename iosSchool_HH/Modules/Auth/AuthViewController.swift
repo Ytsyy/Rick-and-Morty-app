@@ -45,7 +45,8 @@ extension AuthViewController: AuthViewDelegate {
                 return
             }
             self.storageManager.saveToken(token: token)
-            self.storageManager.saveLastLoginDate()
+            self.storageManager.saveUserId(token: token)
+            self.storageManager.saveDateLastLogin()
             DispatchQueue.main.async {
                 self.onOpenLogin?()
             }
