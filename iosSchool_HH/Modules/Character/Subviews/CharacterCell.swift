@@ -48,9 +48,6 @@ class CharacterCell: UICollectionViewCell, CoreCellView {
     }
 
     func update(with inputData: CharacterCellData) {
-        nameLabel.text = inputData.name
-        descriptionLabel.text = inputData.description
-
         if inputData.isLoading {
             loadingSpinner.startAnimating()
             characterImage.image = UIImage(named: "characters-placeholder")
@@ -59,14 +56,18 @@ class CharacterCell: UICollectionViewCell, CoreCellView {
             loadingSpinner.isHidden = true
             characterImage.image = inputData.image
         }
+        nameLabel.text = inputData.name
+        descriptionLabel.text = inputData.description
     }
+    
 
     func applyCellUISettings() {
+        backgroundColor = UIColor(named: "iceberg")
         layer.cornerRadius = 15
-        layer.masksToBounds = false
-        layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        clipsToBounds = false
+        layer.shadowColor = UIColor(named: "shadow-black")?.cgColor
         layer.shadowOpacity = 1
-        layer.shadowRadius = 8
         layer.shadowOffset = CGSize(width: 0, height: 5)
+        layer.shadowRadius = 8
     }
 }

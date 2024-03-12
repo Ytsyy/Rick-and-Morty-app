@@ -8,13 +8,7 @@
 import UIKit
 
 struct PersonPhotoCellData: CoreCellInputData {
+    let image: UIImage
+
     var selectClosure: ((CoreCellInputData) -> Void)?
-
-    let isLoading: Bool
-    let image: UIImage?
-
-    init(image: UIImage?) {
-        self.image = image ?? UIImage(named: "placeholder")
-        self.isLoading = image == nil
-    }
 }
