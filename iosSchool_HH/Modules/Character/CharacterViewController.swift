@@ -5,25 +5,26 @@
 //  Created by student on 22.11.2023.
 //
 
-import Foundation
 import UIKit
+import SPIndicator
 
-final class CharacterViewController< View: CharacterView>: BaseViewController<View> {
+final class CharacterViewController<View: CharacterView>: BaseViewController<View> {
+    private let updateQueue = DispatchQueue(label: "CharacterRequestQueue")
+    private let dataProvider: CharacterDataProvider
+    private let imageService: ImageService
+    private let charactersUrlList: [String]
+
     var selectCharacter: ((CharacterCellData) -> Void)?
 
     private var characters: [Character] = []
 
-    private let dataProvider: CharacterDataProvider
-    private let charactersUrlList: [String]
-    private let updateQueue = DispatchQueue(label: "CharacterRequestQueue")
-    private let imageService: ImageService
-
-    init(dataProvider: CharacterDataProvider, data: LocationCellData, imageService: ImageService) {
+    init(dataProvider: CharacterDataProvider, imageService: ImageService, data: LocationCellData) {
         self.dataProvider = dataProvider
-        charactersUrlList = data.residents
         self.imageService = imageService
+        charactersUrlList = data.residents
+
         super.init(nibName: nil, bundle: nil)
-        title = "Жители локации \(data.name)"
+        title = "Жители локации \"\(data.name)\""
     }
 
     required init?(coder: NSCoder) {
@@ -33,11 +34,9 @@ final class CharacterViewController< View: CharacterView>: BaseViewController<Vi
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        rootView.backgroundColor = UIColor(named: "charactersBackgroundGray")
+        setupBar()
         rootView.setView()
-        rootView.update(data: CharacterViewData(cells: charactersUrlList.map({
-            CharacterCellData(url: $0)
-        })))
+        rootView.update(data: CharacterViewData(cells: charactersUrlList.map({ CharacterCellData(url: $0) })))
 
         let selectClosure: ((CoreCellInputData) -> Void)? = { [weak self] data in
             guard let data = data as? CharacterCellData else {
@@ -46,25 +45,24 @@ final class CharacterViewController< View: CharacterView>: BaseViewController<Vi
             self?.selectCharacter?(data)
         }
 
-        charactersUrlList.enumerated().forEach { index, url in
-
+        charactersUrlList.enumerated().forEach { idx, url in
             requestCharacter(url: url) { [weak self] character in
                 guard let self else {
                     return
                 }
+
                 DispatchQueue.main.async {
-                    self.rootView.updateCharacter(index: index, with: CharacterCellData(
+                    self.rootView.updateCharacter(idx: idx, with: CharacterCellData(
                         character: character,
                         isLoading: true,
                         image: nil,
-
                         selectClosure: selectClosure
-
                     ))
                 }
+
                 self.imageService.getImage(url: character.image, completion: { [weak self] image in
                     DispatchQueue.main.async {
-                        self?.rootView.updateCharacter(index: index, with: CharacterCellData(
+                        self?.rootView.updateCharacter(idx: idx, with: CharacterCellData(
                             character: character,
                             isLoading: false,
                             image: image,
@@ -74,9 +72,10 @@ final class CharacterViewController< View: CharacterView>: BaseViewController<Vi
                 })
             }
         }
-}
+    }
 
-    // MARK: - Private func
+    // MARK: - Private methods
+
     private func requestCharacter(url: String, completion: @escaping (Character) -> Void) {
         if let character = characters.first(where: { $0.url == url }) {
             completion(character)
@@ -85,8 +84,12 @@ final class CharacterViewController< View: CharacterView>: BaseViewController<Vi
         DispatchQueue.global().async {
             self.dataProvider.character(url: url) { [weak self] character, error in
                 guard let character else {
+                    DispatchQueue.main.async {
+                        SPIndicator.present(title: error?.rawValue ?? "Ошибочка", haptic: .error)
+                    }
                     return
                 }
+
                 self?.updateQueue.async {
                     self?.characters.append(character)
                     completion(character)
@@ -94,4 +97,18 @@ final class CharacterViewController< View: CharacterView>: BaseViewController<Vi
             }
         }
     }
+
+    private func setupBar() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage(named: "character-back"),
+            style: .plain,
+            target: self,
+            action: #selector(back)
+        )
+    }
+
+    @objc private func back() {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
+

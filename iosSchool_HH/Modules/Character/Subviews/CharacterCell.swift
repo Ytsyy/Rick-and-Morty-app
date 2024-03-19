@@ -59,6 +59,6 @@ class CharacterCell: UICollectionViewCell, CoreCellView {
             imageView.image = inputData.image
         }
         nameLabel.text = inputData.name
-        typeLabel.text = inputData.description
+        typeLabel.text = inputData.gender
     }
 }

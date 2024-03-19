@@ -21,9 +21,9 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
 
         tabBar.backgroundColor = UIColor(named: "iceberg")
-        tabBar.isTranslucent = false
+        tabBar.layer.shadowColor = UIColor(named: "shadow-black")?.cgColor
         tabBar.layer.shadowOpacity = 1
+        tabBar.layer.shadowOffset = CGSize(width: 0, height: -3)
         tabBar.layer.shadowRadius = 8
-        tabBar.layer.shadowOffset = CGSize(width: 0, height: 5)
     }
 }

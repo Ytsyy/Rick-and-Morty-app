@@ -14,7 +14,6 @@ protocol CoreViewController: AnyObject {
 }
 
 class BaseViewController<View: UIView>: UIViewController, CoreViewController {
-
     var rootView: View = {
         let nibName = String(describing: View.self)
         let bundle = Bundle(for: View.self)
@@ -36,3 +35,4 @@ class BaseViewController<View: UIView>: UIViewController, CoreViewController {
         view = rootView
     }
 }
+

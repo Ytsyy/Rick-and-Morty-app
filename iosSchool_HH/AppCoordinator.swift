@@ -3,19 +3,17 @@ import UIKit
 struct CoordinatorContext {}
 
 class AppCoordinator: BaseCoordinator<CoordinatorContext> {
-
     private var window: UIWindow?
 
     func start(window: UIWindow?) {
         self.window = window
-
-        let coordinator = assembly.authCoordinator { [weak self] in
+        let coordinator = assembly.splashCoordinator { [weak self] in
             self?.authBootstrap()
         }
-        setRoot(
-            viewController: coordinator.make()
-        )
+        setRoot(viewController: coordinator.make())
     }
+
+    // MARK: - Private methods
 
     private func authBootstrap() {
         guard assembly.storageManager.getToken() == nil else {
@@ -33,21 +31,20 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
 
     private func setTabVC() {
         let tabVC = assembly.rootTabBarController()
-
         let locationsCoord = assembly.locationCoordinator()
-        let userProfileCoord = assembly.userProfileCoordinator {
-                    self.authBootstrap()
-                }
-        guard let locationsVC = locationsCoord.make(), let userProfileVC = userProfileCoord.make() else {
+        let profileCoord = assembly.userProfileCoordinator {
+            self.authBootstrap()
+        }
+
+        guard let locationsVC = locationsCoord.make(), let profileVC = profileCoord.make() else {
             return
         }
-        
+
         let navVC = assembly.rootNavigationController()
         navVC.setViewControllers([locationsVC], animated: false)
         navVC.tabBarItem = RootTab.locations.tabBarItem
-        
-        userProfileVC.tabBarItem = RootTab.profile.tabBarItem
-        tabVC.setViewControllers([navVC, userProfileVC], animated: false)
+        profileVC.tabBarItem = RootTab.profile.tabBarItem
+        tabVC.setViewControllers([navVC, profileVC], animated: false)
         setRoot(viewController: tabVC)
     }
 
@@ -55,6 +52,7 @@ class AppCoordinator: BaseCoordinator<CoordinatorContext> {
         guard let window, let viewController else {
             return
         }
+
         window.rootViewController = viewController
         window.makeKeyAndVisible()
     }

@@ -5,38 +5,37 @@
 //  Created by student on 07.12.2023.
 //
 
-import Foundation
 import UIKit
 
 struct CharacterCellData: CoreCellInputData {
-    var selectClosure: ((CoreCellInputData) -> Void)?
-
-    let isLoading: Bool
     let url: String
     let name: String?
-    let description: String?
+    let gender: String?
     let imageUrl: String?
-    let image: UIImage?
     let episodes: [String]
+    let isLoading: Bool
+    let image: UIImage?
+
+    var selectClosure: ((CoreCellInputData) -> Void)?
 
     init(character: Character, isLoading: Bool, image: UIImage?, selectClosure: ((CoreCellInputData) -> Void)?) {
-        self.selectClosure = selectClosure
+        url = character.url
+        name = character.name
+        gender = "\(character.species) \(character.gender)"
+        imageUrl = character.image
+        episodes = character.episode
         self.isLoading = isLoading
         self.image = image
-        name = character.name
-        imageUrl = character.image
-        description = character.gender.rawValue + " " + character.species
-        episodes = character.episode
-        url = character.url
+        self.selectClosure = selectClosure
     }
 
     init(url: String) {
         self.url = url
-        isLoading = true
         name = nil
+        gender = nil
         imageUrl = nil
-        image = nil
-        description = nil
         episodes = []
+        isLoading = true
+        image = nil
     }
 }
