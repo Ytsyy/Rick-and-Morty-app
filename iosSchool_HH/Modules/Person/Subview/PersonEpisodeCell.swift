@@ -12,13 +12,13 @@ class PersonEpisodeCell: UICollectionViewCell, CoreCellView {
     @IBOutlet weak var numberView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
         backgroundColor = UIColor(named: "iceberg")
         layer.cornerRadius = 15
-
+        
         numberView.layer.cornerRadius = 16
         numberView.backgroundColor = UIColor(named: "mint")
         numberView.clipsToBounds = false
@@ -27,7 +27,7 @@ class PersonEpisodeCell: UICollectionViewCell, CoreCellView {
         numberView.layer.shadowOffset = CGSize(width: 0, height: 4)
         numberView.layer.shadowRadius = 4
     }
-
+    
     static func layoutSection() -> NSCollectionLayoutSection {
         let sizeCell = PersonSizeCell(screenSize: (PersonSizeCell.screenHeight > 800 ? .bigSize : .smallSize))
         let itemSize = NSCollectionLayoutSize(
@@ -51,10 +51,10 @@ class PersonEpisodeCell: UICollectionViewCell, CoreCellView {
         section.orthogonalScrollingBehavior = .continuous
         return section
     }
-
+    
     func update(with inputData: PersonEpisodeCellData) {
         numberLabel.text = inputData.number
-
+        
         if !inputData.isLoading {
             nameLabel.text = inputData.name
             dateLabel.text = inputData.date

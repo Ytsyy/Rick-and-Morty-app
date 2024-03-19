@@ -23,16 +23,17 @@ class PersonPhotoCell: UICollectionViewCell, CoreCellView {
 
         imageView.layer.cornerRadius = 15
     }
+
     static func layoutSection() -> NSCollectionLayoutSection {
         let sizeCell = PersonSizeCell(screenSize: (PersonSizeCell.screenHeight > 800 ? .bigSize : .smallSize))
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .fractionalHeight(0.5)
+            heightDimension: .fractionalHeight(1)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .fractionalHeight(0.5)
+            heightDimension: .fractionalHeight(sizeCell.fractionalPhotoCell)
         )
         let group = NSCollectionLayoutGroup.vertical(
             layoutSize: groupSize,
@@ -52,5 +53,4 @@ class PersonPhotoCell: UICollectionViewCell, CoreCellView {
     func update(with inputData: PersonPhotoCellData) {
         imageView.image = inputData.image
     }
-
 }

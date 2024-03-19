@@ -88,4 +88,3 @@ final class PersonViewController<View: PersonView>: BaseViewController<View> {
         self.navigationController?.popViewController(animated: true)
     }
 }
-
