@@ -32,6 +32,7 @@ final class CharacterViewController< View: CharacterView>: BaseViewController<Vi
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupBar()
         rootView.backgroundColor = UIColor(named: "charactersBackgroundGray")
         rootView.setView()
