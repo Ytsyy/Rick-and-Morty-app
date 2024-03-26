@@ -2,7 +2,7 @@
 //  StorageManager.swift
 //  iosSchool_HH
 //
-//  Created by student on 07.12.2023.
+//  Created by MaximM on 07.12.2023.
 //
 
 import Foundation
@@ -11,19 +11,25 @@ import KeychainAccess
 protocol StorageManager {
     func cleanKeychainIfNeeded()
     func saveToken(token: TokenResponse)
-    func getToken() -> TokenResponse?
+    func getToken() -> String?
     func removeToken()
-    func saveLastLoginDate()
-    func getLastLoginDate() -> Date?
+
+    func saveUserId(token: TokenResponse)
+    func getUserId() -> String?
+    func removeUserId()
+
+    func saveDateLastLogin()
+    func getDateLastLogin() -> String
 }
 
-class StorageManagerImp: StorageManager {
+final class StorageManagerImp: StorageManager {
     private let keychain = Keychain(service: Constants.serviceId)
 
     func cleanKeychainIfNeeded() {
         guard !notFirstLaunch() else {
             return
         }
+
         do {
             try keychain.removeAll()
         } catch {
@@ -40,12 +46,13 @@ class StorageManagerImp: StorageManager {
         }
     }
 
-    func getToken() -> TokenResponse? {
+    func getToken() -> String? {
         do {
             guard let token = try keychain.get(StorageManagerKey.token.rawValue) else {
                 return nil
             }
-            return TokenResponse(token: token)
+
+            return token
         } catch {
             print(error as Any)
         }
@@ -60,31 +67,62 @@ class StorageManagerImp: StorageManager {
         }
     }
 
-    func saveLastLoginDate() {
-        UserDefaults.standard.set(Date(), forKey: "lastLoginDate")
+    func saveUserId(token: TokenResponse) {
+        do {
+            try keychain.set(token.userId, key: StorageManagerKey.userId.rawValue)
+        } catch {
+            print(error as Any)
+        }
     }
 
-    func getLastLoginDate() -> Date? {
-        return UserDefaults.standard.object(forKey: "lastLoginDate") as? Date
+    func getUserId() -> String? {
+        do {
+            guard let userId = try keychain.get(StorageManagerKey.userId.rawValue) else {
+                return nil
+            }
+            return userId
+        } catch {
+            print(error as Any)
+        }
+        return nil
+    }
+
+    func removeUserId() {
+        do {
+            try keychain.remove(StorageManagerKey.userId.rawValue)
+        } catch {
+            print(error as Any)
+        }
+    }
+
+    func saveDateLastLogin() {
+        UserDefaults.standard.set(Date().dateTimeString, forKey: StorageManagerKey.lastLoginDate.rawValue)
+    }
+
+    func getDateLastLogin() -> String {
+        UserDefaults.standard.string(forKey: StorageManagerKey.lastLoginDate.rawValue) ?? ""
     }
 }
 
 private extension StorageManagerImp {
-
     enum StorageManagerKey: String {
         case token
+        case userId
         case notFirstLaunch
+        case lastLoginDate
     }
 
     struct Constants {
         static let serviceId = "StorageManagerKeychain.Service.Id"
     }
 
-    func notFirstLaunch() -> Bool {
+    // MARK: - Private methods
+
+    private func notFirstLaunch() -> Bool {
         UserDefaults.standard.bool(forKey: StorageManagerKey.notFirstLaunch.rawValue)
     }
 
-    func saveFirstLaunch() {
+    private func saveFirstLaunch() {
         UserDefaults.standard.set(true, forKey: StorageManagerKey.notFirstLaunch.rawValue)
     }
 }

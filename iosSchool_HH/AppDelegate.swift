@@ -2,10 +2,8 @@
 //  AppDelegate.swift
 //  iosSchool_HH
 //
-//  Created by student on 19.10.2023.
+//  Created by MaximM on 19.10.2023.
 //
-
-import UIKit
 
 import UIKit
 

@@ -2,7 +2,7 @@
 //  NSObject+ClassName.swift
 //  iosSchool_HH
 //
-//  Created by student on 27.11.2023.
+//  Created by MaximM on 27.11.2023.
 //
 
 import Foundation

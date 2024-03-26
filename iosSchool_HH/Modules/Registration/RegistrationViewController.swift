@@ -2,7 +2,7 @@
 //  RegistrationViewController.swift
 //  iosSchool_HH
 //
-//  Created by student on 10.11.2023.
+//  Created by MaximM on 10.11.2023.
 //
 
 import UIKit
@@ -60,7 +60,8 @@ extension RegistrationViewController: RegistrationViewDelegate {
                 return
             }
             self.storageManager.saveToken(token: token)
-            self.storageManager.saveLastLoginDate()
+            self.storageManager.saveUserId(token: token)
+            self.storageManager.saveDateLastLogin()
             self.onRegistrationSuccess?()
         }
     }

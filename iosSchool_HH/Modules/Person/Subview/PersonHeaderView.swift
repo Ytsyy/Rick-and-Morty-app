@@ -2,7 +2,7 @@
 //  PersonHeaderView.swift
 //  iosSchool_HH
 //
-//  Created by student on 14.12.2023.
+//  Created by MaximM on 14.12.2023.
 //
 
 import UIKit
@@ -29,5 +29,4 @@ class PersonHeaderView: UICollectionReusableView, CoreReusableView {
         titleLabel.text = inputData.title
         return self
     }
-
 }

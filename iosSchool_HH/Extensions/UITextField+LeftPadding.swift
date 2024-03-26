@@ -2,7 +2,7 @@
 //  UITextField+LeftPadding.swift
 //  iosSchool_HH
 //
-//  Created by student on 29.11.2023.
+//  Created by MaximM on 29.11.2023.
 //
 
 import Foundation

@@ -1,7 +1,13 @@
+//
+//  Assembly.swift
+//  iosSchoolHH
+//
+//  Created by MaximM on 26.10.2023.
+//
+
 import UIKit
 
-class Assembly {
-
+final class Assembly {
     lazy var imageService: ImageService = ImageServiceImp(apiClient: apiClient)
     lazy var storageManager: StorageManager = StorageManagerImp()
 
@@ -10,7 +16,7 @@ class Assembly {
     }
 
     func appCoordinator() -> AppCoordinator {
-        AppCoordinator(assembly: self, context: .init())
+        AppCoordinator(assembly: self, context: CoordinatorContext())
     }
 
     func rootTabBarController() -> UITabBarController {

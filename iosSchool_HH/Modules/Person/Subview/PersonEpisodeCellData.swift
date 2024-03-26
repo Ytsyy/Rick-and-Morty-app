@@ -2,19 +2,34 @@
 //  PersonEpisodeCellData.swift
 //  iosSchool_HH
 //
-//  Created by student on 14.12.2023.
+//  Created by MaximM on 14.12.2023.
 //
 
 import Foundation
 
 struct PersonEpisodeCellData: CoreCellInputData {
+    let isLoading: Bool
+    let number: String
+    let name: String?
+    let date: String?
+
     var selectClosure: ((CoreCellInputData) -> Void)?
 
-    let number: String
     init?(url: String) {
-        guard let url = URL(string: url) else {
+        guard let urlEpisode = URL(string: url) else {
             return nil
         }
-        number = url.lastPathComponent
+
+        isLoading = true
+        number = urlEpisode.lastPathComponent
+        name = nil
+        date = nil
+    }
+
+    init(episode: Episode) {
+        isLoading = false
+        self.number = String(episode.id)
+        self.name = episode.name
+        self.date = episode.airDate
     }
 }

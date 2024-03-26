@@ -6,12 +6,12 @@ class UserProfileViewController<View: UserProfileView>: BaseViewController<View>
     private let dataProvider: UserProfileDataProvider
     private let storageManager: StorageManager
 
-    private var onProfileLogout: (() -> Void)?
+    private var onUserProfileLogout: (() -> Void)?
 
-    init(dataProvider: UserProfileDataProvider, storageManager: StorageManager, onProfileLogout: (() -> Void)?) {
+    init(dataProvider: UserProfileDataProvider, storageManager: StorageManager, onUserProfileLogout: (() -> Void)?) {
         self.dataProvider = dataProvider
         self.storageManager = storageManager
-        self.onProfileLogout = onProfileLogout
+        self.onUserProfileLogout = onUserProfileLogout
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -29,13 +29,13 @@ class UserProfileViewController<View: UserProfileView>: BaseViewController<View>
             showError()
             return
         }
-        dataProvider.profile(userId: user) { [weak self] profile, error in
-            guard let self, let profile, error == nil else {
+        dataProvider.userProfile(userId: user) { [weak self] userProfile, error in
+            guard let self, let userProfile, error == nil else {
                 self?.showError()
                 return
             }
 
-            update(username: profile.username)
+            update(username: userProfile.username)
         }
     }
 
@@ -54,14 +54,14 @@ class UserProfileViewController<View: UserProfileView>: BaseViewController<View>
             HUD.hide()
             self.rootView.update(
                 data: .init(
-                    image: (UIImage(named: "registration-avatar")) ?? UIImage(),
+                    image: (UIImage(named: "IconDog")) ?? UIImage(),
                     username: username,
                     date: self.storageManager.getDateLastLogin(),
                     color: UIColor(named: "iceberg") ?? UIColor(),
                     logoutClosure: { [weak self] _ in
                         self?.storageManager.removeToken()
                         self?.storageManager.removeUserId()
-                        self?.onProfileLogout?()
+                        self?.onUserProfileLogout?()
                     }
                 )
             )

@@ -2,7 +2,7 @@
 //  CharacterCellData.swift
 //  iosSchool_HH
 //
-//  Created by student on 07.12.2023.
+//  Created by MaximM on 07.12.2023.
 //
 
 import Foundation
@@ -20,15 +20,14 @@ struct CharacterCellData: CoreCellInputData {
     let episodes: [String]
 
     init(character: Character, isLoading: Bool, image: UIImage?, selectClosure: ((CoreCellInputData) -> Void)?) {
-        url = character.url
         self.selectClosure = selectClosure
         self.isLoading = isLoading
         self.image = image
         name = character.name
         imageUrl = character.image
         description = character.gender.rawValue + " " + character.species
-
         episodes = character.episode
+        url = character.url
     }
 
     init(url: String) {
@@ -38,7 +37,6 @@ struct CharacterCellData: CoreCellInputData {
         imageUrl = nil
         image = nil
         description = nil
-
         episodes = []
     }
 }

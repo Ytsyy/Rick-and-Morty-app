@@ -2,21 +2,30 @@
 //  CharacterCell.swift
 //  iosSchool_HH
 //
-//  Created by student on 07.12.2023.
+//  Created by MaximM on 07.12.2023.
 //
 
 import UIKit
 
 class CharacterCell: UICollectionViewCell, CoreCellView {
-
-    @IBOutlet private weak var characterImage: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
-    @IBOutlet private weak var descriptionLabel: UILabel!
-    @IBOutlet private weak var loadingSpinner: UIActivityIndicatorView!
+    @IBOutlet private weak var typeLabel: UILabel!
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        applyCellUISettings()
+
+        backgroundColor = UIColor(named: "iceberg")
+        layer.cornerRadius = 15
+        clipsToBounds = false
+        layer.shadowColor = UIColor(named: "shadow-black")?.cgColor
+        layer.shadowOpacity = 1
+        layer.shadowOffset = CGSize(width: 0, height: 5)
+        layer.shadowRadius = 8
+
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 15
     }
 
     static func layoutSection() -> NSCollectionLayoutSection {
@@ -29,7 +38,6 @@ class CharacterCell: UICollectionViewCell, CoreCellView {
             widthDimension: .fractionalWidth(1),
             heightDimension: .absolute(167)
         )
-
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
             repeatingSubitem: item,
@@ -38,35 +46,19 @@ class CharacterCell: UICollectionViewCell, CoreCellView {
         group.interItemSpacing = .fixed(24)
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 30
-        section.contentInsets = NSDirectionalEdgeInsets(
-            top: 59,
-            leading: 16,
-            bottom: 71,
-            trailing: 16
-        )
+        section.contentInsets = NSDirectionalEdgeInsets(top: 60, leading: 16, bottom: 0, trailing: 16)
         return section
     }
 
     func update(with inputData: CharacterCellData) {
-        nameLabel.text = inputData.name
-        descriptionLabel.text = inputData.description
-
         if inputData.isLoading {
-            loadingSpinner.startAnimating()
-            characterImage.image = UIImage(named: "characters-placeholder")
+            activityIndicator.startAnimating()
+            imageView.image = UIImage(named: "character-placeholder")
         } else {
-            loadingSpinner.stopAnimating()
-            loadingSpinner.isHidden = true
-            characterImage.image = inputData.image
+            activityIndicator.stopAnimating()
+            imageView.image = inputData.image
         }
-    }
-
-    func applyCellUISettings() {
-        layer.cornerRadius = 15
-        layer.masksToBounds = false
-        layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-        layer.shadowOpacity = 1
-        layer.shadowRadius = 8
-        layer.shadowOffset = CGSize(width: 0, height: 5)
+        nameLabel.text = inputData.name
+        typeLabel.text = inputData.description
     }
 }

@@ -2,7 +2,7 @@
 //  CharactersViewController.swift
 //  iosSchool_HH
 //
-//  Created by student on 22.11.2023.
+//  Created by MaximM on 22.11.2023.
 //
 
 import Foundation
@@ -32,7 +32,8 @@ final class CharacterViewController< View: CharacterView>: BaseViewController<Vi
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setupBar()
         rootView.backgroundColor = UIColor(named: "charactersBackgroundGray")
         rootView.setView()
         rootView.update(data: CharacterViewData(cells: charactersUrlList.map({
@@ -94,4 +95,18 @@ final class CharacterViewController< View: CharacterView>: BaseViewController<Vi
             }
         }
     }
+    
+    private func setupBar() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage(named: "character-back"),
+            style: .plain,
+            target: self,
+            action: #selector(back)
+        )
+    }
+    @objc private func back() {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
+
+

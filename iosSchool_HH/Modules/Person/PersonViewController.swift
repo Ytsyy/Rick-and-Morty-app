@@ -24,7 +24,7 @@ final class PersonViewController<View: PersonView>: BaseViewController<View> {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-/*
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -54,7 +54,7 @@ final class PersonViewController<View: PersonView>: BaseViewController<View> {
             }
         }
     }
-*/
+
     // MARK: - Private methods
 
     private func requestEpisode(url: String, completion: @escaping (Episode) -> Void) {

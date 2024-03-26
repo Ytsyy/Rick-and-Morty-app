@@ -1,8 +1,8 @@
 //
-//  LocationsList.swift
+//  LocationList.swift
 //  iosSchool_HH
 //
-//  Created by student on 13.11.2023.
+//  Created by Maxim on 04.03.2024.
 //
 
 import Foundation
