@@ -16,3 +16,5 @@
 - **Список жителей локации**: Список персонажей которые живут в данном мире 
 - **Информация о персонаже**: Краткая информация о герое и список эпизодов сериала в которых он участвовал
 - **Профиль**: Профиль пользователя с информацией об аккаунте
+
+![Экраны приложения]([https://raw.githubusercontent.com/username/projectname/commit/img.png](https://github.com/Ytsyy/iosSchool_HH/blob/beac08f2a8a46095427b9242028134dc476fe9f5/All%20screen%20.png)https://github.com/Ytsyy/iosSchool_HH/blob/beac08f2a8a46095427b9242028134dc476fe9f5/All%20screen%20.png)
