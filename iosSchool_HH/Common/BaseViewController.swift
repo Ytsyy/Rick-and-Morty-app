@@ -2,7 +2,7 @@
 //  BaseViewController.swift
 //  iosSchool_HH
 //
-//  Created by student on 16.11.2023.
+//  Created by MaximM on 16.11.2023.
 //
 
 import UIKit

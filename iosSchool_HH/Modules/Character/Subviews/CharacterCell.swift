@@ -2,7 +2,7 @@
 //  CharacterCell.swift
 //  iosSchool_HH
 //
-//  Created by student on 07.12.2023.
+//  Created by MaximM on 07.12.2023.
 //
 
 import UIKit

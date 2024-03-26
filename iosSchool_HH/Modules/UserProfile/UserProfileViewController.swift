@@ -54,7 +54,7 @@ class UserProfileViewController<View: UserProfileView>: BaseViewController<View>
             HUD.hide()
             self.rootView.update(
                 data: .init(
-                    image: (UIImage(named: "registration-avatar")) ?? UIImage(),
+                    image: (UIImage(named: "IconDog")) ?? UIImage(),
                     username: username,
                     date: self.storageManager.getDateLastLogin(),
                     color: UIColor(named: "iceberg") ?? UIColor(),

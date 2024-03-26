@@ -2,7 +2,7 @@
 //  UserProfileDataProvider.swift
 //  iosSchool_HH
 //
-//  Created by student on 27.12.2023.
+//  Created by sMaximM on 27.12.2023.
 //
 
 import Foundation

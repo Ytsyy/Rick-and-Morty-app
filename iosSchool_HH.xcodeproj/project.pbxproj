@@ -299,13 +299,13 @@
 				3F0712EA2B025AE300B98A82 /* ApiClient */,
 				3F0712E32B02512300B98A82 /* Models */,
 				3F0712BB2AF9224600B98A82 /* Modules */,
+				3F0712A82AEAA5EE00B98A82 /* Assembly.swift */,
 				3F07128D2AE11D2800B98A82 /* AppDelegate.swift */,
+				3F0712B62AF9194000B98A82 /* AppCoordinator.swift */,
 				3F07128F2AE11D2800B98A82 /* SceneDelegate.swift */,
 				3F0712962AE11D2B00B98A82 /* Assets.xcassets */,
 				3F0712982AE11D2B00B98A82 /* LaunchScreen.storyboard */,
 				3F07129B2AE11D2B00B98A82 /* Info.plist */,
-				3F0712A82AEAA5EE00B98A82 /* Assembly.swift */,
-				3F0712B62AF9194000B98A82 /* AppCoordinator.swift */,
 			);
 			path = iosSchool_HH;
 			sourceTree = "<group>";

@@ -2,7 +2,7 @@
 //  StorageManager.swift
 //  iosSchool_HH
 //
-//  Created by student on 07.12.2023.
+//  Created by MaximM on 07.12.2023.
 //
 
 import Foundation
@@ -13,22 +13,23 @@ protocol StorageManager {
     func saveToken(token: TokenResponse)
     func getToken() -> String?
     func removeToken()
-    
-    func saveDateLastLogin()
-    func getDateLastLogin() -> String
 
     func saveUserId(token: TokenResponse)
     func getUserId() -> String?
     func removeUserId()
+
+    func saveDateLastLogin()
+    func getDateLastLogin() -> String
 }
 
-class StorageManagerImp: StorageManager {
+final class StorageManagerImp: StorageManager {
     private let keychain = Keychain(service: Constants.serviceId)
 
     func cleanKeychainIfNeeded() {
         guard !notFirstLaunch() else {
             return
         }
+
         do {
             try keychain.removeAll()
         } catch {
@@ -50,6 +51,7 @@ class StorageManagerImp: StorageManager {
             guard let token = try keychain.get(StorageManagerKey.token.rawValue) else {
                 return nil
             }
+
             return token
         } catch {
             print(error as Any)
